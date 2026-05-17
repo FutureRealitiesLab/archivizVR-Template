@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"$env:APPDATA\\\\Godot\" -Force | Select-Object Name)",
+      "PowerShell(cmd /c \"dir /a C:\\\\Users\\\\dornh\\\\AppData\\\\Roaming\\\\Godot\")"
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://barchvi0020"]
+
+[ext_resource type="Script" uid="uid://b3ehl5007i46y" path="res://scripts/fpv_controller.gd" id="1_fpv"]
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 2
+ambient_light_source = 3
+ambient_light_energy = 0.5
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_white = 6.0
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 0.05
+glow_blend_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(30, 0.2, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+size = Vector3(30, 0.2, 30)
+
+[sub_resource type="StandardMaterial3D" id="Mat_floor"]
+albedo_color = Color(0.82, 0.8, 0.76, 1)
+roughness = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(10, 3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall"]
+size = Vector3(10, 3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="Mat_wall"]
+albedo_color = Color(0.93, 0.91, 0.88, 1)
+roughness = 0.85
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cube"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cube"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_cube"]
+albedo_color = Color(0.2, 0.5, 0.8, 1)
+roughness = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.35
+height = 1.8
+
+[node name="TestScene" type="Node3D" unique_id=1472918487]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1604878762]
+environment = SubResource("Env_1")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1156679212]
+transform = Transform3D(0.866, -0.433, 0.25, 0, 0.5, 0.866, -0.5, -0.75, 0.433, 8, 12, 8)
+light_color = Color(1, 0.96, 0.88, 1)
+light_energy = 2.5
+shadow_enabled = true
+
+[node name="Geometry" type="Node3D" parent="." unique_id=484079812]
+
+[node name="Floor" type="StaticBody3D" parent="Geometry" unique_id=740653950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Floor" unique_id=1114434531]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Floor" unique_id=420413072]
+mesh = SubResource("BoxMesh_floor")
+surface_material_override/0 = SubResource("Mat_floor")
+
+[node name="WallNorth" type="StaticBody3D" parent="Geometry" unique_id=193617806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallNorth" unique_id=100516787]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallNorth" unique_id=639568633]
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("Mat_wall")
+
+[node name="WallSouth" type="StaticBody3D" parent="Geometry" unique_id=883543104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallSouth" unique_id=1409515942]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallSouth" unique_id=540288662]
+mesh = SubResource("BoxMesh_wall")
+surface_material_override/0 = SubResource("Mat_wall")
+
+[node name="TestCube" type="StaticBody3D" parent="Geometry" unique_id=552618421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/TestCube" unique_id=526397717]
+shape = SubResource("BoxShape3D_cube")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/TestCube" unique_id=827519890]
+mesh = SubResource("BoxMesh_cube")
+surface_material_override/0 = SubResource("Mat_cube")
+
+[node name="FPVPlayer" type="CharacterBody3D" parent="." unique_id=1290775116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+collision_layer = 2
+script = ExtResource("1_fpv")
+
+[node name="Head" type="Node3D" parent="FPVPlayer" unique_id=1870098428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+
+[node name="Camera3D" type="Camera3D" parent="FPVPlayer/Head" unique_id=1973642389]
+current = true
+far = 500.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FPVPlayer" unique_id=350080670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_1")

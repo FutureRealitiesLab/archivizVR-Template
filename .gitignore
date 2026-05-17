@@ -1,0 +1,78 @@
+# Godot 4 – .gitignore
+# Offizielle Empfehlung: https://github.com/github/gitignore/blob/main/Godot.gitignore
+
+# Godot-spezifische Verzeichnisse
+.godot/
+
+# Importierte Assets (werden von Godot beim ersten Öffnen regeneriert)
+.import/
+
+# Monodevelop/Visual Studio Projekt-Dateien (nur relevant für C#)
+*.sln
+*.csproj
+.mono/
+data_*/
+mono_crash.*.json
+
+# Exportierte Projekte
+/export/
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.exe
+*.zip
+*.tar.gz
+
+# Build-Artefakte (nur Gradle-Output, nicht das Template selbst)
+android/build/build/
+android/build/.gradle/
+dist/
+
+# Godot Engine Android-Templates (>100MB, werden lokal über Godot installiert)
+# Pfad: Godot Editor → Project → Install Android Build Template
+android/build/libs/
+
+# Kompilierte Godot-Exportdaten (werden beim Export regeneriert)
+android/build/src/main/assets/
+
+# Betriebssystem-spezifisch
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.orig
+
+# VoxelGI Baked Data (optional – je nach Projektgröße zu committen)
+# Wenn die Baked-Data committed werden soll, diese Zeile entfernen:
+*.voxel_gi
+
+# Lightmap Baked Data (kann groß sein – optional)
+# *.lmbake
+
+# Eigene Blender-Quelldateien (empfohlen: in separatem Repository oder LFS)
+# *.blend
+# *.blend1
+
+# Git LFS empfohlen für:
+# - *.glb
+# - *.gltf
+# - *.png (> 1MB)
+# - *.hdr
+# - *.exr
+# - *.wav
+# - *.ogg
