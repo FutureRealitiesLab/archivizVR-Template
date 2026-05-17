@@ -95,7 +95,7 @@ def export_collection(collection):
         # Auch Sub-Collections nicht verarbeiten wenn Parent unsichtbar
         return
 
-    mesh_objects = [o for o in collection.objects if o.type == 'MESH']
+    mesh_objects = [o for o in collection.objects if o.type == 'MESH' and o.visible_get()]
 
     if not mesh_objects:
         print(f"  Übersprungen (keine Mesh-Objekte): {collection.name}")
