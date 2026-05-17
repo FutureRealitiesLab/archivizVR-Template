@@ -59,8 +59,41 @@ exported = []
 skipped = []
 
 
+def find_layer_collection(layer_coll, target):
+    """Findet die LayerCollection für eine gegebene Collection (rekursiv)."""
+    if layer_coll.collection == target:
+        return layer_coll
+    for child in layer_coll.children:
+        result = find_layer_collection(child, target)
+        if result:
+            return result
+    return None
+
+
+def is_collection_visible(collection):
+    """True wenn die Collection im Viewport sichtbar ist (Auge-Icon im Outliner)."""
+    view_layer = bpy.context.view_layer
+    layer_coll = find_layer_collection(view_layer.layer_collection, collection)
+    if layer_coll is None:
+        return False
+    if layer_coll.exclude:        # Checkbox im Outliner deaktiviert
+        return False
+    if layer_coll.hide_viewport:  # Auge-Icon ausgeblendet
+        return False
+    if collection.hide_viewport:  # Global versteckt (H-Taste)
+        return False
+    return True
+
+
 def export_collection(collection):
     """Exportiert eine Collection – rekursiv für alle Sub-Collections."""
+
+    # Unsichtbare Collections überspringen
+    if not is_collection_visible(collection):
+        print(f"  Übersprungen (nicht sichtbar): {collection.name}")
+        skipped.append(f"{collection.name} (unsichtbar)")
+        # Auch Sub-Collections nicht verarbeiten wenn Parent unsichtbar
+        return
 
     mesh_objects = [o for o in collection.objects if o.type == 'MESH']
 
@@ -245,6 +278,11 @@ Lights & Cameras:
 ---
 
 ## Häufige Probleme
+
+**Collection wird nicht exportiert obwohl sie Objekte hat:**
+→ Collection ist im Outliner ausgeblendet (Auge-Icon) → sichtbar machen oder Auge aktivieren
+→ Collection ist per Checkbox deaktiviert (exclude) → Häkchen im Outliner setzen
+→ Wenn eine Parent-Collection unsichtbar ist, werden alle ihre Sub-Collections ebenfalls übersprungen
 
 **`TypeError: keyword "export_colors" unrecognized`**
 → Veraltete Script-Version. `export_colors` existiert nicht in allen Blender-Versionen.
