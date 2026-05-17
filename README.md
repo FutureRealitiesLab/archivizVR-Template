@@ -6,6 +6,33 @@ mit automatischem First-Person-View Fallback für Desktop.
 
 ---
 
+## ⚠️ Pflicht-Schritte nach dem Klonen
+
+Ohne diese Schritte startet das Projekt auf der Quest **nicht** (schwarzer Screen).
+
+### 1. Android Build Template installieren
+
+Die Godot-Engine-Templates (~200 MB) sind **nicht im Repository** enthalten und müssen lokal installiert werden:
+
+```
+Godot Editor öffnen → Project → Install Android Build Template...
+```
+
+Dies erzeugt `android/build/libs/godot-lib.template_*.aar` — ohne diese Dateien schlägt der Android-Build fehl.
+
+### 2. Meta OpenXR Vendor Plugin aktivieren
+
+Das Plugin liegt bereits unter `addons/godotopenxrvendors/` im Repo. Es muss einmalig aktiviert werden:
+
+```
+Godot Editor → Project → Project Settings → Plugins
+→ "Godot OpenXR Vendors" → Enable ✅
+```
+
+> **Ohne Vendor Plugin: schwarzer Screen auf Meta Quest** — auch wenn alle anderen Einstellungen korrekt sind. Dies ist der häufigste Fehler bei neuen Projekten.
+
+---
+
 ## Szenenbaum-Übersicht
 
 ```
