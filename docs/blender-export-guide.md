@@ -6,6 +6,21 @@ Ideal für Architekturprojekte mit klar strukturierten Collections (z.B. `Rohbau
 
 ---
 
+## ✅ Nur sichtbare Objekte werden exportiert
+
+Das Script respektiert **alle Blender-Sichtbarkeits-Einstellungen** automatisch:
+
+| Einstellung | Wo in Blender | Verhalten |
+|---|---|---|
+| **Auge-Icon** im Outliner (hide_viewport) | Neben dem Collection-Namen | Collection + alle Sub-Collections werden übersprungen |
+| **Checkbox** (exclude) | Häkchen links im Outliner | Collection wird komplett ignoriert |
+| **H-Taste** (global versteckt) | Objekt/Collection | Wird übersprungen |
+| **Objekt-Auge** im Outliner | Neben dem Objekt-Namen | Einzelnes Objekt wird nicht exportiert |
+
+> **Arbeitsweise:** Blende in Blender einfach aus, was nicht exportiert werden soll — das Script exportiert nur was auch im Viewport sichtbar ist. Kein manuelles Selektieren oder Umbenennen nötig.
+
+---
+
 ## Voraussetzungen
 
 - **Blender 4.x** (getestet ab 4.0)
