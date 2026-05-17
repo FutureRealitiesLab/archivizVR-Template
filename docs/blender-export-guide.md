@@ -21,6 +21,59 @@ Das Script respektiert **alle Blender-Sichtbarkeits-Einstellungen** automatisch:
 
 ---
 
+## 🪟 Glas und Transparenz exportieren
+
+Transparente Materialien (Fenster, Glasfassaden) werden automatisch korrekt exportiert – **vorausgesetzt, das Material ist in Blender richtig vorbereitet**.
+
+> **Warum ist das wichtig?** Blender exportiert standardmäßig alle Materialien als `OPAQUE` (undurchsichtig) – selbst wenn im Principled BSDF ein Alpha-Wert gesetzt ist. Erst die richtige **Render Method** aktiviert die Transparenz im Export.
+
+---
+
+### Methode A – Fensterglas (empfohlen für ArchViz) — Blender 4.2+
+
+```
+1. Material auswählen → Principled BSDF
+2. Alpha-Wert: 0.1–0.3  (je nach Glasdichte; 0.1 = sehr transparent)
+3. Material Properties → ganz nach unten scrollen → Settings → Surface
+4. Render Method: Blended  (statt Standard "Dithered")
+5. Shadow: Checkbox deaktivieren
+```
+
+→ Godot liest den `alphaMode: BLEND` aus der GLB-Datei und importiert das Material automatisch transparent.
+
+---
+
+### Methode B – Echtes Glas mit Lichtbrechung (Transmission/IOR) — Blender 4.2+
+
+```
+1. Material auswählen → Principled BSDF
+2. Transmission: 1.0
+3. IOR: 1.45  (Glas-Standard; Wasser = 1.33, Diamant = 2.42)
+4. Material Properties → Settings → Surface → Render Method: Blended
+```
+
+→ Godot importiert die `KHR_materials_transmission`-Extension automatisch.
+Für VR/ArchViz ist **Methode A schneller** und mit weniger Performance-Kosten.
+
+---
+
+### Godot nach dem Import – falls Transparenz nicht korrekt erscheint
+
+```
+Importierte .glb-Datei → Material auswählen → Inspector:
+  Transparency → Alpha  (für weiche Transparenz)
+  Transparency → Alpha Scissor  (für harte Kante, z.B. Lochgitter)
+```
+
+| Blender Render Method | glTF alphaMode | Godot Ergebnis |
+|---|---|---|
+| Dithered (Standard) | OPAQUE | undurchsichtig |
+| Alpha Clip | MASK | Alpha Scissor automatisch |
+| **Blended** | **BLEND** | **transparent automatisch** |
+| Principled Transmission | KHR_materials_transmission | transparent mit Reflektion |
+
+---
+
 ## Voraussetzungen
 
 - **Blender 4.x** (getestet ab 4.0)
