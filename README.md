@@ -102,6 +102,10 @@ cd archviz_vr
 
 ## Blender → Godot 4.6 Pipeline
 
+> 📄 **Ausführliche Anleitung mit Batch-Export-Script:**
+> [docs/blender-export-guide.md](docs/blender-export-guide.md)
+> → Exportiert automatisch jede Blender-Collection als separate `.glb`-Datei
+
 ### Empfohlener Workflow: glTF 2.0 Export
 
 Dies ist der **offizielle und beste Weg** für Architektur-Assets in Godot 4.6:
