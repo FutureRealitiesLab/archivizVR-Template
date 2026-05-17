@@ -29,6 +29,7 @@ enum LocomotionMode {
 @export_group("Locomotion")
 @export var locomotion_mode: LocomotionMode = LocomotionMode.TELEPORT
 @export var smooth_speed: float = 2.5          ## m/s Smooth Locomotion
+@export var fly_speed: float = 2.0             ## m/s vertikale Bewegung im Fly-Modus
 @export var smooth_turn_speed: float = 60.0    ## Grad/s sanfte Drehung
 @export var snap_turn_angle: float = 30.0      ## Grad pro Snap-Turn
 @export var snap_turn_cooldown: float = 0.3    ## Sekunden zwischen Snap-Turns
@@ -65,6 +66,10 @@ var _is_teleporting: bool = false
 var _teleport_target: Vector3 = Vector3.ZERO
 var _teleport_valid: bool = false
 
+var fly_mode: bool = false
+var _fly_up_pressed: bool = false
+var _fly_down_pressed: bool = false
+
 # ---------------------------------------------------------------------------
 # Lifecycle
 # ---------------------------------------------------------------------------
@@ -98,6 +103,13 @@ func _physics_process(delta: float) -> void:
 			_process_smooth_locomotion(delta)
 		LocomotionMode.TELEPORT:
 			_process_teleport_aim(delta)
+
+	# Fly Mode: vertikale Bewegung (unabhängig vom Locomotion-Modus)
+	if fly_mode:
+		if _fly_up_pressed:
+			global_position.y += fly_speed * delta
+		if _fly_down_pressed:
+			global_position.y -= fly_speed * delta
 
 
 func _process_smooth_locomotion(delta: float) -> void:
@@ -160,6 +172,9 @@ func _on_right_button_pressed(button_name: String) -> void:
 		"ax_button":
 			# A-Taste: Locomotion-Modus wechseln
 			_toggle_locomotion_mode()
+		"by_button":
+			# B-Taste: Fly-Modus beenden
+			_exit_fly_mode()
 
 
 func _on_right_button_released(button_name: String) -> void:
@@ -172,12 +187,26 @@ func _on_right_button_released(button_name: String) -> void:
 func _on_left_button_pressed(button_name: String) -> void:
 	match button_name:
 		"ax_button":
-			# X-Taste: zurück zur Startposition
-			global_position = Vector3(0.0, 0.0, 0.0)
+			# X-Taste: Hoch fliegen (Fly-Modus aktivieren)
+			fly_mode = true
+			_fly_up_pressed = true
+			print("XRLocomotion: Fly-Modus an – Steigen")
+		"by_button":
+			# Y-Taste: Runter fliegen (Fly-Modus aktivieren)
+			fly_mode = true
+			_fly_down_pressed = true
+			print("XRLocomotion: Fly-Modus an – Sinken")
+		"primary_click":
+			# Linker Thumbstick-Klick: Fly-Modus beenden
+			_exit_fly_mode()
 
 
-func _on_left_button_released(_button_name: String) -> void:
-	pass
+func _on_left_button_released(button_name: String) -> void:
+	match button_name:
+		"ax_button":
+			_fly_up_pressed = false
+		"by_button":
+			_fly_down_pressed = false
 
 # ---------------------------------------------------------------------------
 # Teleport-Logik
@@ -218,6 +247,13 @@ func _toggle_locomotion_mode() -> void:
 	else:
 		locomotion_mode = LocomotionMode.SMOOTH
 		print("XRLocomotion: Wechsel zu Smooth-Locomotion-Modus")
+
+
+func _exit_fly_mode() -> void:
+	fly_mode = false
+	_fly_up_pressed = false
+	_fly_down_pressed = false
+	print("XRLocomotion: Fly-Modus beendet")
 
 
 ## Setzt den XRPlayer auf eine bestimmte Weltposition (für Menü-Navigationspunkte).
