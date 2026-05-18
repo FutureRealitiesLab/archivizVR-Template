@@ -34,6 +34,7 @@ archviz_vr/
 │   ├── scene_manager.gd        # Autoload: async scene loading/swapping
 │   ├── xr_locomotion.gd        # VR locomotion (teleport / smooth / fly)
 │   └── fpv_controller.gd       # Desktop locomotion (walk / fly / crouch)
+├── build_quest.bat             # Force-clean build helper (taskkill + cache clear)
 ├── project.godot               # Engine config (OpenXR, rendering, input)
 ├── export_presets.cfg          # Android / Meta Quest export settings
 ├── default_action_map.tres     # OpenXR action bindings (14 controller profiles)
@@ -165,12 +166,18 @@ Attached to `XROrigin3D`. Pure kinematic movement (no physics/gravity).
 **Fly Mode** (independent of locomotion mode):
 | Button (Quest 2) | Action |
 |---|---|
-| X (left, hold) | Move up — enters fly mode automatically |
-| Y (left, hold) | Move down — enters fly mode automatically |
-| B (right) | Exit fly mode |
-| Left thumbstick click | Exit fly mode |
+| Y (left, hold) | Move up — enters fly mode automatically |
+| X (left, hold) | Move down — enters fly mode automatically |
+| B (right) | Exit fly mode, re-enable gravity |
+| Left thumbstick click | Exit fly mode, re-enable gravity |
 
-While fly mode is active, vertical movement is applied every physics frame at `fly_speed` (2.0 m/s, configurable). Releasing X/Y stops vertical movement but keeps the player at the current height. Fly mode is independent of teleport/smooth mode.
+While fly mode is active, vertical movement is applied every physics frame at `fly_speed` (2.0 m/s, configurable). Releasing Y/X stops vertical movement but keeps the player at the current height. Fly mode is independent of teleport/smooth mode.
+
+**Gravity / Floor Snap** (active by default, disabled in fly mode):
+- Raycast fires downward from HMD X/Z position (not XROrigin center — important for LBE)
+- `floor_collision_mask = 1` — matches Godot's default Layer 1 for StaticBody3D geometry
+- `floor_snap_speed = 8.0` — lerp factor, fast enough to feel like natural gravity
+- Optional: add separate nav-plane colliders on Layer 2 for precise stair/ramp control
 
 **Full button map (Quest 2):**
 | Button | Action |
@@ -179,10 +186,10 @@ While fly mode is active, vertical movement is applied every physics frame at `f
 | Right thumbstick | Turn |
 | Right trigger | Teleport aim / confirm |
 | A (right) | Toggle Teleport ↔ Smooth |
-| B (right) | Exit fly mode |
-| X (left, hold) | Fly up |
-| Y (left, hold) | Fly down |
-| Left thumbstick click | Exit fly mode |
+| B (right) | Exit fly mode / enable gravity |
+| Y (left, hold) | Fly up |
+| X (left, hold) | Fly down |
+| Left thumbstick click | Exit fly mode / enable gravity |
 
 **Export variables:**
 ```gdscript
@@ -283,9 +290,27 @@ common/physics_fps = 90
 
 ---
 
+## Build & Deploy (Meta Quest)
+
+```
+1. Run build_quest.bat          ← kills Gradle daemon, clears cache
+2. Godot Editor → Project → Export → Android (Meta Quest)
+   → Export Type: Release  ← IMPORTANT: Debug exports render collision shapes!
+3. adb install -r export/archviz_vr.apk
+```
+
+`build_quest.bat` uses `taskkill /F /IM java.exe` to reliably kill the Gradle daemon on Windows — more reliable than `gradlew --stop`. `org.gradle.daemon=false` in `gradle.properties` prevents a new daemon from starting.
+
+---
+
 ## Critical Setup (after cloning)
 
 1. **Android Build Template**: `Godot Editor → Project → Install Android Build Template`
 2. **Meta Vendor Plugin**: `Project Settings → Plugins → Godot OpenXR Vendors → Enable`
 
 Without step 2, Quest 2 shows a black screen even if all other settings are correct.
+
+**Common issues:**
+- **Collision shapes visible in VR** → exported as Debug build; switch to Release
+- **Gravity/floor snap not working** → floor geometry must be on Collision Layer 1 (Godot default)
+- **Black screen** → check `Project Settings → Rendering → Shading` is enabled
