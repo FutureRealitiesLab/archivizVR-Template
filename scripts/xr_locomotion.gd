@@ -1,4 +1,4 @@
-﻿## xr_locomotion.gd
+## xr_locomotion.gd
 ## VR-Fortbewegungs-Controller für den XROrigin3D.
 ## Unterstützt Smooth Locomotion und Teleport (Archivz-typisch).
 ##
@@ -10,6 +10,15 @@
 ##   └── RightController (XRController3D)
 ##       ├── RightHandMesh
 ##       └── TeleportRay (RayCast3D)
+##
+## Etagen-Navigation:
+##   Gravity (Standard): Floor-Snap per Raycast von HMD-Position (X/Z) nach unten.
+##   Funktioniert für Continuous Move und LBE, da der Raycast die echte
+##   HMD-Horizontalposition nutzt – nicht den XROrigin-Mittelpunkt.
+##   Collider für Nav-Ebenen/Rampen → Collision Layer 2 (floor_collision_mask).
+##
+##   Fly-Modus: Y-Taste = hoch, X-Taste = runter. Gravity dabei deaktiviert.
+##   B-Taste → Gravity wieder aktivieren.
 
 extends XROrigin3D
 
@@ -33,6 +42,17 @@ enum LocomotionMode {
 @export var smooth_turn_speed: float = 60.0    ## Grad/s sanfte Drehung
 @export var snap_turn_angle: float = 30.0      ## Grad pro Snap-Turn
 @export var snap_turn_cooldown: float = 0.3    ## Sekunden zwischen Snap-Turns
+
+@export_group("Gravity / Floor Snap")
+## Standard-Modus: Raycast vom HMD nach unten, XROrigin.y folgt dem Boden.
+## Collision Layer für Nav-Ebenen und Rampen (Standard: Layer 2).
+@export_flags_3d_physics var floor_collision_mask: int = 2
+## Maximale Raycast-Distanz nach unten (m)
+@export var floor_snap_distance: float = 10.0
+## Wie schnell XROrigin.y dem Boden folgt (Lerp-Faktor)
+@export var floor_snap_speed: float = 8.0
+## Mindesthöhe über dem Boden ab der der Snap greift (vermeidet Zittern)
+@export var floor_snap_threshold: float = 0.02
 
 @export_group("Teleport")
 @export var teleport_color_valid: Color = Color(0.2, 0.8, 0.2, 0.8)
@@ -66,6 +86,8 @@ var _is_teleporting: bool = false
 var _teleport_target: Vector3 = Vector3.ZERO
 var _teleport_valid: bool = false
 
+## Gravity-Modus: Floor-Snap via HMD-Raycast (Standard = true)
+var gravity_enabled: bool = true
 var fly_mode: bool = false
 var _fly_up_pressed: bool = false
 var _fly_down_pressed: bool = false
@@ -89,7 +111,9 @@ func _ready() -> void:
 		_teleport_ray = right_controller.find_child("TeleportRay", true, false) as RayCast3D
 		_teleport_marker = get_tree().current_scene.find_child("TeleportMarker", true, false)
 
-	print("XRLocomotion: Bereit. Modus: %s" % LocomotionMode.keys()[locomotion_mode])
+	print("XRLocomotion: Bereit. Modus: %s | Gravity: %s" % [
+		LocomotionMode.keys()[locomotion_mode], gravity_enabled
+	])
 
 # ---------------------------------------------------------------------------
 # Physics Process
@@ -104,12 +128,16 @@ func _physics_process(delta: float) -> void:
 		LocomotionMode.TELEPORT:
 			_process_teleport_aim(delta)
 
-	# Fly Mode: vertikale Bewegung (unabhängig vom Locomotion-Modus)
+	# Fly-Modus: vertikale Bewegung (deaktiviert Gravity)
 	if fly_mode:
 		if _fly_up_pressed:
 			global_position.y += fly_speed * delta
 		if _fly_down_pressed:
 			global_position.y -= fly_speed * delta
+
+	# Gravity: Floor-Snap via HMD-Raycast (nur wenn kein Fly-Modus)
+	elif gravity_enabled:
+		_process_floor_snap(delta)
 
 
 func _process_smooth_locomotion(delta: float) -> void:
@@ -137,7 +165,7 @@ func _process_smooth_locomotion(delta: float) -> void:
 			rotate_y(deg_to_rad(-turn_axis.x * smooth_turn_speed * delta))
 
 
-func _process_teleport_aim(delta: float) -> void:
+func _process_teleport_aim(_delta: float) -> void:
 	if not _teleport_ray or not _is_teleporting:
 		return
 
@@ -160,6 +188,38 @@ func _process_teleport_aim(delta: float) -> void:
 		if _teleport_marker:
 			_teleport_marker.visible = false
 
+
+## Floor-Snap: Raycast von HMD-Horizontalposition (X/Z) nach unten.
+## Wichtig für LBE: Nicht vom XROrigin-Mittelpunkt, sondern von der echten
+## HMD-Position – so folgt der Snap dem physisch stehenden Spieler.
+func _process_floor_snap(delta: float) -> void:
+	if not xr_camera:
+		return
+
+	var space_state := get_world_3d().direct_space_state
+
+	# Raycast-Start: HMD X/Z, aber von etwas oberhalb des aktuellen Bodens
+	var ray_start := Vector3(
+		xr_camera.global_position.x,
+		global_position.y + 2.0,
+		xr_camera.global_position.z
+	)
+	var ray_end := ray_start + Vector3.DOWN * floor_snap_distance
+
+	var query := PhysicsRayQueryParameters3D.create(ray_start, ray_end)
+	query.collision_mask = floor_collision_mask
+
+	var result := space_state.intersect_ray(query)
+	if result.is_empty():
+		return
+
+	var floor_y: float = result.position.y
+	var diff: float = floor_y - global_position.y
+
+	# Nur anpassen wenn Abweichung über Threshold (verhindert Zittern)
+	if absf(diff) > floor_snap_threshold:
+		global_position.y = lerpf(global_position.y, floor_y, floor_snap_speed * delta)
+
 # ---------------------------------------------------------------------------
 # Button-Handler
 # ---------------------------------------------------------------------------
@@ -173,8 +233,8 @@ func _on_right_button_pressed(button_name: String) -> void:
 			# A-Taste: Locomotion-Modus wechseln
 			_toggle_locomotion_mode()
 		"by_button":
-			# B-Taste: Fly-Modus beenden
-			_exit_fly_mode()
+			# B-Taste: Gravity aktivieren (Fly-Modus beenden)
+			_enable_gravity()
 
 
 func _on_right_button_released(button_name: String) -> void:
@@ -186,26 +246,26 @@ func _on_right_button_released(button_name: String) -> void:
 
 func _on_left_button_pressed(button_name: String) -> void:
 	match button_name:
-		"ax_button":
-			# X-Taste: Hoch fliegen (Fly-Modus aktivieren)
-			fly_mode = true
-			_fly_up_pressed = true
-			print("XRLocomotion: Fly-Modus an – Steigen")
 		"by_button":
-			# Y-Taste: Runter fliegen (Fly-Modus aktivieren)
-			fly_mode = true
+			# Y-Taste (oben): Hoch fliegen
+			_enter_fly_mode()
+			_fly_up_pressed = true
+			print("XRLocomotion: Fly – Steigen")
+		"ax_button":
+			# X-Taste (unten): Runter fliegen
+			_enter_fly_mode()
 			_fly_down_pressed = true
-			print("XRLocomotion: Fly-Modus an – Sinken")
+			print("XRLocomotion: Fly – Sinken")
 		"primary_click":
-			# Linker Thumbstick-Klick: Fly-Modus beenden
-			_exit_fly_mode()
+			# Linker Thumbstick-Klick: Gravity aktivieren
+			_enable_gravity()
 
 
 func _on_left_button_released(button_name: String) -> void:
 	match button_name:
-		"ax_button":
-			_fly_up_pressed = false
 		"by_button":
+			_fly_up_pressed = false
+		"ax_button":
 			_fly_down_pressed = false
 
 # ---------------------------------------------------------------------------
@@ -239,6 +299,9 @@ func _execute_teleport() -> void:
 
 	print("XRLocomotion: Teleportiert zu %s" % _teleport_target)
 
+# ---------------------------------------------------------------------------
+# Locomotion-Modi
+# ---------------------------------------------------------------------------
 
 func _toggle_locomotion_mode() -> void:
 	if locomotion_mode == LocomotionMode.SMOOTH:
@@ -249,11 +312,17 @@ func _toggle_locomotion_mode() -> void:
 		print("XRLocomotion: Wechsel zu Smooth-Locomotion-Modus")
 
 
-func _exit_fly_mode() -> void:
+func _enter_fly_mode() -> void:
+	fly_mode = true
+	gravity_enabled = false
+
+
+func _enable_gravity() -> void:
 	fly_mode = false
+	gravity_enabled = true
 	_fly_up_pressed = false
 	_fly_down_pressed = false
-	print("XRLocomotion: Fly-Modus beendet")
+	print("XRLocomotion: Gravity aktiviert")
 
 
 ## Setzt den XRPlayer auf eine bestimmte Weltposition (für Menü-Navigationspunkte).

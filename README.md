@@ -265,14 +265,14 @@ F2                 → Performance-Info
 ### VR-Controller (OpenXR)
 
 ```
-Linker Thumbstick        → Bewegen (Smooth Locomotion)
-Rechter Thumbstick       → Snap-Turn (30°)
-Rechter Trigger          → Teleport (zielen + loslassen)
-A-Taste (rechts)         → Locomotion-Modus wechseln
-X-Taste (links, halten)  → Hoch fliegen (Fly-Modus aktivieren)
-Y-Taste (links, halten)  → Runter fliegen (Fly-Modus aktivieren)
-B-Taste (rechts)         → Fly-Modus beenden (Gravity an)
-Linker Thumbstick (Klick) → Fly-Modus beenden (Gravity an)
+Linker Thumbstick          → Bewegen (Smooth Locomotion)
+Rechter Thumbstick         → Snap-Turn (30°)
+Rechter Trigger            → Teleport (zielen + loslassen)
+A-Taste (rechts)           → Locomotion-Modus wechseln
+Y-Taste (links, halten)    → Hoch fliegen (Fly-Modus, Gravity aus)
+X-Taste (links, halten)    → Runter fliegen (Fly-Modus, Gravity aus)
+B-Taste (rechts)           → Gravity aktivieren (Floor-Snap, Standard)
+Linker Thumbstick (Klick)  → Gravity aktivieren (Floor-Snap, Standard)
 ```
 
 ---
