@@ -8,7 +8,7 @@ extends Node
 # Export-Variablen
 # ---------------------------------------------------------------------------
 
-@export var startup_scene: String = "res://scenes/environment/demo_room.tscn"
+@export var startup_scene: String = "res://scenes/environment/a24.tscn"
 
 # ---------------------------------------------------------------------------
 # Lifecycle

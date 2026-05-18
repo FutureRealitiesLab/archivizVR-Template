@@ -8,6 +8,8 @@
         android:largeScreens="true"
         android:xlargeScreens="true" />
     <uses-feature android:glEsVersion="0x00030000" android:required="true" />
+    <uses-feature tools:node="replace" android:name="android.hardware.vulkan.level" android:required="false" android:version="1" />
+    <uses-feature tools:node="replace" android:name="android.hardware.vulkan.version" android:required="true" android:version="0x400003" />
 <!-- Start of manifest element contents from OpenXRExportPlugin -->
 
     <uses-permission android:name="org.khronos.openxr.permission.OPENXR" />
@@ -37,24 +39,13 @@
         tools:replace="android:allowBackup,android:appCategory,android:isGame,android:hasFragileUserData,android:requestLegacyExternalStorage"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <meta-data tools:node="replace" android:name="org.godotengine.rendering.method" android:value="gl_compatibility" />
+        <meta-data tools:node="replace" android:name="org.godotengine.rendering.method" android:value="mobile" />
         <meta-data tools:node="replace" android:name="org.godotengine.editor.version" android:value="4.6.2.stable" />
 <!-- Start of manifest application element contents from GodotOpenXRMeta -->
         <meta-data tools:node="replace" android:name="com.oculus.supportedDevices" android:value="quest2|quest3|quest3s|questpro" />
 
 <!-- End of manifest application element contents from GodotOpenXRMeta -->
         <activity android:name=".GodotApp" tools:replace="android:screenOrientation,android:excludeFromRecents,android:resizeableActivity" tools:node="mergeOnlyAttributes" android:excludeFromRecents="false" android:screenOrientation="landscape" android:resizeableActivity="true">
-<!-- Start of manifest activity element contents from OpenXRExportPlugin -->
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-				<category android:name="android.intent.category.DEFAULT" />
-
-                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
-            </intent-filter>
-
-<!-- End of manifest activity element contents from OpenXRExportPlugin -->
 <!-- Start of manifest activity element contents from GodotOpenXRMeta -->
 
 				<intent-filter>
@@ -75,17 +66,6 @@
 				</intent-filter>
 
 <!-- End of manifest activity element contents from GodotOpenXRMeta -->
-        </activity>
-        <activity-alias
-            tools:node="mergeOnlyAttributes"
-            android:name=".GodotAppLauncher"
-            android:targetActivity=".GodotApp"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 <!-- Start of manifest activity element contents from OpenXRExportPlugin -->
 
             <intent-filter>
@@ -97,6 +77,17 @@
             </intent-filter>
 
 <!-- End of manifest activity element contents from OpenXRExportPlugin -->
+        </activity>
+        <activity-alias
+            tools:node="mergeOnlyAttributes"
+            android:name=".GodotAppLauncher"
+            android:targetActivity=".GodotApp"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 <!-- Start of manifest activity element contents from GodotOpenXRMeta -->
 
 				<intent-filter>
@@ -117,6 +108,17 @@
 				</intent-filter>
 
 <!-- End of manifest activity element contents from GodotOpenXRMeta -->
+<!-- Start of manifest activity element contents from OpenXRExportPlugin -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+
+                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+            </intent-filter>
+
+<!-- End of manifest activity element contents from OpenXRExportPlugin -->
         </activity-alias>
     </application>
 </manifest>

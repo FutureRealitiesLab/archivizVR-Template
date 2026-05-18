@@ -13,7 +13,7 @@ config_version=5
 config/name="ArchViz VR"
 config/description="Architekturvisualisierung in VR/FPV mit Godot 4.6.
 Unterstützt OpenXR (VR-Headsets) mit automatischem FPV-Fallback."
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="uid://barchvi0001"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -112,3 +112,4 @@ openxr/environment_blend_mode=0
 openxr/foveation_level=2
 openxr/foveation_dynamic=true
 openxr/startup_alert=false
+shaders/enabled=true

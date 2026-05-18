@@ -1,30 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://barchviz001"]
+[gd_scene format=3 uid="uid://barchvi0001"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bwbxq345fuouj" path="res://scripts/main.gd" id="1_main"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=2001175521]
 script = ExtResource("1_main")
-startup_scene = "res://scenes/environment/demo_room.tscn"
 
-[node name="World" type="Node3D" parent="."]
+[node name="World" type="Node3D" parent="." unique_id=770299777]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=184044895]
 
-[node name="LoadingOverlay" type="Control" parent="UI"]
+[node name="LoadingOverlay" type="Control" parent="UI" unique_id=286349934]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-visible = false
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="UI/LoadingOverlay"]
+[node name="Background" type="ColorRect" parent="UI/LoadingOverlay" unique_id=541243970]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.85)
 
-[node name="ProgressBar" type="ProgressBar" parent="UI/LoadingOverlay"]
+[node name="ProgressBar" type="ProgressBar" parent="UI/LoadingOverlay" unique_id=1204881219]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,11 +38,11 @@ offset_left = -300.0
 offset_top = -20.0
 offset_right = 300.0
 offset_bottom = 20.0
-min_value = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 max_value = 1.0
-value = 0.0
 
-[node name="LoadingLabel" type="Label" parent="UI/LoadingOverlay"]
+[node name="LoadingLabel" type="Label" parent="UI/LoadingOverlay" unique_id=640263184]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,5 +53,7 @@ offset_left = -150.0
 offset_top = -60.0
 offset_right = 150.0
 offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Szene wird geladen..."
 horizontal_alignment = 1
