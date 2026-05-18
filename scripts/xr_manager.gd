@@ -31,7 +31,7 @@ enum Mode {
 	FPV,    ## First-Person-View (Maus/Tastatur)
 }
 
-const VR_RENDER_SCALE: float = 1.0      ## Empfohlen: 1.0–1.2 für High-End
+const VR_RENDER_SCALE: float = 1.4      ## Supersampling: 1.0=nativ, 1.4=schärfer (kostet ~30% Perf)
 const FPV_RENDER_SCALE: float = 1.0     ## Desktop: 1.0 (native)
 const VR_FOVEATION_LEVEL: int = 2       ## 0=none, 1=low, 2=medium, 3=high
 const PHYSICS_FPS_VR: int = 90          ## VR benötigt stabile 90 Hz
