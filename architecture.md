@@ -1,62 +1,291 @@
-# ArchViz VR - Architecture Documentation
+# ArchViz VR – Architecture Documentation
 
 ## Project Outline
-**ArchViz VR** is a Godot 4-based template project specifically designed for Architecture Visualization (ArchViz). It serves as a foundational boilerplate for presenting architectural scenes in Virtual Reality (Meta Quest 3 / PCVR), while automatically providing a First-Person View (FPV) fallback for standard desktop use if no VR headset is detected. 
 
-The primary goal of this template is to simplify the pipeline for importing architectural models and letting clients walk through them seamlessly either in full VR or via a standard monitor and mouse/keyboard setup.
+**ArchViz VR** is a Godot 4.6 template for Architecture Visualization (ArchViz). It supports Meta Quest 2 / PCVR headsets via OpenXR and automatically falls back to a First-Person-View (FPV) desktop controller when no HMD is detected.
 
-## Core Features
-1. **Hybrid Rendering Strategy**:
-   - **VR Mode (Quest 3 Optimized)**: Uses the Mobile renderer, disables expensive post-processing (like FSR2 and Glow), forces Bilinear scaling, and leverages Variable Rate Shading (VRS) and 90Hz refresh rate to ensure solid performance on standalone headsets.
-   - **FPV Mode (Desktop)**: Uses MSAA, TAA, SDFGI (Global Illumination), SSAO, and Screen-Space Reflections (SSR) to maximize visual fidelity when running on a PC.
-2. **Automatic Fallback**: The `XRManager` automatically detects the presence of an OpenXR compatible headset. If initialization fails, it seamlessly falls back to the FPV desktop controller.
-3. **Dynamic Scene Loading**: Environments are loaded inside a dedicated `World` node, allowing architecture models to be swapped asynchronously without destroying the active Player controller or VR session.
+The primary goal is a clean, reusable pipeline: import Blender-exported `.glb` files, drop them into a scene, and let clients walk through the architecture in VR or on a standard monitor.
+
+---
 
 ## Directory Structure
+
 ```text
 archviz_vr/
-├── addons/                 # Third-party Godot addons (e.g., Godot XR Tools)
-├── assets/                 # Textures, 3D models, and materials for architectural scenes
+├── addons/
+│   └── godotopenxrvendors/     # Meta OpenXR Vendor Plugin (required for Quest 2!)
+├── assets/
+│   ├── materials/              # Shared PBR materials (.tres)
+│   ├── textures/               # albedo, normal, roughness maps
+│   └── meshes/                 # Imported .glb / .gltf assets
+├── docs/
+│   └── blender-export-guide.md # Blender batch export guide (Python script + glass tips)
 ├── scenes/
-│   ├── environment/        # Architectural environments (e.g., demo_room.tscn)
-│   ├── player/             # Player controllers (xr_player.tscn, fpv_player.tscn)
-│   └── main.tscn           # Root entry point of the game
+│   ├── environment/
+│   │   ├── demo_room.tscn      # Demo placeholder scene
+│   │   └── [your scenes]       # Architecture scenes go here
+│   ├── player/
+│   │   ├── xr_player.tscn      # VR Player (XROrigin3D + xr_locomotion.gd)
+│   │   └── fpv_player.tscn     # Desktop Player (CharacterBody3D + fpv_controller.gd)
+│   └── main.tscn               # Root entry point
 ├── scripts/
-│   ├── main.gd             # Main orchestrator script
-│   ├── xr_manager.gd       # Singleton for OpenXR & rendering state
-│   ├── scene_manager.gd    # Singleton for async environment loading
-│   ├── fpv_controller.gd   # Logic for desktop mouse/keyboard movement
-│   └── xr_locomotion.gd    # Logic for VR teleportation / smooth locomotion
-├── project.godot           # Godot project configuration
-├── export_presets.cfg      # Export configurations (e.g., Android / Meta Quest 3)
-└── architecture.md         # This documentation file
+│   ├── main.gd                 # Startup orchestration
+│   ├── xr_manager.gd           # Autoload: OpenXR lifecycle + rendering config
+│   ├── scene_manager.gd        # Autoload: async scene loading/swapping
+│   ├── xr_locomotion.gd        # VR locomotion (teleport / smooth / fly)
+│   └── fpv_controller.gd       # Desktop locomotion (walk / fly / crouch)
+├── project.godot               # Engine config (OpenXR, rendering, input)
+├── export_presets.cfg          # Android / Meta Quest export settings
+├── default_action_map.tres     # OpenXR action bindings (14 controller profiles)
+└── architecture.md             # This file
 ```
 
-## System Modules & Autoloads
+---
 
-### 1. `main.gd` / `main.tscn`
-The entry point of the application. The `main.gd` script orchestrates the startup sequence:
-1. Requests `SceneManager` to synchronously load the initial architectural scene.
-2. Awaits the `SceneManager.scene_loaded` signal to ensure the world is built.
-3. Calls `XRManager.initialize()` to detect the platform (VR or FPV) and spawn the appropriate player controller inside the newly created `World` node.
+## Startup Sequence
 
-### 2. `XRManager` (Autoload Singleton)
-Manages the OpenXR lifecycle and rendering pipelines.
-- **Initialization**: Tries to start `OpenXRInterface`. If successful, sets up the viewport for VR. If not, sets up the viewport for FPV desktop use.
-- **Rendering Optimization**: Contains explicit profiles `_configure_rendering_for_vr()` and `_configure_rendering_for_fpv()` to toggle graphic settings (SDFGI, VRS, MSAA) based on the active mode.
-- **Player Spawning**: Instantiates either `xr_player.tscn` or `fpv_player.tscn` and places them in the current environment at the designated `spawn_position`.
+```
+main.gd _ready()
+  │
+  ├── 1. XRManager signals connected (initialized, mode_changed)
+  ├── 2. Player scenes + spawn config set on XRManager
+  ├── 3. SceneManager.load_scene(startup_scene, false)  ← synchronous on first load
+  ├── 4. await SceneManager.scene_loaded
+  └── 5. XRManager.initialize()
+            ├── VR detected  → _activate_vr_mode()  → spawn xr_player.tscn
+            └── no HMD       → _activate_fpv_mode() → spawn fpv_player.tscn
+```
 
-### 3. `SceneManager` (Autoload Singleton)
-Handles the loading and unloading of architectural environments.
-- **Asynchronous Loading**: Can load heavy architectural models in the background without freezing the application.
-- **World Swapping**: Uses a dedicated `World` node in `main.tscn` as a container. When a new scene is loaded, the old `World` node is freed (`queue_free()`) and the new one is instantiated in its place. The Player node remains untouched during this transition.
+Player spawns as a child of `/root/Main` (not inside `World`) so it survives scene swaps.
 
-### 4. Player Controllers
-- **XR Player**: Uses `XROrigin3D` and `XRCamera3D` tied to the physical headset. Locomotion is driven by `xr_locomotion.gd` for VR interaction.
-- **FPV Player**: Uses a `CharacterBody3D` with standard WASD and Mouse-look input, processed via `fpv_controller.gd`.
+---
 
-## Workflow for Adding New Scenes
-1. Import the architectural model (GLTF, blend, etc.) into `assets/`.
-2. Create a new Inherited Scene or build a Godot scene and save it in `scenes/environment/`.
-3. Set up collisions and ensure lighting parameters match the project needs.
-4. Update `startup_scene` in `main.gd` or use `SceneManager.load_scene("res://scenes/environment/your_scene.tscn")` to transition to it at runtime.
+## System Modules
+
+### `main.gd` / `main.tscn`
+
+Entry point. Responsibilities:
+- Wires up `XRManager` signals before initialization
+- Assigns player scenes and spawn config to `XRManager` at runtime
+- Loads the startup scene synchronously before triggering XR init
+- Handles global keyboard shortcuts: `F1` = force FPV, `F2` = performance stats
+
+```gdscript
+@export var startup_scene: String = "res://scenes/environment/a24.tscn"
+XRManager.player_spawn_parent_path = NodePath("/root/Main")
+XRManager.spawn_position = Vector3(0.0, 0.1, 5.0)
+```
+
+---
+
+### `XRManager` (Autoload)
+
+Manages OpenXR lifecycle, rendering mode switching, and player spawning.
+
+**Signals:**
+| Signal | When |
+|---|---|
+| `initialized(success: bool)` | After VR/FPV setup completes |
+| `mode_changed(new_mode: Mode)` | On any mode transition |
+
+**Public API:**
+```gdscript
+XRManager.is_vr_active() → bool
+XRManager.get_mode()     → Mode  # NONE / VR / FPV
+XRManager.get_player()   → Node3D
+XRManager.get_camera()   → Camera3D
+XRManager.force_fpv_mode()
+XRManager.set_render_scale(scale: float)  # 0.5–2.0, live tuning
+```
+
+**VR Rendering Profile** (`_configure_rendering_for_vr()`):
+| Setting | Value | Reason |
+|---|---|---|
+| MSAA | 4x | Anti-aliasing without TAA ghosting |
+| TAA | off | Causes ghosting on head movement |
+| Scaling mode | Bilinear | FSR2 not supported on Mobile renderer |
+| Render scale | 1.0 | Quest 2 native per-eye res is already high |
+| VRS | disabled | `VRS_XR` conflicts with Meta FFR Extension |
+| Foveation | Level 2 | Set in `project.godot`, handled by vendor plugin |
+| Physics FPS | 90 Hz | Matches Quest 2 display rate |
+| Tonemapper | Filmic | Warm, cinematic look for architecture |
+| Glow | on (0.4 intensity) | Subtle bloom on lights and bright surfaces |
+| SDFGI / SSAO / SSR | off | Not available in Mobile renderer |
+
+**FPV Rendering Profile** (`_configure_rendering_for_fpv()`):
+| Setting | Value |
+|---|---|
+| MSAA | 4x |
+| TAA | on |
+| FXAA | on |
+| SDFGI | on |
+| SSAO | on |
+| SSR | on |
+| Physics FPS | 60 Hz |
+
+**OpenXR session signals handled:**
+- `session_begun` → sets 90 Hz refresh rate
+- `session_stopping` → triggers `force_fpv_mode()` (HMD removed)
+
+---
+
+### `SceneManager` (Autoload)
+
+Handles loading and swapping of architectural environments.
+
+**Signals:**
+```gdscript
+scene_loaded(scene_path: String)
+scene_load_progress(progress: float)  # 0.0–1.0 for UI progress bars
+```
+
+**API:**
+```gdscript
+SceneManager.load_scene(path, use_background_load: bool = true)
+SceneManager.get_current_scene_path() → String
+SceneManager.is_loading() → bool
+```
+
+**Scene swap mechanism:**
+1. Finds the `World` child node inside `main.tscn`'s current scene
+2. Calls `queue_free()` on it, awaits one process frame
+3. Instantiates the new scene, names it `"World"`, adds it as child index 0
+4. Player node (at parent `/root/Main`) is untouched during the swap
+
+---
+
+### `xr_locomotion.gd` — VR Player Controller
+
+Attached to `XROrigin3D`. Pure kinematic movement (no physics/gravity).
+
+**Locomotion modes** (toggle with A button):
+- **Teleport**: Right trigger aims via `TeleportRay (RayCast3D)`, release to jump. Validates surface normal (dot > 0.7) and distance (≤ 15 m).
+- **Smooth Locomotion**: Left thumbstick moves relative to HMD yaw. Right thumbstick turns (smooth or snap).
+
+**Fly Mode** (independent of locomotion mode):
+| Button (Quest 2) | Action |
+|---|---|
+| X (left, hold) | Move up — enters fly mode automatically |
+| Y (left, hold) | Move down — enters fly mode automatically |
+| B (right) | Exit fly mode |
+| Left thumbstick click | Exit fly mode |
+
+While fly mode is active, vertical movement is applied every physics frame at `fly_speed` (2.0 m/s, configurable). Releasing X/Y stops vertical movement but keeps the player at the current height. Fly mode is independent of teleport/smooth mode.
+
+**Full button map (Quest 2):**
+| Button | Action |
+|---|---|
+| Left thumbstick | Move (smooth locomotion) |
+| Right thumbstick | Turn |
+| Right trigger | Teleport aim / confirm |
+| A (right) | Toggle Teleport ↔ Smooth |
+| B (right) | Exit fly mode |
+| X (left, hold) | Fly up |
+| Y (left, hold) | Fly down |
+| Left thumbstick click | Exit fly mode |
+
+**Export variables:**
+```gdscript
+@export var smooth_speed: float = 2.5
+@export var fly_speed: float = 2.0
+@export var smooth_turn_speed: float = 60.0
+@export var snap_turn_angle: float = 30.0
+@export var max_teleport_distance: float = 15.0
+@export var comfort_vignette: bool = true
+```
+
+---
+
+### `fpv_controller.gd` — Desktop FPV Controller
+
+Attached to `CharacterBody3D`. Full physics-based walk with optional fly mode.
+
+**Controls:**
+| Key | Action |
+|---|---|
+| WASD / Arrows | Move |
+| Mouse | Look |
+| Shift | Sprint |
+| F | Toggle fly mode |
+| Space | Jump (walk mode) |
+| E / Q | Up / Down (fly mode) |
+| Ctrl | Crouch |
+| Escape | Release / recapture mouse |
+| F1 | Force FPV (debug) |
+| F2 | Performance stats |
+
+**Key export variables:**
+```gdscript
+@export var walk_speed: float = 3.0
+@export var sprint_speed: float = 7.0
+@export var fly_speed: float = 5.0
+@export var eye_height: float = 1.75
+@export var step_height: float = 0.35
+```
+
+In fly mode, `CollisionShape3D` is disabled for free movement through geometry.
+
+---
+
+## Blender → Godot Pipeline
+
+See [`docs/blender-export-guide.md`](docs/blender-export-guide.md) for the full batch export script.
+
+**Summary:**
+- Export each Blender Collection as a separate `.glb` via Python script
+- Only visible collections and objects are exported (`is_collection_visible()` + `obj.visible_get()`)
+- Modifiers are baked on temporary duplicates; originals stay clean
+- **Glass/Transparency:** Set `Render Method: Blended` in Material → Settings → Surface (Blender 4.2+)
+- Import `.glb` files into `assets/meshes/`, Godot auto-imports on editor focus
+
+---
+
+## project.godot – Key Settings
+
+```ini
+[application]
+run/main_scene = "res://scenes/main.tscn"
+config/features = ["4.6", "Mobile"]
+
+[autoload]
+XRManager  = "*res://scripts/xr_manager.gd"
+SceneManager = "*res://scripts/scene_manager.gd"
+
+[rendering]
+renderer/rendering_method = "mobile"          # Vulkan Mobile (required for Quest 2)
+anti_aliasing/quality/msaa_3d = 2             # 4x MSAA
+textures/default_filters/anisotropic_filtering_level = 4
+gi/use_half_resolution = true
+
+[xr]
+openxr/enabled = true
+openxr/foveation_level = 2
+openxr/foveation_dynamic = true
+
+[physics]
+common/physics_fps = 90
+3d/run_on_separate_thread = true
+```
+
+---
+
+## Adding a New Architecture Scene
+
+1. Export from Blender as `.glb` (use `docs/blender-export-guide.md` for batch export)
+2. Copy `.glb` to `assets/meshes/` — Godot auto-imports
+3. Create a new scene in `scenes/environment/`, add a `Node3D` root named to match your project
+4. Drag `.glb` into the scene, add `StaticBody3D` + `CollisionShape3D` for walkable floors
+5. Add `WorldEnvironment` + `DirectionalLight3D`
+6. Set `startup_scene` in `main.gd` or call at runtime:
+   ```gdscript
+   SceneManager.load_scene("res://scenes/environment/your_scene.tscn")
+   ```
+
+---
+
+## Critical Setup (after cloning)
+
+1. **Android Build Template**: `Godot Editor → Project → Install Android Build Template`
+2. **Meta Vendor Plugin**: `Project Settings → Plugins → Godot OpenXR Vendors → Enable`
+
+Without step 2, Quest 2 shows a black screen even if all other settings are correct.
