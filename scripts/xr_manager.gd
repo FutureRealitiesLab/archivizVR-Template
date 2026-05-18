@@ -34,7 +34,7 @@ enum Mode {
 const VR_RENDER_SCALE: float = 1.0      ## 1.0 = nativ (Supersampling auf 1.2–1.4 für mehr Schärfe)
 const FPV_RENDER_SCALE: float = 1.0     ## Desktop: 1.0 (native)
 const VR_FOVEATION_LEVEL: int = 2       ## 0=none, 1=low, 2=medium, 3=high
-const PHYSICS_FPS_VR: int = 90          ## VR benötigt stabile 90 Hz
+const PHYSICS_FPS_VR: int = 72          ## 72 Hz: weniger Thermik als 90 Hz, für ArchViz ausreichend
 const PHYSICS_FPS_FPV: int = 60
 
 # ---------------------------------------------------------------------------
@@ -352,8 +352,8 @@ func _on_openxr_session_begun() -> void:
 	print("XRManager: OpenXR Session gestartet.")
 	# Refresh-Rate erst setzen wenn Session aktiv ist, nicht schon beim initialize()
 	if _openxr_interface:
-		_openxr_interface.display_refresh_rate = 90.0
-		print("XRManager: 90Hz Refresh-Rate gesetzt.")
+		_openxr_interface.display_refresh_rate = 72.0
+		print("XRManager: 72Hz Refresh-Rate gesetzt (thermisch stabil).")
 
 func _on_openxr_session_stopping() -> void:
 	print("XRManager: OpenXR Session gestoppt – wechsle zu FPV.")
