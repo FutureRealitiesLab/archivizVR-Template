@@ -303,6 +303,25 @@ common/physics_fps = 90
 
 ---
 
+## TODO / Open Issues
+
+### Web Export – PCK-Größe reduzieren
+Aktuell: `ArchViz VR.pck` ~480 MB → zu groß für GitHub Pages (100 MB Limit) und itch.io-Standard.
+
+Ursache: unkomprimierte Texturen aus GLB-Importen landen vollständig im PCK.
+
+Geplante Maßnahmen (in dieser Reihenfolge testen):
+1. **Texturkompression im Web-Export-Preset** (größter Hebel, ~60–70% Einsparung)
+   - `Project → Export → Web → Resources → Texture Format: ETC2 + S3TC + BPTC, Lossy: ON (0.7)`
+2. **Draco-Kompression auf GLB** (in Blender beim Re-Export, ~30–50% Mesh-Einsparung)
+   - `Blender → Export glTF → Geometry → Compression: Draco`
+3. **Max Texture Size: 1024** für Web-Preset (Import-Einstellung, nur für Web-Target)
+
+Ziel: < 100 MB für GitHub Pages, < 200 MB für itch.io.
+Hosting-Empfehlung: itch.io als Web-Host (bis 1 GB), GitHub nur als Code-Repo.
+
+---
+
 ## Critical Setup (after cloning)
 
 1. **Android Build Template**: `Godot Editor → Project → Install Android Build Template`
