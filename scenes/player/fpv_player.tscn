@@ -1,33 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://barchviz003"]
+[gd_scene format=3 uid="uid://barchvi0003"]
 
-[ext_resource type="Script" path="res://scripts/fpv_controller.gd" id="1_fpv"]
+[ext_resource type="Script" uid="uid://b3ehl5007i46y" path="res://scripts/fpv_controller.gd" id="1_fpv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
 radius = 0.35
 height = 1.8
 
-[node name="FPVPlayer" type="CharacterBody3D"]
+[node name="FPVPlayer" type="CharacterBody3D" unique_id=995658079]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_fpv")
-walk_speed = 3.0
-sprint_speed = 7.0
-fly_speed = 5.0
-mouse_sensitivity = 0.002
-max_pitch_degrees = 85.0
-walk_fov = 75.0
-fly_fov = 80.0
-eye_height = 1.75
-step_height = 0.35
 
-[node name="Head" type="Node3D" parent="."]
-position = Vector3(0, 1.75, 0)
+[node name="Head" type="Node3D" parent="." unique_id=1377752916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1676034436]
 current = true
-cull_mask = 1048575
-fov = 75.0
-near = 0.05
 far = 1000.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-position = Vector3(0, 0.9, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=208286426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_body")
