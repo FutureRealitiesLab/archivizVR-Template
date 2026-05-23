@@ -158,14 +158,24 @@ func _process_smooth_locomotion(delta: float) -> void:
 
 		global_position += movement
 
-	# Drehung: rechter Thumbstick (Smooth-Turn)
+	# Drehung: rechter Thumbstick (Smooth-Turn, nur im Smooth-Modus)
 	if right_controller and right_controller.get_is_active():
 		var turn_axis: Vector2 = right_controller.get_vector2("primary")
 		if absf(turn_axis.x) > 0.1:
-			rotate_y(deg_to_rad(-turn_axis.x * smooth_turn_speed * delta))
+			_rotate_around_camera(deg_to_rad(-turn_axis.x * smooth_turn_speed * delta))
 
 
 func _process_teleport_aim(_delta: float) -> void:
+	# Snap-Turn im Teleport-Modus (rechter Thumbstick)
+	if right_controller and right_controller.get_is_active() and _snap_turn_cooldown_timer <= 0.0:
+		var snap_axis: Vector2 = right_controller.get_vector2("primary")
+		if snap_axis.x > 0.7:
+			_rotate_around_camera(deg_to_rad(-snap_turn_angle))
+			_snap_turn_cooldown_timer = snap_turn_cooldown
+		elif snap_axis.x < -0.7:
+			_rotate_around_camera(deg_to_rad(snap_turn_angle))
+			_snap_turn_cooldown_timer = snap_turn_cooldown
+
 	if not _teleport_ray or not _is_teleporting:
 		return
 
@@ -323,6 +333,22 @@ func _enable_gravity() -> void:
 	_fly_up_pressed = false
 	_fly_down_pressed = false
 	print("XRLocomotion: Gravity aktiviert")
+
+
+## Dreht den XROrigin so, dass die Kamera (HMD) am gleichen Weltpunkt bleibt.
+## Verhindert das Orbit-Problem wenn Spieler nicht im Guardian-Center steht.
+## Standard rotate_y() würde um den Tracking-Origin (Guardian-Center) drehen –
+## bei Room-Scale/LBE mit Offset zum Center sieht das wie ein Bogen aus.
+func _rotate_around_camera(angle: float) -> void:
+	var offset := Vector3(
+		xr_camera.global_position.x - global_position.x,
+		0.0,
+		xr_camera.global_position.z - global_position.z
+	)
+	var rotated_offset := offset.rotated(Vector3.UP, angle)
+	global_position.x = xr_camera.global_position.x - rotated_offset.x
+	global_position.z = xr_camera.global_position.z - rotated_offset.z
+	rotate_y(angle)
 
 
 ## Setzt den XRPlayer auf eine bestimmte Weltposition (für Menü-Navigationspunkte).
