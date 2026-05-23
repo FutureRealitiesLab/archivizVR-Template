@@ -12,6 +12,18 @@ export_format = 'GLTF'   # 'GLTF' = externe Texturen | 'GLB' = alles eingebettet
 # AB HIER NICHTS ÄNDERN
 # =============================================================================
 
+# ── Kontext sicherstellen ────────────────────────────────────────────────────
+# Sicherstellen dass wir im 3D Viewport im Object Mode sind
+for area in bpy.context.screen.areas:
+    if area.type == 'VIEW_3D':
+        for space in area.spaces:
+            if space.type == 'VIEW_3D':
+                with bpy.context.temp_override(area=area, space=space):
+                    if bpy.context.object and bpy.context.object.mode != 'OBJECT':
+                        bpy.ops.object.mode_set(mode='OBJECT')
+                break
+        break
+# ─────────────────────────────────────────────────────────────────────────────
 if not os.path.exists(export_dir):
     os.makedirs(export_dir)
     print(f"Ordner erstellt: {export_dir}")
