@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://dnjn8l3reba5y" path="res://assets/Exportordner/UG_3D.002.gltf" id="34_6weah"]
 [ext_resource type="LightmapGIData" uid="uid://derw6btbl0o28" path="res://scenes/environment/a24.lmbake" id="34_u88vq"]
 [ext_resource type="PackedScene" uid="uid://dkwfeh1dwlpij" path="res://assets/Exportordner/Umgebung.gltf" id="35_j0i50"]
+[ext_resource type="Script" uid="uid://dp2frlebl33lp" path="res://scripts/scene_changer.gd" id="36_scchg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
 sky_top_color = Color(0.3, 0.45, 0.65, 1)
@@ -294,6 +295,11 @@ points = PackedVector3Array(-0.08942604, -0.08942628, -11.357125, 9.210897, 1.16
 
 [node name="A24" type="Node3D" unique_id=1296296874]
 
+[node name="SceneChanger" type="Node" parent="." unique_id=482910371]
+script = ExtResource("36_scchg")
+next_scene = "res://scenes/environment/A24_260517.tscn"
+previous_scene = "res://scenes/environment/A24_260517.tscn"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1095599563]
 environment = SubResource("Environment_1")
 
@@ -307,7 +313,7 @@ shadow_enabled = true
 [node name="SpawnPoint" type="Marker3D" parent="NavigationPoints" unique_id=919273832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.50937, 0, -14.224901)
 
-[node name="______________________________________________" type="Node" parent="." unique_id=552547203]
+[node name="______________________________________________1" type="Node" parent="." unique_id=552547203]
 
 [node name="lichter2" type="Node3D" parent="." unique_id=551810738]
 

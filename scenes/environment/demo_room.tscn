@@ -39,6 +39,8 @@ size = Vector3(20, 4, 0.3)
 albedo_color = Color(0.95, 0.94, 0.92, 1)
 roughness = 0.8
 
+[ext_resource type="Script" path="res://scripts/scene_changer.gd" id="1_scchg"]
+
 [node name="DemoRoom" type="Node3D" unique_id=1296296874]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1095599563]
@@ -84,3 +86,7 @@ shape = SubResource("BoxShape3D_u12a0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallSouth" unique_id=1170303776]
 mesh = SubResource("BoxMesh_lu3o7")
 surface_material_override/0 = SubResource("StandardMaterial3D_qbgbb")
+
+[node name="SceneChanger" type="Node" parent="." unique_id=591824632]
+script = ExtResource("1_scchg")
+previous_scene = "res://scenes/environment/a24.tscn"

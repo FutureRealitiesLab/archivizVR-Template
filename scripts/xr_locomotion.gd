@@ -236,22 +236,29 @@ func _process_floor_snap(delta: float) -> void:
 
 func _on_right_button_pressed(button_name: String) -> void:
 	match button_name:
-		"trigger_click":
-			if locomotion_mode == LocomotionMode.TELEPORT:
-				_start_teleport_aim()
+		# "trigger_click": Teleport deaktiviert – kann später reaktiviert werden
+		# "trigger_click":
+		# 	if locomotion_mode == LocomotionMode.TELEPORT:
+		# 		_start_teleport_aim()
 		"ax_button":
-			# A-Taste: Locomotion-Modus wechseln
-			_toggle_locomotion_mode()
+			# A-Taste: nächste Szene
+			var sc := get_tree().get_first_node_in_group("scene_changer")
+			if sc:
+				sc.go_next()
 		"by_button":
-			# B-Taste: Gravity aktivieren (Fly-Modus beenden)
-			_enable_gravity()
+			# B-Taste: vorherige Szene
+			var sc := get_tree().get_first_node_in_group("scene_changer")
+			if sc:
+				sc.go_previous()
 
 
-func _on_right_button_released(button_name: String) -> void:
-	match button_name:
-		"trigger_click":
-			if locomotion_mode == LocomotionMode.TELEPORT and _is_teleporting:
-				_execute_teleport()
+func _on_right_button_released(_button_name: String) -> void:
+	pass
+	# "trigger_click": Teleport deaktiviert – kann später reaktiviert werden
+	# match _button_name:
+	# 	"trigger_click":
+	# 		if locomotion_mode == LocomotionMode.TELEPORT and _is_teleporting:
+	# 			_execute_teleport()
 
 
 func _on_left_button_pressed(button_name: String) -> void:

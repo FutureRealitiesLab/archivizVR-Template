@@ -179,17 +179,16 @@ All turns use this helper instead of `rotate_y()`. It compensates for the HMD of
 |---|---|
 | Y (left, hold) | Fly up — enters fly mode automatically |
 | X (left, hold) | Fly down — enters fly mode automatically |
-| B (right) | Exit fly mode, re-enable gravity |
 | Left thumbstick click | Exit fly mode, re-enable gravity |
 
 **Full button map (Quest 2):**
 | Button | Action |
 |---|---|
 | Left thumbstick | Move (smooth locomotion) |
-| Right thumbstick | Turn (smooth in Smooth mode, snap 30° in Teleport mode) |
-| Right trigger | Teleport aim / confirm |
-| A (right) | Toggle Teleport ↔ Smooth |
-| B (right) | Exit fly mode / enable gravity |
+| Right thumbstick | Turn (smooth continuous) |
+| Right trigger | *(Teleport deaktiviert – für spätere Reaktivierung auskommentiert)* |
+| A (right) | Nächste Szene (`SceneChanger.go_next()`) |
+| B (right) | Vorherige Szene (`SceneChanger.go_previous()`) |
 | Y (left, hold) | Fly up |
 | X (left, hold) | Fly down |
 | Left thumbstick click | Exit fly mode / enable gravity |
@@ -205,6 +204,30 @@ All turns use this helper instead of `rotate_y()`. It compensates for the HMD of
 @export var floor_snap_speed: float = 8.0
 @export var max_teleport_distance: float = 15.0
 ```
+
+---
+
+### `scene_changer.gd` — Szenen-Navigation
+
+Attach to any environment scene as a plain `Node` child. Export-Variablen steuern, welche Szene beim Drücken von A (next) bzw. B (previous) geladen wird.
+
+```gdscript
+@export var next_scene: String = ""      # res://scenes/environment/foo.tscn
+@export var previous_scene: String = ""  # leer = kein Wechsel in diese Richtung
+```
+
+**Verhalten:**
+- Registriert sich in der Gruppe `"scene_changer"` – `xr_locomotion.gd` sucht den Node per Gruppen-Lookup, keine harte Referenz nötig.
+- **Preload on ready**: startet `ResourceLoader.load_threaded_request()` für `next_scene` und `previous_scene` im Hintergrund, sobald die Szene geladen ist. Beim tatsächlichen Wechsel ist die Ressource bereits im Cache → minimale Wartezeit.
+- **Sound**: spielt `assets/mixkit-modern-technology-select-3124.wav` über einen `AudioStreamPlayer` beim Button-Press.
+- **"Loading …" Label**: spawnt ein `Label3D` als Kind der aktiven Kamera (VR oder FPV), 1 m vor der Kamera leicht unterhalb der Mitte. Wird automatisch entfernt wenn `SceneManager.scene_loaded` feuert.
+- Guard: ignoriert Doppelklicks während ein Load läuft (`SceneManager.is_loading()`).
+- Fehlt der Node in einer Szene, passiert bei A/B nichts.
+
+**Neue Szene einbinden:**
+1. `SceneChanger`-Node (Typ `Node`, Script `res://scripts/scene_changer.gd`) zur Szene hinzufügen
+2. `next_scene` / `previous_scene` als vollständige `res://`-Pfade setzen
+3. In der Vorgängerszene `next_scene` auf die neue Szene zeigen lassen
 
 ---
 
@@ -324,7 +347,8 @@ common/physics_fps = 90
 4. Create new scene in `scenes/environment/`, drag GLTF assets in
 5. Add `StaticBody3D` + `CollisionShape3D` on **Collision Layer 1** for walkable floors
 6. Add `WorldEnvironment` + `DirectionalLight3D`
-7. Set `startup_scene` in `main.gd` or call at runtime:
+7. Add a `SceneChanger` node (type `Node`, script `res://scripts/scene_changer.gd`), set `next_scene` and/or `previous_scene`
+8. Set `startup_scene` in `main.gd` or call at runtime:
    ```gdscript
    SceneManager.load_scene("res://scenes/environment/your_scene.tscn")
    ```
