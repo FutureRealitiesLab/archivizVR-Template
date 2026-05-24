@@ -116,7 +116,7 @@
 				0.7071068286895752
 			],
 			"scale":[
-				196.881103515625,
+				212.506591796875,
 				54.33125305175781,
 				11.215128898620605
 			],
@@ -143,7 +143,7 @@
 			"translation":[
 				20.070083618164062,
 				5.909999370574951,
-				-6.364022731781006
+				-6.114022731781006
 			]
 		},
 		{
@@ -236,22 +236,21 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Bark",
+			"name":"AussenPutz",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.12180545181035995,
-					0.07247968763113022,
-					0.04598655924201012,
+					0.7766516208648682,
+					0.7766516208648682,
+					0.7766516208648682,
 					1
 				],
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Curve.259",
+			"name":"Curve.542",
 			"primitives":[
 				{
 					"attributes":{
@@ -265,7 +264,7 @@
 			]
 		},
 		{
-			"name":"Curve.260",
+			"name":"Curve.543",
 			"primitives":[
 				{
 					"attributes":{
@@ -279,7 +278,7 @@
 			]
 		},
 		{
-			"name":"Curve.261",
+			"name":"Curve.544",
 			"primitives":[
 				{
 					"attributes":{
@@ -293,7 +292,7 @@
 			]
 		},
 		{
-			"name":"Curve.262",
+			"name":"Curve.545",
 			"primitives":[
 				{
 					"attributes":{
@@ -307,7 +306,7 @@
 			]
 		},
 		{
-			"name":"Curve.263",
+			"name":"Curve.546",
 			"primitives":[
 				{
 					"attributes":{
@@ -320,7 +319,7 @@
 			]
 		},
 		{
-			"name":"Curve.264",
+			"name":"Curve.547",
 			"primitives":[
 				{
 					"attributes":{
@@ -333,7 +332,7 @@
 			]
 		},
 		{
-			"name":"Curve.265",
+			"name":"Curve.548",
 			"primitives":[
 				{
 					"attributes":{

@@ -427,7 +427,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -522,7 +521,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.410",
+			"name":"Cube.787",
 			"primitives":[
 				{
 					"attributes":{
@@ -536,7 +535,7 @@
 			]
 		},
 		{
-			"name":"Cube.411",
+			"name":"Cube.788",
 			"primitives":[
 				{
 					"attributes":{
@@ -550,7 +549,7 @@
 			]
 		},
 		{
-			"name":"Cube.412",
+			"name":"Cube.789",
 			"primitives":[
 				{
 					"attributes":{
@@ -564,7 +563,7 @@
 			]
 		},
 		{
-			"name":"Cube.413",
+			"name":"Cube.790",
 			"primitives":[
 				{
 					"attributes":{
@@ -578,7 +577,7 @@
 			]
 		},
 		{
-			"name":"Cube.414",
+			"name":"Cube.791",
 			"primitives":[
 				{
 					"attributes":{
@@ -592,7 +591,7 @@
 			]
 		},
 		{
-			"name":"Cube.415",
+			"name":"Cube.792",
 			"primitives":[
 				{
 					"attributes":{
@@ -606,7 +605,7 @@
 			]
 		},
 		{
-			"name":"Cube.416",
+			"name":"Cube.793",
 			"primitives":[
 				{
 					"attributes":{
@@ -620,7 +619,7 @@
 			]
 		},
 		{
-			"name":"Cube.417",
+			"name":"Cube.794",
 			"primitives":[
 				{
 					"attributes":{
@@ -634,7 +633,7 @@
 			]
 		},
 		{
-			"name":"Cube.418",
+			"name":"Cube.795",
 			"primitives":[
 				{
 					"attributes":{
@@ -648,7 +647,7 @@
 			]
 		},
 		{
-			"name":"Cube.419",
+			"name":"Cube.796",
 			"primitives":[
 				{
 					"attributes":{
@@ -662,7 +661,7 @@
 			]
 		},
 		{
-			"name":"Cube.420",
+			"name":"Cube.797",
 			"primitives":[
 				{
 					"attributes":{
@@ -676,7 +675,7 @@
 			]
 		},
 		{
-			"name":"Cube.421",
+			"name":"Cube.798",
 			"primitives":[
 				{
 					"attributes":{
@@ -690,7 +689,7 @@
 			]
 		},
 		{
-			"name":"Cube.422",
+			"name":"Cube.799",
 			"primitives":[
 				{
 					"attributes":{
@@ -704,7 +703,7 @@
 			]
 		},
 		{
-			"name":"Cube.423",
+			"name":"Cube.800",
 			"primitives":[
 				{
 					"attributes":{
@@ -718,7 +717,7 @@
 			]
 		},
 		{
-			"name":"Cube.424",
+			"name":"Cube.801",
 			"primitives":[
 				{
 					"attributes":{
@@ -732,7 +731,7 @@
 			]
 		},
 		{
-			"name":"Cube.425",
+			"name":"Cube.802",
 			"primitives":[
 				{
 					"attributes":{
@@ -746,7 +745,7 @@
 			]
 		},
 		{
-			"name":"Cube.426",
+			"name":"Cube.803",
 			"primitives":[
 				{
 					"attributes":{
@@ -760,7 +759,7 @@
 			]
 		},
 		{
-			"name":"Cube.427",
+			"name":"Cube.804",
 			"primitives":[
 				{
 					"attributes":{
@@ -774,7 +773,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.038",
+			"name":"Cylinder.074",
 			"primitives":[
 				{
 					"attributes":{
@@ -788,7 +787,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.039",
+			"name":"Cylinder.075",
 			"primitives":[
 				{
 					"attributes":{
@@ -802,7 +801,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.040",
+			"name":"Cylinder.076",
 			"primitives":[
 				{
 					"attributes":{
@@ -816,7 +815,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.041",
+			"name":"Cylinder.077",
 			"primitives":[
 				{
 					"attributes":{
@@ -830,7 +829,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.042",
+			"name":"Cylinder.078",
 			"primitives":[
 				{
 					"attributes":{
@@ -844,7 +843,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.043",
+			"name":"Cylinder.079",
 			"primitives":[
 				{
 					"attributes":{
@@ -858,7 +857,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.044",
+			"name":"Cylinder.080",
 			"primitives":[
 				{
 					"attributes":{
@@ -872,7 +871,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.045",
+			"name":"Cylinder.081",
 			"primitives":[
 				{
 					"attributes":{
@@ -886,7 +885,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.046",
+			"name":"Cylinder.082",
 			"primitives":[
 				{
 					"attributes":{
@@ -900,7 +899,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.047",
+			"name":"Cylinder.083",
 			"primitives":[
 				{
 					"attributes":{

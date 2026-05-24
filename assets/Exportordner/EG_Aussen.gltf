@@ -704,7 +704,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -779,7 +778,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.498",
+			"name":"Cube.875",
 			"primitives":[
 				{
 					"attributes":{
@@ -793,7 +792,7 @@
 			]
 		},
 		{
-			"name":"Cube.499",
+			"name":"Cube.876",
 			"primitives":[
 				{
 					"attributes":{
@@ -807,7 +806,7 @@
 			]
 		},
 		{
-			"name":"Cube.500",
+			"name":"Cube.877",
 			"primitives":[
 				{
 					"attributes":{
@@ -821,7 +820,7 @@
 			]
 		},
 		{
-			"name":"Cube.501",
+			"name":"Cube.878",
 			"primitives":[
 				{
 					"attributes":{
@@ -835,7 +834,7 @@
 			]
 		},
 		{
-			"name":"Cube.502",
+			"name":"Cube.879",
 			"primitives":[
 				{
 					"attributes":{
@@ -849,7 +848,7 @@
 			]
 		},
 		{
-			"name":"Object_0.009",
+			"name":"Object_0.019",
 			"primitives":[
 				{
 					"attributes":{
@@ -864,7 +863,7 @@
 			]
 		},
 		{
-			"name":"Cube.503",
+			"name":"Cube.880",
 			"primitives":[
 				{
 					"attributes":{
@@ -878,7 +877,7 @@
 			]
 		},
 		{
-			"name":"Cube.504",
+			"name":"Cube.881",
 			"primitives":[
 				{
 					"attributes":{
@@ -892,7 +891,7 @@
 			]
 		},
 		{
-			"name":"Cube.505",
+			"name":"Cube.882",
 			"primitives":[
 				{
 					"attributes":{
@@ -906,7 +905,7 @@
 			]
 		},
 		{
-			"name":"Cube.506",
+			"name":"Cube.883",
 			"primitives":[
 				{
 					"attributes":{
@@ -920,7 +919,7 @@
 			]
 		},
 		{
-			"name":"Cube.507",
+			"name":"Cube.884",
 			"primitives":[
 				{
 					"attributes":{
@@ -934,7 +933,7 @@
 			]
 		},
 		{
-			"name":"Cube.508",
+			"name":"Cube.885",
 			"primitives":[
 				{
 					"attributes":{
@@ -948,7 +947,7 @@
 			]
 		},
 		{
-			"name":"Cube.509",
+			"name":"Cube.886",
 			"primitives":[
 				{
 					"attributes":{
@@ -962,7 +961,7 @@
 			]
 		},
 		{
-			"name":"Cube.510",
+			"name":"Cube.887",
 			"primitives":[
 				{
 					"attributes":{
@@ -976,7 +975,7 @@
 			]
 		},
 		{
-			"name":"Cube.511",
+			"name":"Cube.888",
 			"primitives":[
 				{
 					"attributes":{
@@ -990,7 +989,7 @@
 			]
 		},
 		{
-			"name":"Cube.512",
+			"name":"Cube.889",
 			"primitives":[
 				{
 					"attributes":{
@@ -1004,7 +1003,7 @@
 			]
 		},
 		{
-			"name":"Cube.513",
+			"name":"Cube.890",
 			"primitives":[
 				{
 					"attributes":{
@@ -1018,7 +1017,7 @@
 			]
 		},
 		{
-			"name":"Cube.514",
+			"name":"Cube.891",
 			"primitives":[
 				{
 					"attributes":{
@@ -1032,7 +1031,7 @@
 			]
 		},
 		{
-			"name":"Cube.515",
+			"name":"Cube.892",
 			"primitives":[
 				{
 					"attributes":{
@@ -1046,7 +1045,7 @@
 			]
 		},
 		{
-			"name":"Cube.516",
+			"name":"Cube.893",
 			"primitives":[
 				{
 					"attributes":{
@@ -1060,7 +1059,7 @@
 			]
 		},
 		{
-			"name":"Cube.517",
+			"name":"Cube.894",
 			"primitives":[
 				{
 					"attributes":{
@@ -1074,7 +1073,7 @@
 			]
 		},
 		{
-			"name":"Cube.518",
+			"name":"Cube.895",
 			"primitives":[
 				{
 					"attributes":{
@@ -1088,7 +1087,7 @@
 			]
 		},
 		{
-			"name":"Cube.519",
+			"name":"Cube.896",
 			"primitives":[
 				{
 					"attributes":{
@@ -1102,7 +1101,7 @@
 			]
 		},
 		{
-			"name":"Cube.520",
+			"name":"Cube.897",
 			"primitives":[
 				{
 					"attributes":{
@@ -1116,7 +1115,7 @@
 			]
 		},
 		{
-			"name":"Cube.521",
+			"name":"Cube.898",
 			"primitives":[
 				{
 					"attributes":{
@@ -1130,7 +1129,7 @@
 			]
 		},
 		{
-			"name":"Cube.522",
+			"name":"Cube.899",
 			"primitives":[
 				{
 					"attributes":{
@@ -1144,7 +1143,7 @@
 			]
 		},
 		{
-			"name":"Cube.523",
+			"name":"Cube.900",
 			"primitives":[
 				{
 					"attributes":{

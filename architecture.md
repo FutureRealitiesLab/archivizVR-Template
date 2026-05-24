@@ -4,7 +4,7 @@
 
 **ArchViz VR** is a Godot 4.6 template for Architecture Visualization (ArchViz). It supports Meta Quest 2 / PCVR headsets via OpenXR and automatically falls back to a First-Person-View (FPV) desktop controller when no HMD is detected.
 
-The primary goal is a clean, reusable pipeline: import Blender-exported `.glb` files, drop them into a scene, and let clients walk through the architecture in VR or on a standard monitor.
+The primary goal is a clean, reusable pipeline: export Blender collections as `.gltf` files, drop them into a Godot scene, and let clients walk through the architecture in VR or on a standard monitor.
 
 ---
 
@@ -13,31 +13,35 @@ The primary goal is a clean, reusable pipeline: import Blender-exported `.glb` f
 ```text
 archviz_vr/
 ├── addons/
-│   └── godotopenxrvendors/     # Meta OpenXR Vendor Plugin (required for Quest 2!)
+│   └── godotopenxrvendors/         # Meta OpenXR Vendor Plugin (required for Quest 2!)
 ├── assets/
-│   ├── materials/              # Shared PBR materials (.tres)
-│   ├── textures/               # albedo, normal, roughness maps
-│   └── meshes/                 # Imported .glb / .gltf assets
+│   ├── materials/                  # Shared PBR materials (.tres)
+│   ├── textures/                   # albedo, normal, roughness maps
+│   ├── meshes/                     # Imported .gltf / .glb assets
+│   └── Exportordner/               # Blender batch export target (GLTF + textures)
 ├── docs/
-│   └── blender-export-guide.md # Blender batch export guide (Python script + glass tips)
+│   ├── blender-export-guide.md     # Blender export guide (glass, transparency, tips)
+│   └── blender_batch_export.py     # Blender Python batch export script
 ├── scenes/
 │   ├── environment/
-│   │   ├── demo_room.tscn      # Demo placeholder scene
-│   │   └── [your scenes]       # Architecture scenes go here
+│   │   ├── a24.tscn                # Current architecture scene
+│   │   ├── demo_room.tscn          # Demo placeholder scene
+│   │   └── [your scenes]           # Architecture scenes go here
 │   ├── player/
-│   │   ├── xr_player.tscn      # VR Player (XROrigin3D + xr_locomotion.gd)
-│   │   └── fpv_player.tscn     # Desktop Player (CharacterBody3D + fpv_controller.gd)
-│   └── main.tscn               # Root entry point
+│   │   ├── xr_player.tscn          # VR Player (XROrigin3D + xr_locomotion.gd)
+│   │   └── fpv_player.tscn         # Desktop Player (CharacterBody3D + fpv_controller.gd)
+│   └── main.tscn                   # Root entry point
 ├── scripts/
-│   ├── main.gd                 # Startup orchestration
-│   ├── xr_manager.gd           # Autoload: OpenXR lifecycle + rendering config
-│   ├── scene_manager.gd        # Autoload: async scene loading/swapping
-│   ├── xr_locomotion.gd        # VR locomotion (teleport / smooth / fly)
-│   └── fpv_controller.gd       # Desktop locomotion (walk / fly / crouch)
-├── project.godot               # Engine config (OpenXR, rendering, input)
-├── export_presets.cfg          # Android / Meta Quest export settings
-├── default_action_map.tres     # OpenXR action bindings (14 controller profiles)
-└── architecture.md             # This file
+│   ├── main.gd                     # Startup orchestration
+│   ├── xr_manager.gd               # Autoload: OpenXR lifecycle + rendering config
+│   ├── scene_manager.gd            # Autoload: async scene loading/swapping
+│   ├── xr_locomotion.gd            # VR locomotion (teleport / smooth / fly / gravity)
+│   └── fpv_controller.gd           # Desktop locomotion (walk / fly / crouch)
+├── build_quest.bat                 # Force-clean build helper (taskkill + cache clear)
+├── project.godot                   # Engine config (OpenXR, rendering, input)
+├── export_presets.cfg              # Android / Meta Quest export settings
+├── default_action_map.tres         # OpenXR action bindings (14 controller profiles)
+└── architecture.md                 # This file
 ```
 
 ---
@@ -101,15 +105,14 @@ XRManager.set_render_scale(scale: float)  # 0.5–2.0, live tuning
 **VR Rendering Profile** (`_configure_rendering_for_vr()`):
 | Setting | Value | Reason |
 |---|---|---|
-| MSAA | 4x | Anti-aliasing without TAA ghosting |
-| TAA | off | Causes ghosting on head movement |
-| Scaling mode | Bilinear | FSR2 not supported on Mobile renderer |
-| Render scale | 1.0 | Quest 2 native per-eye res is already high |
-| VRS | disabled | `VRS_XR` conflicts with Meta FFR Extension |
-| Foveation | Level 2 | Set in `project.godot`, handled by vendor plugin |
+| MSAA | 4x | Anti-aliasing |
+| TAA | off | Ghosting on head movement |
+| Render scale | 1.0 | Quest 2 native per-eye res |
+| VRS | disabled | Conflicts with Meta FFR Extension |
+| Foveation | Level 2 | Via `project.godot`, handled by vendor plugin |
 | Physics FPS | 90 Hz | Matches Quest 2 display rate |
-| Tonemapper | Filmic | Warm, cinematic look for architecture |
-| Glow | on (0.4 intensity) | Subtle bloom on lights and bright surfaces |
+| Tonemapper | Filmic | Warm, cinematic look |
+| Glow | on (0.4) | Subtle bloom |
 | SDFGI / SSAO / SSR | off | Not available in Mobile renderer |
 
 **FPV Rendering Profile** (`_configure_rendering_for_fpv()`):
@@ -156,42 +159,51 @@ SceneManager.is_loading() → bool
 
 ### `xr_locomotion.gd` — VR Player Controller
 
-Attached to `XROrigin3D`. Pure kinematic movement (no physics/gravity).
+Attached to `XROrigin3D`. Pure kinematic movement (no physics engine).
 
 **Locomotion modes** (toggle with A button):
-- **Teleport**: Right trigger aims via `TeleportRay (RayCast3D)`, release to jump. Validates surface normal (dot > 0.7) and distance (≤ 15 m).
-- **Smooth Locomotion**: Left thumbstick moves relative to HMD yaw. Right thumbstick turns (smooth or snap).
+- **Teleport**: Right trigger aims via `TeleportRay (RayCast3D)`, release to jump. Validates surface normal (dot > 0.7) and distance (≤ 15 m). Snap-Turn (30°) via right thumbstick.
+- **Smooth Locomotion**: Left thumbstick moves relative to HMD yaw. Right thumbstick = smooth continuous turn.
+
+**Rotation – `_rotate_around_camera(angle)`:**
+All turns use this helper instead of `rotate_y()`. It compensates for the HMD offset relative to `XROrigin`, ensuring rotation always happens around the player's head — not the Guardian tracking center. This prevents the "orbiting" effect in room-scale / LBE setups.
+
+**Gravity / Floor Snap** (active by default, disabled in fly mode):
+- Raycast fires downward from HMD X/Z position (not XROrigin center — correct for LBE)
+- `floor_collision_mask = 1` — Godot default Layer 1 for StaticBody3D geometry
+- `floor_snap_speed = 8.0` — lerp factor, fast enough for natural gravity feel
+- Optional: add nav-plane colliders on Layer 2 for precise stair/ramp control
 
 **Fly Mode** (independent of locomotion mode):
 | Button (Quest 2) | Action |
 |---|---|
-| X (left, hold) | Move up — enters fly mode automatically |
-| Y (left, hold) | Move down — enters fly mode automatically |
-| B (right) | Exit fly mode |
-| Left thumbstick click | Exit fly mode |
-
-While fly mode is active, vertical movement is applied every physics frame at `fly_speed` (2.0 m/s, configurable). Releasing X/Y stops vertical movement but keeps the player at the current height. Fly mode is independent of teleport/smooth mode.
+| Y (left, hold) | Fly up — enters fly mode automatically |
+| X (left, hold) | Fly down — enters fly mode automatically |
+| B (right) | Exit fly mode, re-enable gravity |
+| Left thumbstick click | Exit fly mode, re-enable gravity |
 
 **Full button map (Quest 2):**
 | Button | Action |
 |---|---|
 | Left thumbstick | Move (smooth locomotion) |
-| Right thumbstick | Turn |
+| Right thumbstick | Turn (smooth in Smooth mode, snap 30° in Teleport mode) |
 | Right trigger | Teleport aim / confirm |
 | A (right) | Toggle Teleport ↔ Smooth |
-| B (right) | Exit fly mode |
-| X (left, hold) | Fly up |
-| Y (left, hold) | Fly down |
-| Left thumbstick click | Exit fly mode |
+| B (right) | Exit fly mode / enable gravity |
+| Y (left, hold) | Fly up |
+| X (left, hold) | Fly down |
+| Left thumbstick click | Exit fly mode / enable gravity |
 
-**Export variables:**
+**Key export variables:**
 ```gdscript
 @export var smooth_speed: float = 2.5
 @export var fly_speed: float = 2.0
 @export var smooth_turn_speed: float = 60.0
 @export var snap_turn_angle: float = 30.0
+@export var floor_collision_mask: int = 1   # Layer 1 = Godot default
+@export var floor_snap_distance: float = 10.0
+@export var floor_snap_speed: float = 8.0
 @export var max_teleport_distance: float = 15.0
-@export var comfort_vignette: bool = true
 ```
 
 ---
@@ -214,29 +226,52 @@ Attached to `CharacterBody3D`. Full physics-based walk with optional fly mode.
 | F1 | Force FPV (debug) |
 | F2 | Performance stats |
 
-**Key export variables:**
-```gdscript
-@export var walk_speed: float = 3.0
-@export var sprint_speed: float = 7.0
-@export var fly_speed: float = 5.0
-@export var eye_height: float = 1.75
-@export var step_height: float = 0.35
-```
-
-In fly mode, `CollisionShape3D` is disabled for free movement through geometry.
+In fly mode, `CollisionShape3D` is disabled. Collision mask must include the layer of floor geometry (Layer 1 = Godot default).
 
 ---
 
 ## Blender → Godot Pipeline
 
-See [`docs/blender-export-guide.md`](docs/blender-export-guide.md) for the full batch export script.
+**Script:** [`docs/blender_batch_export.py`](docs/blender_batch_export.py)  
+**Guide:** [`docs/blender-export-guide.md`](docs/blender-export-guide.md)
 
-**Summary:**
-- Export each Blender Collection as a separate `.glb` via Python script
-- Only visible collections and objects are exported (`is_collection_visible()` + `obj.visible_get()`)
-- Modifiers are baked on temporary duplicates; originals stay clean
-- **Glass/Transparency:** Set `Render Method: Blended` in Material → Settings → Surface (Blender 4.2+)
-- Import `.glb` files into `assets/meshes/`, Godot auto-imports on editor focus
+### What the script does
+
+- Iterates all top-level Blender Collections recursively
+- Skips invisible collections (`is_collection_visible()`) and hidden objects (`obj.visible_get()`)
+- Realizes Collection Instances (linked geometry) into real meshes before export
+- Bakes modifiers on temporary duplicates — originals stay untouched
+- Exports each collection as a separate file to `export_dir`
+- **Auto-generates Godot `.import` files** for GLTF exports (no manual reimport needed)
+
+### Configuration (top of script)
+
+```python
+export_dir    = "C:/Exportordner/"
+export_format = 'GLTF'   # 'GLTF' | 'GLB' | 'FBX'
+```
+
+### Format comparison
+
+| Format | Textures | Godot import | Recommended |
+|---|---|---|---|
+| GLTF | External files in export_dir | Auto via script | ✅ Yes |
+| GLB | Embedded (single file) | Manual in Godot | Production builds |
+| FBX | External | Manual in Godot | Avoid |
+
+### Glass / Transparency (Blender 4.2+)
+
+```
+Material → Settings → Surface → Render Method: Blended
+```
+Godot imports `alphaMode: BLEND` automatically. No manual material fix needed.
+
+### Workflow
+
+1. Run script in Blender Scripting tab
+2. Copy exported files from `C:/Exportordner/` to `assets/Exportordner/` (or directly there)
+3. Godot auto-imports on editor focus (`.import` already generated by script)
+4. Drag assets into scene
 
 ---
 
@@ -248,14 +283,13 @@ run/main_scene = "res://scenes/main.tscn"
 config/features = ["4.6", "Mobile"]
 
 [autoload]
-XRManager  = "*res://scripts/xr_manager.gd"
+XRManager    = "*res://scripts/xr_manager.gd"
 SceneManager = "*res://scripts/scene_manager.gd"
 
 [rendering]
 renderer/rendering_method = "mobile"          # Vulkan Mobile (required for Quest 2)
 anti_aliasing/quality/msaa_3d = 2             # 4x MSAA
 textures/default_filters/anisotropic_filtering_level = 4
-gi/use_half_resolution = true
 
 [xr]
 openxr/enabled = true
@@ -269,17 +303,48 @@ common/physics_fps = 90
 
 ---
 
+## Build & Deploy (Meta Quest)
+
+```
+1. run build_quest.bat          ← kills Gradle daemon, clears cache
+2. Godot Editor → Project → Export → Android (Meta Quest)
+   → Export Type: Release       ← IMPORTANT: Debug exports render collision shapes!
+3. adb install -r export/archviz_vr.apk
+```
+
+`build_quest.bat` uses `taskkill /F /IM java.exe` to reliably kill the Gradle daemon on Windows. `org.gradle.daemon=false` in `gradle.properties` prevents a new daemon from starting.
+
+---
+
 ## Adding a New Architecture Scene
 
-1. Export from Blender as `.glb` (use `docs/blender-export-guide.md` for batch export)
-2. Copy `.glb` to `assets/meshes/` — Godot auto-imports
-3. Create a new scene in `scenes/environment/`, add a `Node3D` root named to match your project
-4. Drag `.glb` into the scene, add `StaticBody3D` + `CollisionShape3D` for walkable floors
-5. Add `WorldEnvironment` + `DirectionalLight3D`
-6. Set `startup_scene` in `main.gd` or call at runtime:
+1. Run `docs/blender_batch_export.py` in Blender → exports to `C:/Exportordner/`
+2. Copy GLTF + textures to `assets/Exportordner/` (or configure `export_dir` to point there directly)
+3. Godot auto-imports (`.import` files generated by script)
+4. Create new scene in `scenes/environment/`, drag GLTF assets in
+5. Add `StaticBody3D` + `CollisionShape3D` on **Collision Layer 1** for walkable floors
+6. Add `WorldEnvironment` + `DirectionalLight3D`
+7. Set `startup_scene` in `main.gd` or call at runtime:
    ```gdscript
    SceneManager.load_scene("res://scenes/environment/your_scene.tscn")
    ```
+
+---
+
+## TODO / Open Issues
+
+### Web Export – PCK-Größe reduzieren
+Aktuell: `ArchViz VR.pck` ~480 MB → zu groß für GitHub Pages (100 MB Limit) und itch.io.
+
+Ursache: unkomprimierte Texturen aus GLTF-Importen landen vollständig im PCK.
+
+Geplante Maßnahmen:
+1. **Texturkompression im Web-Export-Preset** (~60–70% Einsparung)
+   - `Export → Web → Resources → Texture Format: ETC2 + S3TC, Lossy: ON`
+2. **Draco-Kompression auf GLTF** in Blender beim Export (~30–50% Mesh-Einsparung)
+3. **Max Texture Size: 1024** für Web-Preset
+
+Ziel: < 100 MB für itch.io-Hosting. GitHub Pages für Web-Deploy ungeeignet (100 MB Dateilimit).
 
 ---
 
@@ -289,3 +354,9 @@ common/physics_fps = 90
 2. **Meta Vendor Plugin**: `Project Settings → Plugins → Godot OpenXR Vendors → Enable`
 
 Without step 2, Quest 2 shows a black screen even if all other settings are correct.
+
+**Common issues:**
+- **Collision shapes visible in VR** → exported as Debug build; switch to Release
+- **Gravity / floor snap not working** → floor geometry must be on Collision Layer 1
+- **Black screen** → check `Project Settings → Rendering` that shading is enabled; check Vendor Plugin is active
+- **Rotation orbits around a point** → fixed via `_rotate_around_camera()` — do not use `rotate_y()` directly on XROrigin

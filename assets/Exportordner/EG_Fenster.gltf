@@ -245,7 +245,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.524",
+			"name":"Cube.901",
 			"primitives":[
 				{
 					"attributes":{
@@ -259,7 +259,7 @@
 			]
 		},
 		{
-			"name":"Plane.002_Door_0.002",
+			"name":"Plane.002_Door_0.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -275,7 +275,7 @@
 			]
 		},
 		{
-			"name":"Cube.525",
+			"name":"Cube.902",
 			"primitives":[
 				{
 					"attributes":{
@@ -289,7 +289,7 @@
 			]
 		},
 		{
-			"name":"defaultMaterial.008",
+			"name":"defaultMaterial.014",
 			"primitives":[
 				{
 					"attributes":{
@@ -303,7 +303,7 @@
 			]
 		},
 		{
-			"name":"Cube.526",
+			"name":"Cube.903",
 			"primitives":[
 				{
 					"attributes":{
@@ -317,7 +317,7 @@
 			]
 		},
 		{
-			"name":"Cube.527",
+			"name":"Cube.904",
 			"primitives":[
 				{
 					"attributes":{
@@ -331,7 +331,7 @@
 			]
 		},
 		{
-			"name":"Cube.528",
+			"name":"Cube.905",
 			"primitives":[
 				{
 					"attributes":{
@@ -345,7 +345,7 @@
 			]
 		},
 		{
-			"name":"Cube.529",
+			"name":"Cube.906",
 			"primitives":[
 				{
 					"attributes":{
@@ -358,7 +358,7 @@
 			]
 		},
 		{
-			"name":"Plane.001_Glossy_0.015",
+			"name":"Plane.001_Glossy_0.027",
 			"primitives":[
 				{
 					"attributes":{

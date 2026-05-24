@@ -213,21 +213,15 @@
 		{
 			"mesh":13,
 			"name":"CoatRack.001",
-			"rotation":[
-				0,
-				-0.3113592565059662,
-				0,
-				0.9502922892570496
-			],
 			"scale":[
-				0.019999999552965164,
 				1,
-				0.019999999552965164
+				1.0664008855819702,
+				1
 			],
 			"translation":[
-				25.192747116088867,
-				0.04277883470058441,
-				-12.466756820678711
+				25.11833953857422,
+				0,
+				-12.633316993713379
 			]
 		}
 	],
@@ -242,7 +236,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -763,7 +756,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.339",
+			"name":"Curve.622",
 			"primitives":[
 				{
 					"attributes":{
@@ -777,7 +770,7 @@
 			]
 		},
 		{
-			"name":"3d-model.025",
+			"name":"3d-model.045",
 			"primitives":[
 				{
 					"attributes":{
@@ -818,7 +811,7 @@
 			]
 		},
 		{
-			"name":"Platte.005",
+			"name":"Platte.009",
 			"primitives":[
 				{
 					"attributes":{
@@ -832,7 +825,7 @@
 			]
 		},
 		{
-			"name":"Curve.340",
+			"name":"Curve.623",
 			"primitives":[
 				{
 					"attributes":{
@@ -846,7 +839,7 @@
 			]
 		},
 		{
-			"name":"Curve.341",
+			"name":"Curve.624",
 			"primitives":[
 				{
 					"attributes":{
@@ -860,7 +853,7 @@
 			]
 		},
 		{
-			"name":"Curve.342",
+			"name":"Curve.625",
 			"primitives":[
 				{
 					"attributes":{
@@ -874,7 +867,7 @@
 			]
 		},
 		{
-			"name":"Curve.343",
+			"name":"Curve.626",
 			"primitives":[
 				{
 					"attributes":{
@@ -888,7 +881,7 @@
 			]
 		},
 		{
-			"name":"Curve.344",
+			"name":"Curve.627",
 			"primitives":[
 				{
 					"attributes":{
@@ -902,7 +895,7 @@
 			]
 		},
 		{
-			"name":"Curve.345",
+			"name":"Curve.628",
 			"primitives":[
 				{
 					"attributes":{
@@ -916,7 +909,7 @@
 			]
 		},
 		{
-			"name":"Platte.006",
+			"name":"Platte.010",
 			"primitives":[
 				{
 					"attributes":{
@@ -930,7 +923,7 @@
 			]
 		},
 		{
-			"name":"Curve.346",
+			"name":"Curve.629",
 			"primitives":[
 				{
 					"attributes":{
@@ -944,7 +937,7 @@
 			]
 		},
 		{
-			"name":"Curve.347",
+			"name":"Curve.630",
 			"primitives":[
 				{
 					"attributes":{
@@ -958,7 +951,7 @@
 			]
 		},
 		{
-			"name":"Object_2.010",
+			"name":"Object_2.020",
 			"primitives":[
 				{
 					"attributes":{
@@ -1107,7 +1100,7 @@
 			]
 		},
 		{
-			"name":"Cube.531",
+			"name":"Cube.908",
 			"primitives":[
 				{
 					"attributes":{
@@ -2170,14 +2163,14 @@
 			"componentType":5126,
 			"count":120,
 			"max":[
-				7.17240047454834,
-				1.9427944421768188,
-				7.979920864105225
+				0.2077307403087616,
+				1.9731699228286743,
+				0.1730096936225891
 			],
 			"min":[
-				-37.01173400878906,
-				-0.05720555782318115,
-				-22.87965202331543
+				-0.3753288686275482,
+				0.003929249942302704,
+				-0.4247828722000122
 			],
 			"type":"VEC3"
 		},

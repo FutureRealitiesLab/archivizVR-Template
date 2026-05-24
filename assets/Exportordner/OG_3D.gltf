@@ -356,7 +356,16 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Spiegel"
+			"name":"Spiegel",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.800000011920929,
+					0.800000011920929,
+					0.800000011920929,
+					1
+				],
+				"roughnessFactor":0
+			}
 		},
 		{
 			"doubleSided":true,
@@ -374,7 +383,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.287",
+			"name":"Curve.570",
 			"primitives":[
 				{
 					"attributes":{
@@ -388,7 +397,7 @@
 			]
 		},
 		{
-			"name":"Curve.288",
+			"name":"Curve.571",
 			"primitives":[
 				{
 					"attributes":{
@@ -401,7 +410,7 @@
 			]
 		},
 		{
-			"name":"Curve.289",
+			"name":"Curve.572",
 			"primitives":[
 				{
 					"attributes":{
@@ -414,7 +423,7 @@
 			]
 		},
 		{
-			"name":"Curve.290",
+			"name":"Curve.573",
 			"primitives":[
 				{
 					"attributes":{
@@ -428,7 +437,7 @@
 			]
 		},
 		{
-			"name":"Curve.291",
+			"name":"Curve.574",
 			"primitives":[
 				{
 					"attributes":{
@@ -441,7 +450,7 @@
 			]
 		},
 		{
-			"name":"Curve.292",
+			"name":"Curve.575",
 			"primitives":[
 				{
 					"attributes":{
@@ -455,7 +464,7 @@
 			]
 		},
 		{
-			"name":"Curve.293",
+			"name":"Curve.576",
 			"primitives":[
 				{
 					"attributes":{
@@ -468,7 +477,7 @@
 			]
 		},
 		{
-			"name":"Curve.294",
+			"name":"Curve.577",
 			"primitives":[
 				{
 					"attributes":{
@@ -481,7 +490,7 @@
 			]
 		},
 		{
-			"name":"Curve.295",
+			"name":"Curve.578",
 			"primitives":[
 				{
 					"attributes":{
@@ -494,7 +503,7 @@
 			]
 		},
 		{
-			"name":"Curve.296",
+			"name":"Curve.579",
 			"primitives":[
 				{
 					"attributes":{
@@ -507,7 +516,7 @@
 			]
 		},
 		{
-			"name":"Curve.297",
+			"name":"Curve.580",
 			"primitives":[
 				{
 					"attributes":{
@@ -520,7 +529,7 @@
 			]
 		},
 		{
-			"name":"Curve.298",
+			"name":"Curve.581",
 			"primitives":[
 				{
 					"attributes":{
@@ -533,7 +542,7 @@
 			]
 		},
 		{
-			"name":"Curve.299",
+			"name":"Curve.582",
 			"primitives":[
 				{
 					"attributes":{
@@ -546,7 +555,7 @@
 			]
 		},
 		{
-			"name":"Curve.300",
+			"name":"Curve.583",
 			"primitives":[
 				{
 					"attributes":{
@@ -559,7 +568,7 @@
 			]
 		},
 		{
-			"name":"Curve.301",
+			"name":"Curve.584",
 			"primitives":[
 				{
 					"attributes":{
@@ -572,7 +581,7 @@
 			]
 		},
 		{
-			"name":"Curve.302",
+			"name":"Curve.585",
 			"primitives":[
 				{
 					"attributes":{
@@ -585,7 +594,7 @@
 			]
 		},
 		{
-			"name":"Curve.303",
+			"name":"Curve.586",
 			"primitives":[
 				{
 					"attributes":{
@@ -598,7 +607,7 @@
 			]
 		},
 		{
-			"name":"Curve.304",
+			"name":"Curve.587",
 			"primitives":[
 				{
 					"attributes":{
@@ -611,7 +620,7 @@
 			]
 		},
 		{
-			"name":"Curve.305",
+			"name":"Curve.588",
 			"primitives":[
 				{
 					"attributes":{

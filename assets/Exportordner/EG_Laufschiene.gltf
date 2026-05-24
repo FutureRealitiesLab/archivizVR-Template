@@ -147,7 +147,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -210,7 +209,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.348",
+			"name":"Curve.631",
 			"primitives":[
 				{
 					"attributes":{
@@ -224,7 +223,7 @@
 			]
 		},
 		{
-			"name":"Curve.349",
+			"name":"Curve.632",
 			"primitives":[
 				{
 					"attributes":{
@@ -238,7 +237,7 @@
 			]
 		},
 		{
-			"name":"Curve.350",
+			"name":"Curve.633",
 			"primitives":[
 				{
 					"attributes":{
@@ -252,7 +251,7 @@
 			]
 		},
 		{
-			"name":"Curve.351",
+			"name":"Curve.634",
 			"primitives":[
 				{
 					"attributes":{
@@ -266,7 +265,7 @@
 			]
 		},
 		{
-			"name":"Curve.352",
+			"name":"Curve.635",
 			"primitives":[
 				{
 					"attributes":{
@@ -280,7 +279,7 @@
 			]
 		},
 		{
-			"name":"Curve.353",
+			"name":"Curve.636",
 			"primitives":[
 				{
 					"attributes":{
@@ -294,7 +293,7 @@
 			]
 		},
 		{
-			"name":"Curve.354",
+			"name":"Curve.637",
 			"primitives":[
 				{
 					"attributes":{

@@ -578,7 +578,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -647,7 +646,7 @@
 	],
 	"meshes":[
 		{
-			"name":"3d-model.020",
+			"name":"3d-model.040",
 			"primitives":[
 				{
 					"attributes":{
@@ -688,7 +687,7 @@
 			]
 		},
 		{
-			"name":"3d-model.021",
+			"name":"3d-model.041",
 			"primitives":[
 				{
 					"attributes":{
@@ -729,7 +728,7 @@
 			]
 		},
 		{
-			"name":"3d-model.022",
+			"name":"3d-model.042",
 			"primitives":[
 				{
 					"attributes":{
@@ -770,7 +769,7 @@
 			]
 		},
 		{
-			"name":"3d-model.023",
+			"name":"3d-model.043",
 			"primitives":[
 				{
 					"attributes":{
@@ -811,7 +810,7 @@
 			]
 		},
 		{
-			"name":"Curve.269",
+			"name":"Curve.552",
 			"primitives":[
 				{
 					"attributes":{
@@ -825,7 +824,7 @@
 			]
 		},
 		{
-			"name":"Curve.270",
+			"name":"Curve.553",
 			"primitives":[
 				{
 					"attributes":{
@@ -839,7 +838,7 @@
 			]
 		},
 		{
-			"name":"Curve.271",
+			"name":"Curve.554",
 			"primitives":[
 				{
 					"attributes":{
@@ -853,7 +852,7 @@
 			]
 		},
 		{
-			"name":"Curve.272",
+			"name":"Curve.555",
 			"primitives":[
 				{
 					"attributes":{
@@ -867,7 +866,7 @@
 			]
 		},
 		{
-			"name":"Curve.273",
+			"name":"Curve.556",
 			"primitives":[
 				{
 					"attributes":{
@@ -881,7 +880,7 @@
 			]
 		},
 		{
-			"name":"Curve.274",
+			"name":"Curve.557",
 			"primitives":[
 				{
 					"attributes":{
@@ -894,7 +893,7 @@
 			]
 		},
 		{
-			"name":"Curve.275",
+			"name":"Curve.558",
 			"primitives":[
 				{
 					"attributes":{
@@ -908,7 +907,7 @@
 			]
 		},
 		{
-			"name":"Curve.276",
+			"name":"Curve.559",
 			"primitives":[
 				{
 					"attributes":{
@@ -921,7 +920,7 @@
 			]
 		},
 		{
-			"name":"Curve.277",
+			"name":"Curve.560",
 			"primitives":[
 				{
 					"attributes":{
@@ -930,12 +929,12 @@
 						"TEXCOORD_0":84
 					},
 					"indices":85,
-					"material":6
+					"material":5
 				}
 			]
 		},
 		{
-			"name":"Curve.278",
+			"name":"Curve.561",
 			"primitives":[
 				{
 					"attributes":{
@@ -949,7 +948,7 @@
 			]
 		},
 		{
-			"name":"Curve.279",
+			"name":"Curve.562",
 			"primitives":[
 				{
 					"attributes":{
@@ -963,7 +962,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.050",
+			"name":"Cylinder.086",
 			"primitives":[
 				{
 					"attributes":{
@@ -977,7 +976,7 @@
 			]
 		},
 		{
-			"name":"Curve.280",
+			"name":"Curve.563",
 			"primitives":[
 				{
 					"attributes":{
@@ -990,7 +989,7 @@
 			]
 		},
 		{
-			"name":"Curve.281",
+			"name":"Curve.564",
 			"primitives":[
 				{
 					"attributes":{
@@ -1003,7 +1002,7 @@
 			]
 		},
 		{
-			"name":"Curve.282",
+			"name":"Curve.565",
 			"primitives":[
 				{
 					"attributes":{
@@ -1017,7 +1016,7 @@
 			]
 		},
 		{
-			"name":"3d-model.024",
+			"name":"3d-model.044",
 			"primitives":[
 				{
 					"attributes":{
@@ -1058,7 +1057,7 @@
 			]
 		},
 		{
-			"name":"Curve.283",
+			"name":"Curve.566",
 			"primitives":[
 				{
 					"attributes":{
@@ -1067,12 +1066,12 @@
 						"TEXCOORD_0":121
 					},
 					"indices":85,
-					"material":6
+					"material":5
 				}
 			]
 		},
 		{
-			"name":"Curve.284",
+			"name":"Curve.567",
 			"primitives":[
 				{
 					"attributes":{
@@ -1086,7 +1085,7 @@
 			]
 		},
 		{
-			"name":"Curve.285",
+			"name":"Curve.568",
 			"primitives":[
 				{
 					"attributes":{
@@ -1099,7 +1098,7 @@
 			]
 		},
 		{
-			"name":"defaultMaterial.007",
+			"name":"defaultMaterial.013",
 			"primitives":[
 				{
 					"attributes":{
@@ -1113,7 +1112,7 @@
 			]
 		},
 		{
-			"name":"Curve.286",
+			"name":"Curve.569",
 			"primitives":[
 				{
 					"attributes":{

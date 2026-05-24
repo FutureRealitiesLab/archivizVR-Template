@@ -168,14 +168,13 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.578",
+			"name":"Cube.942",
 			"primitives":[
 				{
 					"attributes":{
@@ -189,7 +188,7 @@
 			]
 		},
 		{
-			"name":"Cube.579",
+			"name":"Cube.943",
 			"primitives":[
 				{
 					"attributes":{
@@ -203,7 +202,7 @@
 			]
 		},
 		{
-			"name":"Cube.580",
+			"name":"Cube.944",
 			"primitives":[
 				{
 					"attributes":{
@@ -217,7 +216,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.053",
+			"name":"Cylinder.089",
 			"primitives":[
 				{
 					"attributes":{
@@ -231,7 +230,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.054",
+			"name":"Cylinder.090",
 			"primitives":[
 				{
 					"attributes":{
@@ -245,7 +244,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.055",
+			"name":"Cylinder.091",
 			"primitives":[
 				{
 					"attributes":{
@@ -259,7 +258,7 @@
 			]
 		},
 		{
-			"name":"Cube.581",
+			"name":"Cube.945",
 			"primitives":[
 				{
 					"attributes":{

@@ -282,7 +282,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -328,25 +327,11 @@
 					"index":2
 				}
 			}
-		},
-		{
-			"doubleSided":true,
-			"name":"Bark.003",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.12180545181035995,
-					0.07247968763113022,
-					0.04598655924201012,
-					1
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.452",
+			"name":"Cube.829",
 			"primitives":[
 				{
 					"attributes":{
@@ -360,7 +345,7 @@
 			]
 		},
 		{
-			"name":"Cube.453",
+			"name":"Cube.830",
 			"primitives":[
 				{
 					"attributes":{
@@ -374,7 +359,7 @@
 			]
 		},
 		{
-			"name":"Cube.454",
+			"name":"Cube.831",
 			"primitives":[
 				{
 					"attributes":{
@@ -388,7 +373,7 @@
 			]
 		},
 		{
-			"name":"Cube.455",
+			"name":"Cube.832",
 			"primitives":[
 				{
 					"attributes":{
@@ -411,7 +396,7 @@
 			]
 		},
 		{
-			"name":"Cube.456",
+			"name":"Cube.833",
 			"primitives":[
 				{
 					"attributes":{
@@ -425,7 +410,7 @@
 			]
 		},
 		{
-			"name":"Cube.457",
+			"name":"Cube.834",
 			"primitives":[
 				{
 					"attributes":{
@@ -439,7 +424,7 @@
 			]
 		},
 		{
-			"name":"Cube.458",
+			"name":"Cube.835",
 			"primitives":[
 				{
 					"attributes":{
@@ -453,7 +438,7 @@
 			]
 		},
 		{
-			"name":"Curve.257",
+			"name":"Curve.540",
 			"primitives":[
 				{
 					"attributes":{
@@ -467,7 +452,7 @@
 			]
 		},
 		{
-			"name":"Cube.459",
+			"name":"Cube.836",
 			"primitives":[
 				{
 					"attributes":{
@@ -481,7 +466,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.048",
+			"name":"Cylinder.084",
 			"primitives":[
 				{
 					"attributes":{
@@ -495,7 +480,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.049",
+			"name":"Cylinder.085",
 			"primitives":[
 				{
 					"attributes":{
@@ -509,7 +494,7 @@
 			]
 		},
 		{
-			"name":"Cube.460",
+			"name":"Cube.837",
 			"primitives":[
 				{
 					"attributes":{
@@ -523,7 +508,7 @@
 			]
 		},
 		{
-			"name":"Cube.461",
+			"name":"Cube.838",
 			"primitives":[
 				{
 					"attributes":{
@@ -537,7 +522,7 @@
 			]
 		},
 		{
-			"name":"Curve.258",
+			"name":"Curve.541",
 			"primitives":[
 				{
 					"attributes":{
@@ -546,7 +531,7 @@
 						"TEXCOORD_0":54
 					},
 					"indices":55,
-					"material":4
+					"material":1
 				}
 			]
 		}

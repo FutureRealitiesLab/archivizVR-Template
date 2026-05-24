@@ -696,7 +696,6 @@
 					0.05448030307888985,
 					1
 				],
-				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
 		},
@@ -886,7 +885,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.574",
+			"name":"Cube.938",
 			"primitives":[
 				{
 					"attributes":{
@@ -899,7 +898,7 @@
 			]
 		},
 		{
-			"name":"Curve.357",
+			"name":"Curve.640",
 			"primitives":[
 				{
 					"attributes":{
@@ -912,7 +911,7 @@
 			]
 		},
 		{
-			"name":"Curve.358",
+			"name":"Curve.641",
 			"primitives":[
 				{
 					"attributes":{
@@ -925,7 +924,7 @@
 			]
 		},
 		{
-			"name":"Curve.359",
+			"name":"Curve.642",
 			"primitives":[
 				{
 					"attributes":{
@@ -938,7 +937,7 @@
 			]
 		},
 		{
-			"name":"Curve.360",
+			"name":"Curve.643",
 			"primitives":[
 				{
 					"attributes":{
@@ -951,7 +950,7 @@
 			]
 		},
 		{
-			"name":"Curve.361",
+			"name":"Curve.644",
 			"primitives":[
 				{
 					"attributes":{
@@ -964,7 +963,7 @@
 			]
 		},
 		{
-			"name":"Curve.362",
+			"name":"Curve.645",
 			"primitives":[
 				{
 					"attributes":{
@@ -977,7 +976,7 @@
 			]
 		},
 		{
-			"name":"Curve.363",
+			"name":"Curve.646",
 			"primitives":[
 				{
 					"attributes":{
@@ -991,7 +990,7 @@
 			]
 		},
 		{
-			"name":"Curve.364",
+			"name":"Curve.647",
 			"primitives":[
 				{
 					"attributes":{
@@ -1004,7 +1003,7 @@
 			]
 		},
 		{
-			"name":"Curve.365",
+			"name":"Curve.648",
 			"primitives":[
 				{
 					"attributes":{
@@ -1017,7 +1016,7 @@
 			]
 		},
 		{
-			"name":"Curve.366",
+			"name":"Curve.649",
 			"primitives":[
 				{
 					"attributes":{
@@ -1030,7 +1029,7 @@
 			]
 		},
 		{
-			"name":"Curve.367",
+			"name":"Curve.650",
 			"primitives":[
 				{
 					"attributes":{
@@ -1044,7 +1043,7 @@
 			]
 		},
 		{
-			"name":"Curve.368",
+			"name":"Curve.651",
 			"primitives":[
 				{
 					"attributes":{
@@ -1058,7 +1057,7 @@
 			]
 		},
 		{
-			"name":"Cube.575",
+			"name":"Cube.939",
 			"primitives":[
 				{
 					"attributes":{
@@ -1071,7 +1070,7 @@
 			]
 		},
 		{
-			"name":"Cube.576",
+			"name":"Cube.940",
 			"primitives":[
 				{
 					"attributes":{
@@ -1094,7 +1093,7 @@
 			]
 		},
 		{
-			"name":"Cube.577",
+			"name":"Cube.941",
 			"primitives":[
 				{
 					"attributes":{
@@ -1117,7 +1116,7 @@
 			]
 		},
 		{
-			"name":"Curve.369",
+			"name":"Curve.652",
 			"primitives":[
 				{
 					"attributes":{
@@ -1130,7 +1129,7 @@
 			]
 		},
 		{
-			"name":"Curve.370",
+			"name":"Curve.653",
 			"primitives":[
 				{
 					"attributes":{
@@ -1143,7 +1142,7 @@
 			]
 		},
 		{
-			"name":"Curve.371",
+			"name":"Curve.654",
 			"primitives":[
 				{
 					"attributes":{
@@ -1157,7 +1156,7 @@
 			]
 		},
 		{
-			"name":"Curve.372",
+			"name":"Curve.655",
 			"primitives":[
 				{
 					"attributes":{
@@ -1170,7 +1169,7 @@
 			]
 		},
 		{
-			"name":"Curve.373",
+			"name":"Curve.656",
 			"primitives":[
 				{
 					"attributes":{
@@ -1184,7 +1183,7 @@
 			]
 		},
 		{
-			"name":"Curve.374",
+			"name":"Curve.657",
 			"primitives":[
 				{
 					"attributes":{
@@ -1198,7 +1197,7 @@
 			]
 		},
 		{
-			"name":"Curve.375",
+			"name":"Curve.658",
 			"primitives":[
 				{
 					"attributes":{
@@ -1212,7 +1211,7 @@
 			]
 		},
 		{
-			"name":"Curve.376",
+			"name":"Curve.659",
 			"primitives":[
 				{
 					"attributes":{
@@ -1225,7 +1224,7 @@
 			]
 		},
 		{
-			"name":"Curve.377",
+			"name":"Curve.662",
 			"primitives":[
 				{
 					"attributes":{
@@ -1239,7 +1238,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.052",
+			"name":"Cylinder.088",
 			"primitives":[
 				{
 					"attributes":{
@@ -1252,7 +1251,7 @@
 			]
 		},
 		{
-			"name":"Curve.378",
+			"name":"Curve.664",
 			"primitives":[
 				{
 					"attributes":{
@@ -1266,7 +1265,7 @@
 			]
 		},
 		{
-			"name":"Curve.379",
+			"name":"Curve.665",
 			"primitives":[
 				{
 					"attributes":{
@@ -1280,7 +1279,7 @@
 			]
 		},
 		{
-			"name":"Curve.380",
+			"name":"Curve.666",
 			"primitives":[
 				{
 					"attributes":{
@@ -1294,7 +1293,7 @@
 			]
 		},
 		{
-			"name":"Curve.381",
+			"name":"Curve.667",
 			"primitives":[
 				{
 					"attributes":{
@@ -1308,7 +1307,7 @@
 			]
 		},
 		{
-			"name":"Curve.382",
+			"name":"Curve.668",
 			"primitives":[
 				{
 					"attributes":{
@@ -1322,7 +1321,7 @@
 			]
 		},
 		{
-			"name":"Curve.383",
+			"name":"Curve.670",
 			"primitives":[
 				{
 					"attributes":{
@@ -1336,7 +1335,7 @@
 			]
 		},
 		{
-			"name":"Curve.384",
+			"name":"Curve.671",
 			"primitives":[
 				{
 					"attributes":{
@@ -1350,7 +1349,7 @@
 			]
 		},
 		{
-			"name":"Curve.386",
+			"name":"Curve.672",
 			"primitives":[
 				{
 					"attributes":{
@@ -1364,7 +1363,7 @@
 			]
 		},
 		{
-			"name":"Curve.387",
+			"name":"Curve.673",
 			"primitives":[
 				{
 					"attributes":{
@@ -1378,7 +1377,7 @@
 			]
 		},
 		{
-			"name":"Curve.388",
+			"name":"Curve.674",
 			"primitives":[
 				{
 					"attributes":{
@@ -1392,7 +1391,7 @@
 			]
 		},
 		{
-			"name":"Curve.389",
+			"name":"Curve.675",
 			"primitives":[
 				{
 					"attributes":{
@@ -1406,7 +1405,7 @@
 			]
 		},
 		{
-			"name":"Curve.390",
+			"name":"Curve.676",
 			"primitives":[
 				{
 					"attributes":{
@@ -1420,7 +1419,7 @@
 			]
 		},
 		{
-			"name":"Curve.391",
+			"name":"Curve.677",
 			"primitives":[
 				{
 					"attributes":{
