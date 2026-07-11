@@ -284,7 +284,7 @@
 	],
 	"meshes":[
 		{
-			"name":"defaultMaterial.012",
+			"name":"defaultMaterial.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -298,7 +298,7 @@
 			]
 		},
 		{
-			"name":"Cube.840",
+			"name":"Cube.269",
 			"primitives":[
 				{
 					"attributes":{
@@ -312,7 +312,7 @@
 			]
 		},
 		{
-			"name":"Cube.841",
+			"name":"Cube.270",
 			"primitives":[
 				{
 					"attributes":{
@@ -326,7 +326,7 @@
 			]
 		},
 		{
-			"name":"Cube.842",
+			"name":"Cube.271",
 			"primitives":[
 				{
 					"attributes":{
@@ -340,7 +340,7 @@
 			]
 		},
 		{
-			"name":"Cube.843",
+			"name":"Cube.272",
 			"primitives":[
 				{
 					"attributes":{
@@ -354,7 +354,7 @@
 			]
 		},
 		{
-			"name":"Cube.844",
+			"name":"Cube.276",
 			"primitives":[
 				{
 					"attributes":{
@@ -368,7 +368,7 @@
 			]
 		},
 		{
-			"name":"Cube.845",
+			"name":"Cube.286",
 			"primitives":[
 				{
 					"attributes":{
@@ -382,7 +382,7 @@
 			]
 		},
 		{
-			"name":"Cube.846",
+			"name":"Cube.287",
 			"primitives":[
 				{
 					"attributes":{
@@ -396,7 +396,7 @@
 			]
 		},
 		{
-			"name":"Cube.847",
+			"name":"Cube.288",
 			"primitives":[
 				{
 					"attributes":{
@@ -410,7 +410,7 @@
 			]
 		},
 		{
-			"name":"Cube.848",
+			"name":"Cube.289",
 			"primitives":[
 				{
 					"attributes":{
@@ -424,7 +424,7 @@
 			]
 		},
 		{
-			"name":"Cube.849",
+			"name":"Cube.290",
 			"primitives":[
 				{
 					"attributes":{
@@ -447,7 +447,7 @@
 			]
 		},
 		{
-			"name":"Cube.850",
+			"name":"Cube.291",
 			"primitives":[
 				{
 					"attributes":{
@@ -470,7 +470,7 @@
 			]
 		},
 		{
-			"name":"Cube.851",
+			"name":"Cube.292",
 			"primitives":[
 				{
 					"attributes":{
@@ -493,7 +493,7 @@
 			]
 		},
 		{
-			"name":"Cube.852",
+			"name":"Cube.293",
 			"primitives":[
 				{
 					"attributes":{
@@ -516,7 +516,7 @@
 			]
 		},
 		{
-			"name":"Cube.853",
+			"name":"Cube.294",
 			"primitives":[
 				{
 					"attributes":{

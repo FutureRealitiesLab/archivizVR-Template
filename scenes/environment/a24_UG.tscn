@@ -1,0 +1,401 @@
+[gd_scene format=3 uid="uid://cw715swgiamdh"]
+
+[ext_resource type="Script" uid="uid://dp2frlebl33lp" path="res://scripts/scene_changer.gd" id="1_wce2d"]
+[ext_resource type="LightmapGIData" uid="uid://derw6btbl0o28" path="res://scenes/environment/a24.lmbake" id="2_f2idc"]
+[ext_resource type="PackedScene" uid="uid://wkb5vjfybhod" path="res://assets/Exportordner/Garten_Landschaft.gltf" id="23_pudc5"]
+[ext_resource type="PackedScene" uid="uid://b6ca2f11rth4l" path="res://assets/Exportordner/Garten_Stuff.gltf" id="24_nhqsd"]
+[ext_resource type="PackedScene" uid="uid://dckgp7tu0yyq6" path="res://assets/Exportordner/Garten_Zaun_Rasen.gltf" id="25_n3ndm"]
+[ext_resource type="PackedScene" uid="uid://bcuu0nwjlfxo0" path="res://assets/Exportordner/Hecken.gltf" id="26_2ww2x"]
+[ext_resource type="PackedScene" uid="uid://c2iknxeka44lb" path="res://assets/Exportordner/Szene.gltf" id="34_ky4of"]
+[ext_resource type="PackedScene" uid="uid://c32i00sjjk0oq" path="res://assets/Exportordner/UG.gltf" id="35_qgvi1"]
+[ext_resource type="PackedScene" uid="uid://c6ts5bgw6l7ou" path="res://assets/Exportordner/UG_3D.002.gltf" id="36_6eq4t"]
+[ext_resource type="PackedScene" uid="uid://bfpwgdiolb2o7" path="res://assets/Exportordner/UG_Doors.gltf" id="36_wce2d"]
+[ext_resource type="PackedScene" uid="uid://bvfsp7wq3xrx7" path="res://assets/Exportordner/Umgebung.gltf" id="37_ynhhd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
+sky_top_color = Color(0.3, 0.45, 0.65, 1)
+
+[sub_resource type="Sky" id="Sky_1"]
+sky_material = SubResource("ProceduralSkyMaterial_1")
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 2
+sky = SubResource("Sky_1")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 2
+tonemap_white = 6.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.4
+glow_bloom = 0.05
+glow_blend_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pemy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_haj7g"]
+size = Vector3(1.0410156, 1, 1.1905518)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxm5u"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ecvld"]
+data = PackedVector3Array(0.15879999, 0, -0.1663, 1, 0, -1, 0.2575, 0, -0.1663, 1, 0, -1, 0.2575, 0, -0.1344, 0.2575, 0, -0.1663, 0.15879999, 0, -0.1663, -1, 0, -1, 1, 0, -1, 0.2488, 0, -0.0274, 0.2575, 0, -0.1344, 1, 0, -1, 0.2575, 0, -0.1344, 0.2488, 0, -0.0274, 0.2488, 0, -0.1344, 0.2488, 0, -0.0274, 1, 0, -1, 1, 0, 1, -1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0, 1, 0.15879999, 0, -0.0274, 0.2488, 0, -0.0274, -1, 0, -1, 0.15879999, 0, -0.1663, 0.15879999, 0, -0.0274, -1, 0, -1, 0.15879999, 0, -0.0274, 1, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k52pe"]
+points = PackedVector3Array(-0.08942604, -0.08942628, -11.357125, 9.210897, 1.1625404, -7.9587903, 8.495348, 1.1625404, 0.08942604, 8.495348, -0.08942628, 0.08942604, -0.08942604, 1.1625404, 0.08942604, 9.210897, -0.08942628, -11.357125, -0.08942604, 1.1625404, -11.357125, -0.08942604, -0.08942628, 0.08942604, 9.210897, 1.1625404, -11.357125, 9.210897, -0.08942628, -7.9587903)
+
+[node name="A24" type="Node3D" unique_id=1296296874]
+
+[node name="SceneChanger" type="Node" parent="." unique_id=482910371]
+script = ExtResource("1_wce2d")
+next_scene = "res://scenes/environment/a24_EG.tscn"
+previous_scene = "res://scenes/environment/a24.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1095599563]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1080872424]
+transform = Transform3D(0.866, -0.433, 0.25, 0, 0.5, 0.866, -0.5, -0.75, 0.433, 0, 8, 0)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="NavigationPoints" type="Node3D" parent="." unique_id=1311637161]
+
+[node name="SpawnPoint" type="Marker3D" parent="NavigationPoints" unique_id=919273832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.50937, 0, -14.224901)
+
+[node name="______________________________________________1" type="Node" parent="." unique_id=552547203]
+
+[node name="lichter2" type="Node3D" parent="." unique_id=551810738]
+visible = false
+
+[node name="Point" type="OmniLight3D" parent="lichter2" unique_id=1982845932]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.39442, 4.951973, -14.327418)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_002" type="OmniLight3D" parent="lichter2" unique_id=391980642]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.500212, 5.1304746, -8.623031)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_003" type="OmniLight3D" parent="lichter2" unique_id=1038535829]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 21.005405, -1.0947454, -6.8037453)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_005" type="OmniLight3D" parent="lichter2" unique_id=1701240288]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 22.679537, 5.458189, -10.062297)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_006" type="OmniLight3D" parent="lichter2" unique_id=23152179]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.29804, 4.951973, -11.13312)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_007" type="OmniLight3D" parent="lichter2" unique_id=1446290672]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.662664, 4.951973, -6.782264)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_010" type="OmniLight3D" parent="lichter2" unique_id=570792726]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 22.736418, 2.3847044, -16.190441)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_011" type="OmniLight3D" parent="lichter2" unique_id=1345119746]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.867193, 2.3847044, -14.005958)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_012" type="OmniLight3D" parent="lichter2" unique_id=1297813732]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 18.367443, -1.0947454, -6.8037453)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_015" type="OmniLight3D" parent="lichter2" unique_id=1151994651]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.86963, 6.1342545, -14.543588)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_016" type="OmniLight3D" parent="lichter2" unique_id=1706745216]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 24.46896, 6.4853864, -16.113653)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_017" type="OmniLight3D" parent="lichter2" unique_id=206010798]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.667841, -0.4577601, -14.685892)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_018" type="OmniLight3D" parent="lichter2" unique_id=1865671182]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.378693, -0.4577601, -14.924929)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_019" type="OmniLight3D" parent="lichter2" unique_id=304924081]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 17.051298, -0.4577601, -15.412564)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_020" type="OmniLight3D" parent="lichter2" unique_id=1197156572]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 17.596302, -0.4577601, -11.186392)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_021" type="OmniLight3D" parent="lichter2" unique_id=2116005959]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.751589, -1.1764922, -10.775249)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_022" type="OmniLight3D" parent="lichter2" unique_id=1658354577]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 22.721252, -0.4577601, -10.6509495)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_023" type="OmniLight3D" parent="lichter2" unique_id=789477383]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 21.592999, -0.4577601, -8.729093)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_024" type="OmniLight3D" parent="lichter2" unique_id=459834734]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.572226, -0.4577601, -7.065396)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point2" type="OmniLight3D" parent="lichter2" unique_id=584255745]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.39442, 1.7636132, -14.327418)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point3" type="OmniLight3D" parent="lichter2" unique_id=1524778558]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.39442, 2.1077173, -9.697546)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point4" type="OmniLight3D" parent="lichter2" unique_id=1689222909]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 22.702888, 2.4700615, -8.150103)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point5" type="OmniLight3D" parent="lichter2" unique_id=1238031572]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 23.405518, 2.1939287, -6.777863)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point6" type="OmniLight3D" parent="lichter2" unique_id=1010863811]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 21.230543, 2.1939287, -6.777863)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point7" type="OmniLight3D" parent="lichter2" unique_id=236539040]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 18.10653, 2.1939287, -6.777863)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Point_004" type="OmniLight3D" parent="lichter2" unique_id=1608713517]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.949354, 7.3904715, -7.425666)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 6.0
+distance_fade_shadow = 8.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="StaticBody3D - Collision" type="StaticBody3D" parent="." unique_id=1539189850]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D - Collision" unique_id=421108240]
+transform = Transform3D(3.308193, 0, 0, 0, 0.0995092, 0, 0, 0, 1, 25.389132, -2.027469, -8.53732)
+shape = SubResource("BoxShape3D_4pemy")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D - Collision" unique_id=1525368261]
+transform = Transform3D(4.2522124e-06, -2.4173096e-07, 1, 2.7867398, -0.14637083, -2.336513e-08, -4.1050286, 0.25450033, -3.6942172e-08, 24.345655, -1.0929931, -10.2395315)
+shape = SubResource("BoxShape3D_haj7g")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D - Collision" unique_id=2029220859]
+transform = Transform3D(2.5078669, -0.064896375, 0, 2.1574864, 0.07543569, 0, 0, 0, 1, 22.556196, -3.080185, -8.53732)
+shape = SubResource("BoxShape3D_sxm5u")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D - Collision" unique_id=1778966547]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.52933246, 0)
+shape = SubResource("ConcavePolygonShape3D_ecvld")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D - Collision" unique_id=1578576111]
+transform = Transform3D(1.8220636, 0, 0, 0, 0.29999998, 0, 0, 0, 1.9290444, 13.104686, -3.1, -1.8821282)
+shape = SubResource("ConvexPolygonShape3D_k52pe")
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=2045963223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.057644, -4.565833, -25.11764)
+visible = false
+light_data = ExtResource("2_f2idc")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="LightmapGI" unique_id=882555548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2322, 9.536564, 12.042094)
+size = Vector3(7.4181676, 8.906349, 6.54113)
+box_projection = true
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="LightmapGI" unique_id=1592509328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.743082, 6.1271386, 9.118865)
+size = Vector3(4.075886, 5.0137577, 2.1841965)
+box_projection = true
+
+[node name="ReflectionProbe4" type="ReflectionProbe" parent="LightmapGI" unique_id=300786541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.40572, 5.735598, 10.70775)
+size = Vector3(4.453348, 5.0137577, 4.854896)
+box_projection = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="LightmapGI" unique_id=1081267824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.226427, 8.774623, 10.739574)
+size = Vector3(6.8873634, 6.698206, 8.319565)
+box_projection = true
+
+[node name="______________________________________________2" type="Node" parent="." unique_id=972022452]
+
+[node name="StaticBody3D - Blender Export" type="StaticBody3D" parent="." unique_id=268364465]
+
+[node name="Garten_Landschaft" parent="StaticBody3D - Blender Export" unique_id=830820226 instance=ExtResource("23_pudc5")]
+
+[node name="Garten_Stuff" parent="StaticBody3D - Blender Export" unique_id=54956220 instance=ExtResource("24_nhqsd")]
+
+[node name="Garten_Zaun_Rasen" parent="StaticBody3D - Blender Export" unique_id=397738091 instance=ExtResource("25_n3ndm")]
+
+[node name="Hecken" parent="StaticBody3D - Blender Export" unique_id=1181583992 instance=ExtResource("26_2ww2x")]
+
+[node name="Szene" parent="StaticBody3D - Blender Export" unique_id=761048242 instance=ExtResource("34_ky4of")]
+
+[node name="UG" parent="StaticBody3D - Blender Export" unique_id=1653642425 instance=ExtResource("35_qgvi1")]
+
+[node name="UG_3D_002" parent="StaticBody3D - Blender Export" unique_id=1612115884 instance=ExtResource("36_6eq4t")]
+
+[node name="UG_Doors" parent="StaticBody3D - Blender Export" unique_id=2085134624 instance=ExtResource("36_wce2d")]
+
+[node name="Umgebung" parent="StaticBody3D - Blender Export" unique_id=1063658571 instance=ExtResource("37_ynhhd")]

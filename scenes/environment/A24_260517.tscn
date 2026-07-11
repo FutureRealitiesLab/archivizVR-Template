@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bqftbm5opfdas"]
 
+[ext_resource type="Script" uid="uid://dp2frlebl33lp" path="res://scripts/scene_changer.gd" id="1_grmdx"]
+
 [sub_resource type="Environment" id="Environment_world"]
 background_mode = 2
 ambient_light_source = 3
@@ -33,61 +35,61 @@ size = Vector3(20, 4, 0.3)
 albedo_color = Color(0.95, 0.94, 0.92, 1)
 roughness = 0.8
 
-[node name="DemoRoom" type="Node3D"]
+[node name="DemoRoom" type="Node3D" unique_id=570373115]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=780955592]
 environment = SubResource("Environment_world")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=785685488]
 transform = Transform3D(0.866, -0.433, 0.25, 0, 0.5, 0.866, -0.5, -0.75, 0.433, 0, 8, 0)
 light_color = Color(1, 0.95, 0.85, 1)
 light_energy = 3.0
 light_angular_distance = 0.5
 shadow_enabled = true
-directional_shadow_mode = 2
-directional_shadow_split_1 = 0.1
-directional_shadow_split_2 = 0.2
-directional_shadow_split_3 = 0.5
 directional_shadow_blend_splits = true
 
-[node name="VoxelGI" type="VoxelGI" parent="."]
+[node name="VoxelGI" type="VoxelGI" parent="." unique_id=2101562998]
 size = Vector3(20, 8, 20)
-data = null
 
-[node name="Geometry" type="Node3D" parent="."]
+[node name="Geometry" type="Node3D" parent="." unique_id=1696024462]
 
-[node name="Floor" type="StaticBody3D" parent="Geometry"]
+[node name="Floor" type="StaticBody3D" parent="Geometry" unique_id=1956805399]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Floor" unique_id=582230752]
 shape = SubResource("BoxShape3D_floor")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Floor" unique_id=1742597862]
 mesh = SubResource("BoxMesh_floor")
 surface_material_override/0 = SubResource("StandardMaterial3D_floor")
-cast_shadow = 1
 
-[node name="WallNorth" type="StaticBody3D" parent="Geometry"]
+[node name="WallNorth" type="StaticBody3D" parent="Geometry" unique_id=1212813113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallNorth"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallNorth" unique_id=697158033]
 shape = SubResource("BoxShape3D_wall_n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallNorth"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallNorth" unique_id=655025459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.495184, 0, 0)
 mesh = SubResource("BoxMesh_wall")
 surface_material_override/0 = SubResource("StandardMaterial3D_wall")
 
-[node name="WallSouth" type="StaticBody3D" parent="Geometry"]
+[node name="WallSouth" type="StaticBody3D" parent="Geometry" unique_id=454885876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallSouth"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/WallSouth" unique_id=70584272]
 shape = SubResource("BoxShape3D_wall_n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallSouth"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/WallSouth" unique_id=883363560]
 mesh = SubResource("BoxMesh_wall")
 surface_material_override/0 = SubResource("StandardMaterial3D_wall")
 
-[node name="NavigationPoints" type="Node3D" parent="."]
+[node name="NavigationPoints" type="Node3D" parent="." unique_id=357551274]
 
-[node name="SpawnPoint" type="Marker3D" parent="NavigationPoints"]
+[node name="SpawnPoint" type="Marker3D" parent="NavigationPoints" unique_id=703090083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="SceneChanger" type="Node" parent="." unique_id=2052875361]
+script = ExtResource("1_grmdx")
+next_scene = "res://scenes/environment/a24.tscn"
+previous_scene = "res://scenes/environment/a24.tscn"

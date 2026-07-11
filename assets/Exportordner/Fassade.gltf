@@ -139,8 +139,14 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Besenputz",
+			"name":"AussenPutz",
 			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.7766516208648682,
+					0.7766516208648682,
+					0.7766516208648682,
+					1
+				],
 				"metallicFactor":0
 			}
 		},
@@ -174,7 +180,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.942",
+			"name":"Cube.229",
 			"primitives":[
 				{
 					"attributes":{
@@ -188,7 +194,7 @@
 			]
 		},
 		{
-			"name":"Cube.943",
+			"name":"Cube.230",
 			"primitives":[
 				{
 					"attributes":{
@@ -202,7 +208,7 @@
 			]
 		},
 		{
-			"name":"Cube.944",
+			"name":"Cube.231",
 			"primitives":[
 				{
 					"attributes":{
@@ -216,7 +222,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.089",
+			"name":"Cylinder.023",
 			"primitives":[
 				{
 					"attributes":{
@@ -230,7 +236,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.090",
+			"name":"Cylinder.024",
 			"primitives":[
 				{
 					"attributes":{
@@ -244,7 +250,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.091",
+			"name":"Cylinder.025",
 			"primitives":[
 				{
 					"attributes":{
@@ -258,7 +264,7 @@
 			]
 		},
 		{
-			"name":"Cube.945",
+			"name":"Cube.232",
 			"primitives":[
 				{
 					"attributes":{

@@ -506,7 +506,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh.074",
+			"name":"Mesh.031",
 			"primitives":[
 				{
 					"attributes":{
@@ -521,7 +521,7 @@
 			]
 		},
 		{
-			"name":"3d-model.046",
+			"name":"3d-model.016",
 			"primitives":[
 				{
 					"attributes":{
@@ -562,7 +562,7 @@
 			]
 		},
 		{
-			"name":"3d-model.047",
+			"name":"3d-model.017",
 			"primitives":[
 				{
 					"attributes":{
@@ -603,7 +603,7 @@
 			]
 		},
 		{
-			"name":"3d-model.048",
+			"name":"3d-model.018",
 			"primitives":[
 				{
 					"attributes":{
@@ -644,7 +644,7 @@
 			]
 		},
 		{
-			"name":"3d-model.049",
+			"name":"3d-model.019",
 			"primitives":[
 				{
 					"attributes":{
@@ -685,7 +685,7 @@
 			]
 		},
 		{
-			"name":"Object_1.016",
+			"name":"Object_1.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -699,7 +699,7 @@
 			]
 		},
 		{
-			"name":"Object_1.017",
+			"name":"Object_1.005",
 			"primitives":[
 				{
 					"attributes":{
@@ -713,7 +713,7 @@
 			]
 		},
 		{
-			"name":"Object_1.018",
+			"name":"Object_1.006",
 			"primitives":[
 				{
 					"attributes":{
@@ -727,7 +727,7 @@
 			]
 		},
 		{
-			"name":"Object_1.019",
+			"name":"Object_1.007",
 			"primitives":[
 				{
 					"attributes":{
@@ -741,7 +741,7 @@
 			]
 		},
 		{
-			"name":"Object_2.021",
+			"name":"Object_2.006",
 			"primitives":[
 				{
 					"attributes":{
@@ -755,7 +755,7 @@
 			]
 		},
 		{
-			"name":"Object_3.016",
+			"name":"Object_3.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -769,7 +769,7 @@
 			]
 		},
 		{
-			"name":"Object_2.022",
+			"name":"Object_2.007",
 			"primitives":[
 				{
 					"attributes":{
@@ -783,7 +783,7 @@
 			]
 		},
 		{
-			"name":"Object_3.017",
+			"name":"Object_3.005",
 			"primitives":[
 				{
 					"attributes":{
@@ -797,7 +797,7 @@
 			]
 		},
 		{
-			"name":"Object_2.023",
+			"name":"Object_2.008",
 			"primitives":[
 				{
 					"attributes":{
@@ -811,7 +811,7 @@
 			]
 		},
 		{
-			"name":"Object_3.018",
+			"name":"Object_3.006",
 			"primitives":[
 				{
 					"attributes":{
@@ -825,7 +825,7 @@
 			]
 		},
 		{
-			"name":"Object_2.024",
+			"name":"Object_2.009",
 			"primitives":[
 				{
 					"attributes":{
@@ -839,7 +839,7 @@
 			]
 		},
 		{
-			"name":"Object_3.019",
+			"name":"Object_3.007",
 			"primitives":[
 				{
 					"attributes":{

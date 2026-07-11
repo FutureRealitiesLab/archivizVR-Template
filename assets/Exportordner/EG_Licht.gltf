@@ -258,7 +258,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.909",
+			"name":"Cube.350",
 			"primitives":[
 				{
 					"attributes":{
@@ -281,7 +281,7 @@
 			]
 		},
 		{
-			"name":"Cube.910",
+			"name":"Cube.351",
 			"primitives":[
 				{
 					"attributes":{
@@ -304,7 +304,7 @@
 			]
 		},
 		{
-			"name":"Cube.911",
+			"name":"Cube.352",
 			"primitives":[
 				{
 					"attributes":{
@@ -327,7 +327,7 @@
 			]
 		},
 		{
-			"name":"Cube.912",
+			"name":"Cube.353",
 			"primitives":[
 				{
 					"attributes":{
@@ -350,7 +350,7 @@
 			]
 		},
 		{
-			"name":"Cube.913",
+			"name":"Cube.354",
 			"primitives":[
 				{
 					"attributes":{
@@ -373,7 +373,7 @@
 			]
 		},
 		{
-			"name":"Cube.914",
+			"name":"Cube.355",
 			"primitives":[
 				{
 					"attributes":{
@@ -396,7 +396,7 @@
 			]
 		},
 		{
-			"name":"Sphere.008",
+			"name":"Sphere.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -410,7 +410,7 @@
 			]
 		},
 		{
-			"name":"Sphere.009",
+			"name":"Sphere.003",
 			"primitives":[
 				{
 					"attributes":{

@@ -102,7 +102,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.854",
+			"name":"Cube.295",
 			"primitives":[
 				{
 					"attributes":{
@@ -116,7 +116,7 @@
 			]
 		},
 		{
-			"name":"Cube.857",
+			"name":"Cube.298",
 			"primitives":[
 				{
 					"attributes":{
@@ -130,7 +130,7 @@
 			]
 		},
 		{
-			"name":"Cube.855",
+			"name":"Cube.296",
 			"primitives":[
 				{
 					"attributes":{
@@ -144,7 +144,7 @@
 			]
 		},
 		{
-			"name":"Cube.856",
+			"name":"Cube.297",
 			"primitives":[
 				{
 					"attributes":{

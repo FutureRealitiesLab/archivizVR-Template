@@ -89,7 +89,7 @@
 		},
 		{
 			"mesh":4,
-			"name":"Curve.049",
+			"name":"Curve.050",
 			"scale":[
 				1,
 				1,
@@ -135,7 +135,7 @@
 		},
 		{
 			"mesh":8,
-			"name":"Curve.050",
+			"name":"Curve.051",
 			"scale":[
 				3.9183831214904785,
 				0.25,
@@ -169,7 +169,7 @@
 		},
 		{
 			"mesh":10,
-			"name":"Curve.051",
+			"name":"Curve.052",
 			"scale":[
 				1.1248159408569336,
 				1.6666666269302368,
@@ -183,7 +183,7 @@
 		},
 		{
 			"mesh":11,
-			"name":"Curve.052",
+			"name":"Curve.053",
 			"scale":[
 				1,
 				1,
@@ -756,7 +756,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.622",
+			"name":"Curve.193",
 			"primitives":[
 				{
 					"attributes":{
@@ -770,7 +770,7 @@
 			]
 		},
 		{
-			"name":"3d-model.045",
+			"name":"3d-model.015",
 			"primitives":[
 				{
 					"attributes":{
@@ -811,7 +811,7 @@
 			]
 		},
 		{
-			"name":"Platte.009",
+			"name":"Platte.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -825,7 +825,7 @@
 			]
 		},
 		{
-			"name":"Curve.623",
+			"name":"Curve.195",
 			"primitives":[
 				{
 					"attributes":{
@@ -839,7 +839,7 @@
 			]
 		},
 		{
-			"name":"Curve.624",
+			"name":"Curve.196",
 			"primitives":[
 				{
 					"attributes":{
@@ -853,7 +853,7 @@
 			]
 		},
 		{
-			"name":"Curve.625",
+			"name":"Curve.197",
 			"primitives":[
 				{
 					"attributes":{
@@ -867,7 +867,7 @@
 			]
 		},
 		{
-			"name":"Curve.626",
+			"name":"Curve.199",
 			"primitives":[
 				{
 					"attributes":{
@@ -881,7 +881,7 @@
 			]
 		},
 		{
-			"name":"Curve.627",
+			"name":"Curve.201",
 			"primitives":[
 				{
 					"attributes":{
@@ -895,7 +895,7 @@
 			]
 		},
 		{
-			"name":"Curve.628",
+			"name":"Curve.202",
 			"primitives":[
 				{
 					"attributes":{
@@ -909,7 +909,7 @@
 			]
 		},
 		{
-			"name":"Platte.010",
+			"name":"Platte.004",
 			"primitives":[
 				{
 					"attributes":{
@@ -923,7 +923,7 @@
 			]
 		},
 		{
-			"name":"Curve.629",
+			"name":"Curve.203",
 			"primitives":[
 				{
 					"attributes":{
@@ -937,7 +937,7 @@
 			]
 		},
 		{
-			"name":"Curve.630",
+			"name":"Curve.204",
 			"primitives":[
 				{
 					"attributes":{
@@ -951,7 +951,7 @@
 			]
 		},
 		{
-			"name":"Object_2.020",
+			"name":"Object_2.005",
 			"primitives":[
 				{
 					"attributes":{
@@ -1100,7 +1100,7 @@
 			]
 		},
 		{
-			"name":"Cube.908",
+			"name":"Cube.349",
 			"primitives":[
 				{
 					"attributes":{

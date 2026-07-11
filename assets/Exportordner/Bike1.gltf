@@ -305,7 +305,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Object_0.016",
+			"name":"Object_0.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -346,7 +346,7 @@
 			]
 		},
 		{
-			"name":"Cube.765",
+			"name":"Cube.136",
 			"primitives":[
 				{
 					"attributes":{
@@ -360,7 +360,7 @@
 			]
 		},
 		{
-			"name":"Object_0.017",
+			"name":"Object_0.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -401,7 +401,7 @@
 			]
 		},
 		{
-			"name":"Object_0.018",
+			"name":"Object_0.003",
 			"primitives":[
 				{
 					"attributes":{
@@ -442,7 +442,7 @@
 			]
 		},
 		{
-			"name":"Cube.766",
+			"name":"Cube.139",
 			"primitives":[
 				{
 					"attributes":{

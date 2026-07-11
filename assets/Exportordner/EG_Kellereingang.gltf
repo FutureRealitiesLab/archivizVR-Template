@@ -20,7 +20,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Curve.049",
+			"name":"Curve.050",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -40,7 +40,7 @@
 		},
 		{
 			"mesh":1,
-			"name":"Blockzarge.033",
+			"name":"Blockzarge.048",
 			"rotation":[
 				0,
 				-0.7071066498756409,
@@ -60,7 +60,7 @@
 		},
 		{
 			"mesh":2,
-			"name":"Blockzarge.034",
+			"name":"Blockzarge.049",
 			"rotation":[
 				0,
 				0.7071067094802856,
@@ -80,7 +80,7 @@
 		},
 		{
 			"mesh":3,
-			"name":"Blockzarge.035",
+			"name":"Blockzarge.050",
 			"rotation":[
 				-0.5,
 				0.5,
@@ -100,7 +100,7 @@
 		},
 		{
 			"mesh":4,
-			"name":"T\u00fcrblatt.011",
+			"name":"T\u00fcrblatt.016",
 			"rotation":[
 				0,
 				0.7071067094802856,
@@ -120,7 +120,7 @@
 		},
 		{
 			"mesh":5,
-			"name":"Door.011",
+			"name":"Door.016",
 			"rotation":[
 				0.7071068286895752,
 				0,
@@ -170,7 +170,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.638",
+			"name":"Curve.212",
 			"primitives":[
 				{
 					"attributes":{
@@ -184,7 +184,7 @@
 			]
 		},
 		{
-			"name":"Cube.931",
+			"name":"Cube.372",
 			"primitives":[
 				{
 					"attributes":{
@@ -198,7 +198,7 @@
 			]
 		},
 		{
-			"name":"Cube.932",
+			"name":"Cube.373",
 			"primitives":[
 				{
 					"attributes":{
@@ -212,7 +212,7 @@
 			]
 		},
 		{
-			"name":"Cube.933",
+			"name":"Cube.374",
 			"primitives":[
 				{
 					"attributes":{
@@ -226,7 +226,7 @@
 			]
 		},
 		{
-			"name":"Cube.934",
+			"name":"Cube.375",
 			"primitives":[
 				{
 					"attributes":{
@@ -239,7 +239,7 @@
 			]
 		},
 		{
-			"name":"Plane.001_Glossy_0.028",
+			"name":"Plane.001_Glossy_0.009",
 			"primitives":[
 				{
 					"attributes":{

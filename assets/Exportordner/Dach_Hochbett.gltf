@@ -48,7 +48,7 @@
 		},
 		{
 			"mesh":1,
-			"name":"Curve.049",
+			"name":"Curve.050",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -68,7 +68,7 @@
 		},
 		{
 			"mesh":2,
-			"name":"Curve.050",
+			"name":"Curve.051",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -88,7 +88,7 @@
 		},
 		{
 			"mesh":3,
-			"name":"Curve.051",
+			"name":"Curve.052",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -108,7 +108,7 @@
 		},
 		{
 			"mesh":4,
-			"name":"Curve.052",
+			"name":"Curve.053",
 			"rotation":[
 				0,
 				0.7071068286895752,
@@ -128,7 +128,7 @@
 		},
 		{
 			"mesh":5,
-			"name":"Curve.053",
+			"name":"Curve.054",
 			"rotation":[
 				0,
 				-1,
@@ -148,7 +148,7 @@
 		},
 		{
 			"mesh":6,
-			"name":"Curve.054",
+			"name":"Curve.055",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -250,7 +250,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Curve.542",
+			"name":"Curve.015",
 			"primitives":[
 				{
 					"attributes":{
@@ -264,7 +264,7 @@
 			]
 		},
 		{
-			"name":"Curve.543",
+			"name":"Curve.016",
 			"primitives":[
 				{
 					"attributes":{
@@ -278,7 +278,7 @@
 			]
 		},
 		{
-			"name":"Curve.544",
+			"name":"Curve.017",
 			"primitives":[
 				{
 					"attributes":{
@@ -292,7 +292,7 @@
 			]
 		},
 		{
-			"name":"Curve.545",
+			"name":"Curve.026",
 			"primitives":[
 				{
 					"attributes":{
@@ -306,7 +306,7 @@
 			]
 		},
 		{
-			"name":"Curve.546",
+			"name":"Curve.042",
 			"primitives":[
 				{
 					"attributes":{
@@ -319,7 +319,7 @@
 			]
 		},
 		{
-			"name":"Curve.547",
+			"name":"Curve.043",
 			"primitives":[
 				{
 					"attributes":{
@@ -332,7 +332,7 @@
 			]
 		},
 		{
-			"name":"Curve.548",
+			"name":"Curve.060",
 			"primitives":[
 				{
 					"attributes":{

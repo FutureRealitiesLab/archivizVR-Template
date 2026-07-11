@@ -8,14 +8,34 @@
 		{
 			"name":"Scene",
 			"nodes":[
-				0
+				0,
+				1
 			]
 		}
 	],
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Boden.005",
+			"name":"Boden.006",
+			"scale":[
+				1,
+				0.5,
+				1
+			],
+			"translation":[
+				16.250099182128906,
+				-0.14999999105930328,
+				-5.364019870758057
+			]
+		},
+		{
+			"mesh":1,
+			"name":"Boden.007",
+			"scale":[
+				1,
+				0.5,
+				1
+			],
 			"translation":[
 				16.250099182128906,
 				-0.29999998211860657,
@@ -33,11 +53,24 @@
 				},
 				"metallicFactor":0
 			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Beton_Rough",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.3583049178123474,
+					0.3314575254917145,
+					0.36859366297721863,
+					1
+				],
+				"metallicFactor":0
+			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"B\u00e9zierCurve.027",
+			"name":"B\u00e9zierCurve.013",
 			"primitives":[
 				{
 					"attributes":{
@@ -47,6 +80,20 @@
 					},
 					"indices":3,
 					"material":0
+				}
+			]
+		},
+		{
+			"name":"B\u00e9zierCurve.014",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":4,
+						"NORMAL":5,
+						"TEXCOORD_0":6
+					},
+					"indices":3,
+					"material":1
 				}
 			]
 		}
@@ -98,6 +145,34 @@
 			"componentType":5123,
 			"count":120,
 			"type":"SCALAR"
+		},
+		{
+			"bufferView":4,
+			"componentType":5126,
+			"count":60,
+			"max":[
+				9.18558120727539,
+				0.29999998211860657,
+				4.76837158203125e-07
+			],
+			"min":[
+				0,
+				0,
+				-11.21768856048584
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":5,
+			"componentType":5126,
+			"count":60,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":6,
+			"componentType":5126,
+			"count":60,
+			"type":"VEC2"
 		}
 	],
 	"bufferViews":[
@@ -124,6 +199,24 @@
 			"byteLength":240,
 			"byteOffset":1920,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":720,
+			"byteOffset":2160,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":720,
+			"byteOffset":2880,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":3600,
+			"target":34962
 		}
 	],
 	"samplers":[
@@ -134,7 +227,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":2160,
+			"byteLength":4080,
 			"uri":"EG_boden.bin"
 		}
 	]
