@@ -34,7 +34,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -49,7 +50,7 @@
 				0.7071068286895752
 			],
 			"translation":[
-				16.54909896850586,
+				16.83588981628418,
 				-0.4703141748905182,
 				-5.000035285949707
 			]
@@ -58,14 +59,14 @@
 			"mesh":1,
 			"name":"Cut-Office.003",
 			"translation":[
-				22.16504669189453,
+				22.097532272338867,
 				-0.4703141748905182,
 				-3.4000353813171387
 			]
 		},
 		{
 			"mesh":2,
-			"name":"Cut-Office.011",
+			"name":"Cut-Office.010",
 			"rotation":[
 				0,
 				0.7071068286895752,
@@ -73,14 +74,14 @@
 				0.7071068286895752
 			],
 			"translation":[
-				22.328800201416016,
+				22.097532272338867,
 				-0.4703141748905182,
 				-5.000035285949707
 			]
 		},
 		{
 			"mesh":3,
-			"name":"Cut-Office.021",
+			"name":"Cut-Office.011",
 			"translation":[
 				22.16504669189453,
 				-1.032164454460144,
@@ -498,6 +499,26 @@
 				-0.5249999761581421,
 				-20
 			]
+		},
+		{
+			"mesh":27,
+			"name":"holzfassade.016",
+			"rotation":[
+				0.5,
+				0.5,
+				-0.5,
+				0.5
+			],
+			"scale":[
+				1.0049999952316284,
+				0.4444444477558136,
+				1
+			],
+			"translation":[
+				11.885079383850098,
+				0,
+				-16.666790008544922
+			]
 		}
 	],
 	"materials":[
@@ -774,11 +795,22 @@
 				"metallicFactor":0.6571428775787354,
 				"roughnessFactor":0.654285728931427
 			}
+		},
+		{
+			"doubleSided":true,
+			"name":"fichte",
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":0
+				},
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.316",
+			"name":"Cube.806",
 			"primitives":[
 				{
 					"attributes":{
@@ -792,7 +824,7 @@
 			]
 		},
 		{
-			"name":"Cube.317",
+			"name":"Cube.807",
 			"primitives":[
 				{
 					"attributes":{
@@ -806,7 +838,7 @@
 			]
 		},
 		{
-			"name":"Cube.318",
+			"name":"Cube.808",
 			"primitives":[
 				{
 					"attributes":{
@@ -820,7 +852,7 @@
 			]
 		},
 		{
-			"name":"Cube.319",
+			"name":"Cube.809",
 			"primitives":[
 				{
 					"attributes":{
@@ -834,7 +866,7 @@
 			]
 		},
 		{
-			"name":"Cube.320",
+			"name":"Cube.810",
 			"primitives":[
 				{
 					"attributes":{
@@ -848,7 +880,7 @@
 			]
 		},
 		{
-			"name":"Object_0.004",
+			"name":"Object_0.005",
 			"primitives":[
 				{
 					"attributes":{
@@ -863,7 +895,7 @@
 			]
 		},
 		{
-			"name":"Cube.321",
+			"name":"Cube.811",
 			"primitives":[
 				{
 					"attributes":{
@@ -877,7 +909,7 @@
 			]
 		},
 		{
-			"name":"Cube.322",
+			"name":"Cube.812",
 			"primitives":[
 				{
 					"attributes":{
@@ -891,7 +923,7 @@
 			]
 		},
 		{
-			"name":"Cube.323",
+			"name":"Cube.813",
 			"primitives":[
 				{
 					"attributes":{
@@ -905,7 +937,7 @@
 			]
 		},
 		{
-			"name":"Cube.324",
+			"name":"Cube.814",
 			"primitives":[
 				{
 					"attributes":{
@@ -919,7 +951,7 @@
 			]
 		},
 		{
-			"name":"Cube.325",
+			"name":"Cube.815",
 			"primitives":[
 				{
 					"attributes":{
@@ -933,7 +965,7 @@
 			]
 		},
 		{
-			"name":"Cube.326",
+			"name":"Cube.816",
 			"primitives":[
 				{
 					"attributes":{
@@ -947,7 +979,7 @@
 			]
 		},
 		{
-			"name":"Cube.327",
+			"name":"Cube.817",
 			"primitives":[
 				{
 					"attributes":{
@@ -961,7 +993,7 @@
 			]
 		},
 		{
-			"name":"Cube.328",
+			"name":"Cube.818",
 			"primitives":[
 				{
 					"attributes":{
@@ -975,7 +1007,7 @@
 			]
 		},
 		{
-			"name":"Cube.329",
+			"name":"Cube.819",
 			"primitives":[
 				{
 					"attributes":{
@@ -989,7 +1021,7 @@
 			]
 		},
 		{
-			"name":"Cube.330",
+			"name":"Cube.820",
 			"primitives":[
 				{
 					"attributes":{
@@ -1003,7 +1035,7 @@
 			]
 		},
 		{
-			"name":"Cube.331",
+			"name":"Cube.821",
 			"primitives":[
 				{
 					"attributes":{
@@ -1017,7 +1049,7 @@
 			]
 		},
 		{
-			"name":"Cube.332",
+			"name":"Cube.822",
 			"primitives":[
 				{
 					"attributes":{
@@ -1031,7 +1063,7 @@
 			]
 		},
 		{
-			"name":"Cube.333",
+			"name":"Cube.823",
 			"primitives":[
 				{
 					"attributes":{
@@ -1045,7 +1077,7 @@
 			]
 		},
 		{
-			"name":"Cube.334",
+			"name":"Cube.824",
 			"primitives":[
 				{
 					"attributes":{
@@ -1059,7 +1091,7 @@
 			]
 		},
 		{
-			"name":"Cube.335",
+			"name":"Cube.825",
 			"primitives":[
 				{
 					"attributes":{
@@ -1073,7 +1105,7 @@
 			]
 		},
 		{
-			"name":"Cube.336",
+			"name":"Cube.826",
 			"primitives":[
 				{
 					"attributes":{
@@ -1087,7 +1119,7 @@
 			]
 		},
 		{
-			"name":"Cube.337",
+			"name":"Cube.827",
 			"primitives":[
 				{
 					"attributes":{
@@ -1101,7 +1133,7 @@
 			]
 		},
 		{
-			"name":"Cube.338",
+			"name":"Cube.828",
 			"primitives":[
 				{
 					"attributes":{
@@ -1115,7 +1147,7 @@
 			]
 		},
 		{
-			"name":"Cube.339",
+			"name":"Cube.829",
 			"primitives":[
 				{
 					"attributes":{
@@ -1129,7 +1161,7 @@
 			]
 		},
 		{
-			"name":"Cube.340",
+			"name":"Cube.830",
 			"primitives":[
 				{
 					"attributes":{
@@ -1143,7 +1175,7 @@
 			]
 		},
 		{
-			"name":"Cube.341",
+			"name":"Cube.831",
 			"primitives":[
 				{
 					"attributes":{
@@ -1155,6 +1187,33 @@
 					"material":20
 				}
 			]
+		},
+		{
+			"name":"Cube.832",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":87,
+						"NORMAL":88,
+						"TEXCOORD_0":89
+					},
+					"indices":90,
+					"material":21
+				}
+			]
+		}
+	],
+	"textures":[
+		{
+			"sampler":0,
+			"source":0
+		}
+	],
+	"images":[
+		{
+			"mimeType":"image/jpeg",
+			"name":"fichte - grau",
+			"uri":"fichte%20-%20grau.jpg"
 		}
 	],
 	"accessors":[
@@ -1202,7 +1261,7 @@
 				-3.814731996953924e-08
 			],
 			"min":[
-				-5.600000381469727,
+				-5.2616424560546875,
 				-1.399999976158142,
 				-0.15000003576278687
 			],
@@ -1227,12 +1286,12 @@
 			"max":[
 				0,
 				0,
-				-3.814731996953924e-08
+				0.14999957382678986
 			],
 			"min":[
 				-1.5999999046325684,
 				-1.399999976158142,
-				-0.15000003576278687
+				-4.172325134277344e-07
 			],
 			"type":"VEC3"
 		},
@@ -1951,6 +2010,40 @@
 			"componentType":5126,
 			"count":24,
 			"type":"VEC2"
+		},
+		{
+			"bufferView":87,
+			"componentType":5126,
+			"count":5568,
+			"max":[
+				0,
+				9,
+				0
+			],
+			"min":[
+				-11.594999313354492,
+				0,
+				-0.019999999552965164
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":88,
+			"componentType":5126,
+			"count":5568,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":89,
+			"componentType":5126,
+			"count":5568,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":90,
+			"componentType":5123,
+			"count":7656,
+			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
@@ -2475,11 +2568,41 @@
 			"byteLength":192,
 			"byteOffset":404576,
 			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":66816,
+			"byteOffset":404768,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":66816,
+			"byteOffset":471584,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":44544,
+			"byteOffset":538400,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":15312,
+			"byteOffset":582944,
+			"target":34963
+		}
+	],
+	"samplers":[
+		{
+			"magFilter":9729,
+			"minFilter":9987
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":404768,
+			"byteLength":598256,
 			"uri":"EG_Aussen.bin"
 		}
 	]

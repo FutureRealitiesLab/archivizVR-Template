@@ -3,6 +3,9 @@
 		"generator":"Khronos glTF Blender I/O v5.1.18",
 		"version":"2.0"
 	},
+	"extensionsUsed":[
+		"KHR_materials_specular"
+	],
 	"scene":0,
 	"scenes":[
 		{
@@ -20,7 +23,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Curve.050",
+			"name":"Curve.067",
 			"rotation":[
 				0,
 				-0.7071068286895752,
@@ -40,7 +43,7 @@
 		},
 		{
 			"mesh":1,
-			"name":"Blockzarge.048",
+			"name":"Blockzarge.012",
 			"rotation":[
 				0,
 				-0.7071066498756409,
@@ -60,7 +63,7 @@
 		},
 		{
 			"mesh":2,
-			"name":"Blockzarge.049",
+			"name":"Blockzarge.013",
 			"rotation":[
 				0,
 				0.7071067094802856,
@@ -80,7 +83,7 @@
 		},
 		{
 			"mesh":3,
-			"name":"Blockzarge.050",
+			"name":"Blockzarge.014",
 			"rotation":[
 				-0.5,
 				0.5,
@@ -100,7 +103,7 @@
 		},
 		{
 			"mesh":4,
-			"name":"T\u00fcrblatt.016",
+			"name":"T\u00fcrblatt.004",
 			"rotation":[
 				0,
 				0.7071067094802856,
@@ -120,7 +123,7 @@
 		},
 		{
 			"mesh":5,
-			"name":"Door.016",
+			"name":"Door.004",
 			"rotation":[
 				0.7071068286895752,
 				0,
@@ -142,7 +145,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"AussenPutz.032",
+			"name":"AussenPutz",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0.7766516208648682,
@@ -166,11 +169,29 @@
 				"metallicFactor":0.39263802766799927,
 				"roughnessFactor":0.6840490698814392
 			}
+		},
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularFactor":0
+				}
+			},
+			"name":"material_0_material",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.800000011920929,
+					0.800000011920929,
+					0.800000011920929,
+					1
+				],
+				"metallicFactor":0
+			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Curve.212",
+			"name":"Curve.369",
 			"primitives":[
 				{
 					"attributes":{
@@ -184,7 +205,7 @@
 			]
 		},
 		{
-			"name":"Cube.372",
+			"name":"Cube.862",
 			"primitives":[
 				{
 					"attributes":{
@@ -198,7 +219,7 @@
 			]
 		},
 		{
-			"name":"Cube.373",
+			"name":"Cube.863",
 			"primitives":[
 				{
 					"attributes":{
@@ -212,7 +233,7 @@
 			]
 		},
 		{
-			"name":"Cube.374",
+			"name":"Cube.864",
 			"primitives":[
 				{
 					"attributes":{
@@ -226,7 +247,7 @@
 			]
 		},
 		{
-			"name":"Cube.375",
+			"name":"Cube.865",
 			"primitives":[
 				{
 					"attributes":{
@@ -234,12 +255,13 @@
 						"NORMAL":15,
 						"TEXCOORD_0":16
 					},
-					"indices":7
+					"indices":7,
+					"material":2
 				}
 			]
 		},
 		{
-			"name":"Plane.001_Glossy_0.009",
+			"name":"Plane.001_Glossy_0.010",
 			"primitives":[
 				{
 					"attributes":{
@@ -296,7 +318,7 @@
 			"count":24,
 			"max":[
 				1,
-				2,
+				1.7987421751022339,
 				0
 			],
 			"min":[
@@ -330,7 +352,7 @@
 			"count":24,
 			"max":[
 				1,
-				2,
+				1.7987421751022339,
 				0
 			],
 			"min":[
@@ -357,14 +379,14 @@
 			"componentType":5126,
 			"count":24,
 			"max":[
-				1,
+				1.0000007152557373,
 				2,
-				0
+				-12
 			],
 			"min":[
-				-1,
-				0,
-				-2
+				-0.9999992847442627,
+				2.5462945529852732e-08,
+				-14
 			],
 			"type":"VEC3"
 		},
@@ -386,7 +408,7 @@
 			"count":24,
 			"max":[
 				1,
-				2,
+				1.7957446575164795,
 				0
 			],
 			"min":[

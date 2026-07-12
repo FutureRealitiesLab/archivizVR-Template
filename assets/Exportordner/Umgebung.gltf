@@ -36,7 +36,7 @@
 		},
 		{
 			"mesh":1,
-			"name":"Cube.017",
+			"name":"Cube.270",
 			"scale":[
 				5,
 				3.5,
@@ -50,7 +50,7 @@
 		},
 		{
 			"mesh":2,
-			"name":"Cube.018",
+			"name":"Cube.271",
 			"scale":[
 				1.9086451530456543,
 				1.2284804582595825,
@@ -95,7 +95,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh.013",
+			"name":"Mesh.060",
 			"primitives":[
 				{
 					"attributes":{
@@ -118,7 +118,7 @@
 			]
 		},
 		{
-			"name":"Cube.235",
+			"name":"Cube.438",
 			"primitives":[
 				{
 					"attributes":{
@@ -131,7 +131,7 @@
 			]
 		},
 		{
-			"name":"Cube.236",
+			"name":"Cube.442",
 			"primitives":[
 				{
 					"attributes":{

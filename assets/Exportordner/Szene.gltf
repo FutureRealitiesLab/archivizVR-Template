@@ -46,7 +46,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Plane.007",
+			"name":"Plane.008",
 			"primitives":[
 				{
 					"attributes":{
@@ -64,7 +64,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":10,
+			"count":185,
 			"max":[
 				1,
 				0,
@@ -72,7 +72,7 @@
 			],
 			"min":[
 				-1,
-				0,
+				-17.580684661865234,
 				-1
 			],
 			"type":"VEC3"
@@ -80,51 +80,51 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":10,
+			"count":185,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":10,
+			"count":185,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":30,
+			"count":420,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":120,
+			"byteLength":2220,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":120,
-			"byteOffset":120,
+			"byteLength":2220,
+			"byteOffset":2220,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":80,
-			"byteOffset":240,
+			"byteLength":1480,
+			"byteOffset":4440,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":60,
-			"byteOffset":320,
+			"byteLength":840,
+			"byteOffset":5920,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":380,
+			"byteLength":6760,
 			"uri":"Szene.bin"
 		}
 	]

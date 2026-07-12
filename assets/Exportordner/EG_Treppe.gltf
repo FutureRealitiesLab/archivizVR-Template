@@ -26,21 +26,18 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Beton_Rough",
+			"name":"Parkett",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.3583049178123474,
-					0.3314575254917145,
-					0.36859366297721863,
-					1
-				],
+				"baseColorTexture":{
+					"index":0
+				},
 				"metallicFactor":0
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.315",
+			"name":"Cube.805",
 			"primitives":[
 				{
 					"attributes":{
@@ -52,6 +49,19 @@
 					"material":0
 				}
 			]
+		}
+	],
+	"textures":[
+		{
+			"sampler":0,
+			"source":0
+		}
+	],
+	"images":[
+		{
+			"mimeType":"image/jpeg",
+			"name":"eicheindustrie.jpg",
+			"uri":"eicheindustrie.jpg.jpg"
 		}
 	],
 	"accessors":[
@@ -114,6 +124,12 @@
 			"byteLength":1272,
 			"byteOffset":13440,
 			"target":34963
+		}
+	],
+	"samplers":[
+		{
+			"magFilter":9729,
+			"minFilter":9987
 		}
 	],
 	"buffers":[

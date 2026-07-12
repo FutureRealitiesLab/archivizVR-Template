@@ -1,42 +1,50 @@
 [gd_scene format=3 uid="uid://uotc4vvjy8nn"]
 
-[ext_resource type="PackedScene" uid="uid://b07by4llp82uc" path="res://assets/Exportordner/Bike1.gltf" id="1_sccug"]
-[ext_resource type="PackedScene" uid="uid://b8dse3t6o6ayn" path="res://assets/Exportordner/Dach_Aussen.gltf" id="2_r6nm5"]
-[ext_resource type="PackedScene" uid="uid://bani42ishmku2" path="res://assets/Exportordner/Dach_Hochbett.gltf" id="3_4pemy"]
-[ext_resource type="PackedScene" uid="uid://bx2sqxgm7rgqk" path="res://assets/Exportordner/Dach_Innen.001.gltf" id="4_haj7g"]
-[ext_resource type="PackedScene" uid="uid://bao7yobimjha6" path="res://assets/Exportordner/Dach_PV.gltf" id="6_sxm5u"]
-[ext_resource type="PackedScene" uid="uid://dlrrxbk2jq04y" path="res://assets/Exportordner/Dach_Zwischenboden.gltf" id="7_assgo"]
-[ext_resource type="PackedScene" uid="uid://cfxgm83a3of46" path="res://assets/Exportordner/EG.gltf" id="8_n0npj"]
-[ext_resource type="PackedScene" uid="uid://ds7nfkfaoym2d" path="res://assets/Exportordner/EG_3D.gltf" id="9_mednw"]
-[ext_resource type="PackedScene" uid="uid://7g42vs16b45p" path="res://assets/Exportordner/EG_Aussen.gltf" id="10_xanla"]
-[ext_resource type="PackedScene" uid="uid://l4y8de16d6og" path="res://assets/Exportordner/EG_boden.gltf" id="11_q3fe4"]
-[ext_resource type="PackedScene" uid="uid://d2ukhcak7yvum" path="res://assets/Exportordner/EG_Fenster.gltf" id="12_e3tbj"]
-[ext_resource type="PackedScene" uid="uid://bkely203131u7" path="res://assets/Exportordner/EG_Frühstücksecke.gltf" id="13_2b5t4"]
-[ext_resource type="PackedScene" uid="uid://cwo86nfeowoht" path="res://assets/Exportordner/EG_Kellereingang.gltf" id="14_6rr4d"]
-[ext_resource type="PackedScene" uid="uid://b6equjsrkk03s" path="res://assets/Exportordner/EG_Laufschiene.gltf" id="15_kd6hp"]
-[ext_resource type="PackedScene" uid="uid://tlorxj1xt1if" path="res://assets/Exportordner/EG_Licht.gltf" id="16_ecvld"]
-[ext_resource type="PackedScene" uid="uid://t6xaeqh5h1pn" path="res://assets/Exportordner/EG_Möbel.gltf" id="17_hq1h4"]
-[ext_resource type="PackedScene" uid="uid://doa7hlal1ofho" path="res://assets/Exportordner/EG_Treppe.gltf" id="18_k52pe"]
-[ext_resource type="PackedScene" uid="uid://dsq4myflu4avb" path="res://assets/Exportordner/Fassade.gltf" id="19_u76e6"]
-[ext_resource type="PackedScene" uid="uid://xi20ii1sel5e" path="res://assets/Exportordner/Fenster.gltf" id="20_f8pvo"]
-[ext_resource type="PackedScene" uid="uid://wkb5vjfybhod" path="res://assets/Exportordner/Garten_Landschaft.gltf" id="21_34mrp"]
-[ext_resource type="PackedScene" uid="uid://b6ca2f11rth4l" path="res://assets/Exportordner/Garten_Stuff.gltf" id="22_3k105"]
-[ext_resource type="PackedScene" uid="uid://dckgp7tu0yyq6" path="res://assets/Exportordner/Garten_Zaun_Rasen.gltf" id="23_m2q7u"]
-[ext_resource type="PackedScene" uid="uid://bcuu0nwjlfxo0" path="res://assets/Exportordner/Hecken.gltf" id="24_s6nk0"]
-[ext_resource type="PackedScene" uid="uid://c7jd7gn2vrcxj" path="res://assets/Exportordner/OG.gltf" id="25_qcl0t"]
-[ext_resource type="PackedScene" uid="uid://dqerlw0vj76yp" path="res://assets/Exportordner/OG_3D.gltf" id="26_rh0wu"]
-[ext_resource type="PackedScene" uid="uid://bi2q8rcf1562m" path="res://assets/Exportordner/OG_Fallgitter.gltf" id="27_ycxw5"]
-[ext_resource type="PackedScene" uid="uid://ddq2eab6ysowt" path="res://assets/Exportordner/OG_Fenster.gltf" id="28_23ejm"]
-[ext_resource type="PackedScene" uid="uid://cydohau1hpgvj" path="res://assets/Exportordner/OG_Innenwände.gltf" id="29_of3n5"]
-[ext_resource type="PackedScene" uid="uid://cs8vffqilii1a" path="res://assets/Exportordner/OG_Möbel.gltf" id="30_rpak2"]
-[ext_resource type="PackedScene" uid="uid://edxy6irx0mjl" path="res://assets/Exportordner/OG_Türen.gltf" id="31_5km1q"]
-[ext_resource type="PackedScene" uid="uid://c2iknxeka44lb" path="res://assets/Exportordner/Szene.gltf" id="32_xg34d"]
-[ext_resource type="PackedScene" uid="uid://c32i00sjjk0oq" path="res://assets/Exportordner/UG.gltf" id="33_ovydp"]
-[ext_resource type="PackedScene" uid="uid://c6ts5bgw6l7ou" path="res://assets/Exportordner/UG_3D.002.gltf" id="34_6weah"]
+[ext_resource type="PackedScene" uid="uid://b341ojpsd4su5" path="res://assets/Exportordner/Bike1.gltf" id="1_sccug"]
+[ext_resource type="PackedScene" uid="uid://b3y1efuaqkgug" path="res://assets/Exportordner/Dach_Aussen.gltf" id="2_r6nm5"]
+[ext_resource type="PackedScene" uid="uid://d0jbtf86s3t6u" path="res://assets/Exportordner/Dach_Hochbett.gltf" id="3_4pemy"]
+[ext_resource type="PackedScene" uid="uid://cos7vw6befaad" path="res://assets/Exportordner/Books.gltf" id="4_4f8ib"]
+[ext_resource type="PackedScene" uid="uid://bvnhciiejj8ow" path="res://assets/Exportordner/Dach_Innen.001.gltf" id="4_haj7g"]
+[ext_resource type="PackedScene" uid="uid://b2jhmsmdjmjvh" path="res://assets/Exportordner/Books.001.gltf" id="4_xanla"]
+[ext_resource type="PackedScene" uid="uid://v87no2ggtbsb" path="res://assets/Exportordner/Books.002.gltf" id="5_q3fe4"]
+[ext_resource type="PackedScene" uid="uid://bt60p5qnnfj3y" path="res://assets/Exportordner/Books.004.gltf" id="6_e3tbj"]
+[ext_resource type="PackedScene" uid="uid://dyjchj5qnxi4m" path="res://assets/Exportordner/Dach_PV.gltf" id="6_sxm5u"]
+[ext_resource type="PackedScene" uid="uid://cedkk0sfrtds" path="res://assets/Exportordner/EG.gltf" id="8_n0npj"]
+[ext_resource type="PackedScene" uid="uid://bvsxt3ov5v2sb" path="res://assets/Exportordner/EG_3D.gltf" id="9_mednw"]
+[ext_resource type="PackedScene" uid="uid://dbpbt4sodd2vu" path="res://assets/Exportordner/DG_Fassade.gltf" id="10_sxm5u"]
+[ext_resource type="PackedScene" uid="uid://sdeqxkha006r" path="res://assets/Exportordner/EG_Aussen.gltf" id="10_xanla"]
+[ext_resource type="PackedScene" uid="uid://c5giqpw0k634g" path="res://assets/Exportordner/EG_boden.gltf" id="11_q3fe4"]
+[ext_resource type="PackedScene" uid="uid://cwno64njilclo" path="res://assets/Exportordner/EG_Fenster.gltf" id="12_e3tbj"]
+[ext_resource type="PackedScene" uid="uid://bist3pxb4655k" path="res://assets/Exportordner/EG_Frühstücksecke.gltf" id="13_2b5t4"]
+[ext_resource type="PackedScene" uid="uid://bfegwxmobtufr" path="res://assets/Exportordner/EG_Kellereingang.gltf" id="14_6rr4d"]
+[ext_resource type="PackedScene" uid="uid://c4umb1eyg2vk4" path="res://assets/Exportordner/EG_Fassade.gltf" id="15_assgo"]
+[ext_resource type="PackedScene" uid="uid://c1jky3isd4osj" path="res://assets/Exportordner/EG_Laufschiene.gltf" id="15_kd6hp"]
+[ext_resource type="PackedScene" uid="uid://x2n3xism3daa" path="res://assets/Exportordner/EG_Licht.gltf" id="16_ecvld"]
+[ext_resource type="PackedScene" uid="uid://kscgwiglh45h" path="res://assets/Exportordner/EG_Möbel.gltf" id="17_hq1h4"]
+[ext_resource type="PackedScene" uid="uid://b1jb571k5kayg" path="res://assets/Exportordner/EG_Treppe.gltf" id="18_k52pe"]
+[ext_resource type="PackedScene" uid="uid://idnivjel7ihy" path="res://assets/Exportordner/Fassade.gltf" id="19_u76e6"]
+[ext_resource type="PackedScene" uid="uid://cxttxxpbqlh7w" path="res://assets/Exportordner/Fenster.gltf" id="20_f8pvo"]
+[ext_resource type="PackedScene" uid="uid://cbd0w0co40w3l" path="res://assets/Exportordner/Garten_Landschaft.gltf" id="21_34mrp"]
+[ext_resource type="PackedScene" uid="uid://dkpe6k3uhus02" path="res://assets/Exportordner/Garten_Stuff.gltf" id="22_3k105"]
+[ext_resource type="PackedScene" uid="uid://c0b7hnpdpvkpe" path="res://assets/Exportordner/Garten_Zaun_Rasen.gltf" id="23_m2q7u"]
+[ext_resource type="PackedScene" uid="uid://4rkfgleg8fpj" path="res://assets/Exportordner/Hecken.gltf" id="24_s6nk0"]
+[ext_resource type="PackedScene" uid="uid://c20avykyp2r18" path="res://assets/Exportordner/OG.gltf" id="25_qcl0t"]
+[ext_resource type="PackedScene" uid="uid://pqwrkuk6q7cp" path="res://assets/Exportordner/OG_3D.gltf" id="26_rh0wu"]
+[ext_resource type="PackedScene" uid="uid://6dj6225ukfw8" path="res://assets/Exportordner/OG_Fenster.gltf" id="28_23ejm"]
+[ext_resource type="PackedScene" uid="uid://da2a0lt3k3bov" path="res://assets/Exportordner/OG_Innenwände.gltf" id="29_of3n5"]
+[ext_resource type="PackedScene" uid="uid://coynbq71vudnj" path="res://assets/Exportordner/OG_Möbel.gltf" id="30_rpak2"]
+[ext_resource type="PackedScene" uid="uid://drj33qppvgm2e" path="res://assets/Exportordner/OG_Türen.gltf" id="31_5km1q"]
+[ext_resource type="PackedScene" uid="uid://dpwrx04kg5ant" path="res://assets/Exportordner/OG_Fassade.gltf" id="31_n0npj"]
+[ext_resource type="PackedScene" uid="uid://b5sjgbcam43ht" path="res://assets/Exportordner/Szene.gltf" id="32_xg34d"]
+[ext_resource type="PackedScene" uid="uid://drkcxm6rj44tq" path="res://assets/Exportordner/UG.gltf" id="33_ovydp"]
+[ext_resource type="PackedScene" uid="uid://uuhs43ivg57m" path="res://assets/Exportordner/UG_3D.002.gltf" id="34_6weah"]
 [ext_resource type="LightmapGIData" uid="uid://derw6btbl0o28" path="res://scenes/environment/a24.lmbake" id="34_u88vq"]
-[ext_resource type="PackedScene" uid="uid://bvfsp7wq3xrx7" path="res://assets/Exportordner/Umgebung.gltf" id="35_j0i50"]
-[ext_resource type="PackedScene" uid="uid://bfpwgdiolb2o7" path="res://assets/Exportordner/UG_Doors.gltf" id="36_r6nm5"]
+[ext_resource type="PackedScene" uid="uid://dp61u80f54wfr" path="res://assets/Exportordner/Umgebung.gltf" id="35_j0i50"]
+[ext_resource type="PackedScene" uid="uid://d07vicjmrd174" path="res://assets/Exportordner/UG_Doors.gltf" id="36_r6nm5"]
 [ext_resource type="Script" uid="uid://dp2frlebl33lp" path="res://scripts/scene_changer.gd" id="36_scchg"]
+[ext_resource type="PackedScene" uid="uid://cy7i0i1mudcat" path="res://assets/Exportordner/SchlafzimmerLayout_01.gltf" id="38_2b5t4"]
+[ext_resource type="PackedScene" uid="uid://dw6s42hy8vfvf" path="res://assets/Exportordner/SchlafzimmerLayout_02.gltf" id="39_6rr4d"]
+[ext_resource type="PackedScene" uid="uid://cwqg48csrugac" path="res://assets/Exportordner/SchlafzimmerLayout_03.gltf" id="40_kd6hp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
 sky_top_color = Color(0.3, 0.45, 0.65, 1)
@@ -111,8 +119,8 @@ size = Vector3(1.324707, 0.26464844, 1.7141113)
 
 [node name="SceneChanger" type="Node" parent="." unique_id=482910371]
 script = ExtResource("36_scchg")
-next_scene = "res://scenes/environment/a24_UG.tscn"
-previous_scene = "res://scenes/environment/a24_OG.tscn"
+next_scene = "res://scenes/environment/a_24_sleep2"
+previous_scene = "res://scenes/environment/a_24_sleep3.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1095599563]
 environment = SubResource("Environment_1")
@@ -132,7 +140,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.50937, 0, -14.224901)
 [node name="lichter2" type="Node3D" parent="." unique_id=551810738]
 
 [node name="Point" type="OmniLight3D" parent="lichter2" unique_id=1982845932]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.39442, 4.951973, -14.327418)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 19.39442, 5.6711535, -14.614522)
+light_energy = 1.741
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
@@ -382,7 +391,7 @@ omni_range = 10.0
 omni_attenuation = 2.0
 
 [node name="Point_004" type="OmniLight3D" parent="lichter2" unique_id=1608713517]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.949354, 7.3904715, -7.425666)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 20.949354, 7.0739455, -7.425666)
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
@@ -392,6 +401,7 @@ omni_range = 10.0
 omni_attenuation = 2.0
 
 [node name="StaticBody3D - Collision2" type="StaticBody3D" parent="." unique_id=1342451299]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -432,7 +442,7 @@ transform = Transform3D(4.2522124e-06, -2.4173096e-07, 1, 2.7867398, -0.14637083
 shape = SubResource("BoxShape3D_xanla")
 
 [node name="OliviaTreppe" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=511752611]
-transform = Transform3D(1.4971535, -0.08873578, 0, 2.9500294, 0.045033813, 0, 0, 0, 1, 19.883867, 4.4637885, -5.8192315)
+transform = Transform3D(1.9137375, -0.081169024, 0, 2.6984715, 0.057564504, 0, 0, 0, 1, 19.710978, 4.403538, -5.8192315)
 shape = SubResource("BoxShape3D_q3fe4")
 
 [node name="_UG_Treppe" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=1103675643]
@@ -440,11 +450,11 @@ transform = Transform3D(2.5078669, -0.064896375, 0, 2.1574864, 0.07543569, 0, 0,
 shape = SubResource("BoxShape3D_e3tbj")
 
 [node name="_DG_" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=1357018651]
-transform = Transform3D(0, 0, -302.80847, 0, 7.761607, 0, 166.03311, 0, 0, 24.56924, 5.8099995, -5.3640223)
+transform = Transform3D(0, 0, -302.80847, 0, 7.761607, 0, 166.03311, 0, 0, 24.56924, 5.6598196, -5.3640223)
 shape = SubResource("ConcavePolygonShape3D_2b5t4")
 
 [node name="_DG_2" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=1981391381]
-transform = Transform3D(0, 0, -145.79668, 0, 7.761607, 0, 259.38306, 0, 0, 21.870085, 5.8099995, -5.3640223)
+transform = Transform3D(0, 0, -145.79668, 0, 7.761607, 0, 259.38306, 0, 0, 21.870085, 5.6598196, -5.3640223)
 shape = SubResource("ConcavePolygonShape3D_6rr4d")
 
 [node name="_OG" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=794244090]
@@ -452,7 +462,7 @@ transform = Transform3D(1, 0, 0, 0, 1.25, 0, 0, 0, 1, 16.2501, 3.1599998, -5.364
 shape = SubResource("ConcavePolygonShape3D_kd6hp")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=1330812641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2501, -0.29999998, -5.36402)
+transform = Transform3D(1.0464952, 0, 0, 0, 1, 0, 0, 0, 1, 16.2501, -0.29999998, -5.36402)
 shape = SubResource("ConcavePolygonShape3D_hq1h4")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D - Collision2" unique_id=789004384]
@@ -509,72 +519,92 @@ box_projection = true
 
 [node name="StaticBody3D - Blender Export" type="StaticBody3D" parent="." unique_id=268364465]
 
-[node name="Bike1" parent="StaticBody3D - Blender Export" unique_id=1869710455 instance=ExtResource("1_sccug")]
+[node name="Bike1" parent="StaticBody3D - Blender Export" unique_id=1780945388 instance=ExtResource("1_sccug")]
 
-[node name="Dach_Aussen" parent="StaticBody3D - Blender Export" unique_id=1468850985 instance=ExtResource("2_r6nm5")]
+[node name="Books_001" parent="StaticBody3D - Blender Export" unique_id=1419345782 instance=ExtResource("4_xanla")]
+visible = false
 
-[node name="Dach_Hochbett" parent="StaticBody3D - Blender Export" unique_id=1255161769 instance=ExtResource("3_4pemy")]
+[node name="Books_002" parent="StaticBody3D - Blender Export" unique_id=687026006 instance=ExtResource("5_q3fe4")]
 
-[node name="Dach_Innen_001" parent="StaticBody3D - Blender Export" unique_id=2021585723 instance=ExtResource("4_haj7g")]
+[node name="Books_004" parent="StaticBody3D - Blender Export" unique_id=5057020 instance=ExtResource("6_e3tbj")]
+visible = false
 
-[node name="Dach_PV" parent="StaticBody3D - Blender Export" unique_id=610105095 instance=ExtResource("6_sxm5u")]
+[node name="Books" parent="StaticBody3D - Blender Export" unique_id=1538377576 instance=ExtResource("4_4f8ib")]
 
-[node name="Dach_Zwischenboden" parent="StaticBody3D - Blender Export" unique_id=1419942471 instance=ExtResource("7_assgo")]
+[node name="Dach_Aussen" parent="StaticBody3D - Blender Export" unique_id=449286222 instance=ExtResource("2_r6nm5")]
 
-[node name="EG" parent="StaticBody3D - Blender Export" unique_id=1926659676 instance=ExtResource("8_n0npj")]
+[node name="Dach_Hochbett" parent="StaticBody3D - Blender Export" unique_id=222892527 instance=ExtResource("3_4pemy")]
 
-[node name="EG_3D" parent="StaticBody3D - Blender Export" unique_id=1287578424 instance=ExtResource("9_mednw")]
+[node name="Dach_Innen_001" parent="StaticBody3D - Blender Export" unique_id=1399097498 instance=ExtResource("4_haj7g")]
 
-[node name="EG_Aussen" parent="StaticBody3D - Blender Export" unique_id=371358921 instance=ExtResource("10_xanla")]
+[node name="Dach_PV" parent="StaticBody3D - Blender Export" unique_id=286289816 instance=ExtResource("6_sxm5u")]
 
-[node name="EG_boden" parent="StaticBody3D - Blender Export" unique_id=799495482 instance=ExtResource("11_q3fe4")]
+[node name="DG_Fassade" parent="StaticBody3D - Blender Export" unique_id=952813975 instance=ExtResource("10_sxm5u")]
 
-[node name="EG_Fenster" parent="StaticBody3D - Blender Export" unique_id=656266636 instance=ExtResource("12_e3tbj")]
+[node name="EG" parent="StaticBody3D - Blender Export" unique_id=692721862 instance=ExtResource("8_n0npj")]
 
-[node name="EG_Frühstücksecke" parent="StaticBody3D - Blender Export" unique_id=1379806948 instance=ExtResource("13_2b5t4")]
+[node name="EG_3D" parent="StaticBody3D - Blender Export" unique_id=1206893861 instance=ExtResource("9_mednw")]
 
-[node name="EG_Kellereingang" parent="StaticBody3D - Blender Export" unique_id=246117379 instance=ExtResource("14_6rr4d")]
+[node name="EG_Aussen" parent="StaticBody3D - Blender Export" unique_id=1541154544 instance=ExtResource("10_xanla")]
 
-[node name="EG_Laufschiene" parent="StaticBody3D - Blender Export" unique_id=1750364533 instance=ExtResource("15_kd6hp")]
+[node name="EG_boden" parent="StaticBody3D - Blender Export" unique_id=1312701034 instance=ExtResource("11_q3fe4")]
 
-[node name="EG_Licht" parent="StaticBody3D - Blender Export" unique_id=1751500185 instance=ExtResource("16_ecvld")]
+[node name="EG_Fassade" parent="StaticBody3D - Blender Export" unique_id=875546593 instance=ExtResource("15_assgo")]
 
-[node name="EG_Möbel" parent="StaticBody3D - Blender Export" unique_id=1906515505 instance=ExtResource("17_hq1h4")]
+[node name="EG_Fenster" parent="StaticBody3D - Blender Export" unique_id=1199486427 instance=ExtResource("12_e3tbj")]
 
-[node name="EG_Treppe" parent="StaticBody3D - Blender Export" unique_id=1300074756 instance=ExtResource("18_k52pe")]
+[node name="EG_Frühstücksecke" parent="StaticBody3D - Blender Export" unique_id=906724298 instance=ExtResource("13_2b5t4")]
 
-[node name="Fassade" parent="StaticBody3D - Blender Export" unique_id=1464608437 instance=ExtResource("19_u76e6")]
+[node name="EG_Kellereingang" parent="StaticBody3D - Blender Export" unique_id=1177639375 instance=ExtResource("14_6rr4d")]
 
-[node name="Fenster" parent="StaticBody3D - Blender Export" unique_id=1120728966 instance=ExtResource("20_f8pvo")]
+[node name="EG_Laufschiene" parent="StaticBody3D - Blender Export" unique_id=682535180 instance=ExtResource("15_kd6hp")]
 
-[node name="Garten_Landschaft" parent="StaticBody3D - Blender Export" unique_id=830820226 instance=ExtResource("21_34mrp")]
+[node name="EG_Licht" parent="StaticBody3D - Blender Export" unique_id=790339342 instance=ExtResource("16_ecvld")]
 
-[node name="Garten_Stuff" parent="StaticBody3D - Blender Export" unique_id=54956220 instance=ExtResource("22_3k105")]
+[node name="EG_Möbel" parent="StaticBody3D - Blender Export" unique_id=1340404524 instance=ExtResource("17_hq1h4")]
 
-[node name="Garten_Zaun_Rasen" parent="StaticBody3D - Blender Export" unique_id=397738091 instance=ExtResource("23_m2q7u")]
+[node name="EG_Treppe" parent="StaticBody3D - Blender Export" unique_id=1664987663 instance=ExtResource("18_k52pe")]
 
-[node name="Hecken" parent="StaticBody3D - Blender Export" unique_id=1181583992 instance=ExtResource("24_s6nk0")]
+[node name="Fassade" parent="StaticBody3D - Blender Export" unique_id=450242703 instance=ExtResource("19_u76e6")]
 
-[node name="OG" parent="StaticBody3D - Blender Export" unique_id=2092344696 instance=ExtResource("25_qcl0t")]
+[node name="Fenster" parent="StaticBody3D - Blender Export" unique_id=1463464466 instance=ExtResource("20_f8pvo")]
 
-[node name="OG_3D" parent="StaticBody3D - Blender Export" unique_id=969865765 instance=ExtResource("26_rh0wu")]
+[node name="Garten_Landschaft" parent="StaticBody3D - Blender Export" unique_id=1570892333 instance=ExtResource("21_34mrp")]
 
-[node name="OG_Fallgitter" parent="StaticBody3D - Blender Export" unique_id=1456778275 instance=ExtResource("27_ycxw5")]
+[node name="Garten_Stuff" parent="StaticBody3D - Blender Export" unique_id=646252597 instance=ExtResource("22_3k105")]
 
-[node name="OG_Fenster" parent="StaticBody3D - Blender Export" unique_id=2011776160 instance=ExtResource("28_23ejm")]
+[node name="Garten_Zaun_Rasen" parent="StaticBody3D - Blender Export" unique_id=1874113821 instance=ExtResource("23_m2q7u")]
 
-[node name="OG_Innenwände" parent="StaticBody3D - Blender Export" unique_id=2014840976 instance=ExtResource("29_of3n5")]
+[node name="Hecken" parent="StaticBody3D - Blender Export" unique_id=961149531 instance=ExtResource("24_s6nk0")]
 
-[node name="OG_Möbel" parent="StaticBody3D - Blender Export" unique_id=1761921519 instance=ExtResource("30_rpak2")]
+[node name="OG" parent="StaticBody3D - Blender Export" unique_id=309000315 instance=ExtResource("25_qcl0t")]
 
-[node name="OG_Türen" parent="StaticBody3D - Blender Export" unique_id=1437627777 instance=ExtResource("31_5km1q")]
+[node name="OG_3D" parent="StaticBody3D - Blender Export" unique_id=618361318 instance=ExtResource("26_rh0wu")]
 
-[node name="Szene" parent="StaticBody3D - Blender Export" unique_id=761048242 instance=ExtResource("32_xg34d")]
+[node name="OG_Fassade" parent="StaticBody3D - Blender Export" unique_id=1073221607 instance=ExtResource("31_n0npj")]
 
-[node name="UG" parent="StaticBody3D - Blender Export" unique_id=1653642425 instance=ExtResource("33_ovydp")]
+[node name="OG_Fenster" parent="StaticBody3D - Blender Export" unique_id=831066784 instance=ExtResource("28_23ejm")]
 
-[node name="UG_3D_002" parent="StaticBody3D - Blender Export" unique_id=1612115884 instance=ExtResource("34_6weah")]
+[node name="OG_Innenwände" parent="StaticBody3D - Blender Export" unique_id=909977653 instance=ExtResource("29_of3n5")]
 
-[node name="UG_Doors" parent="StaticBody3D - Blender Export" unique_id=2085134624 instance=ExtResource("36_r6nm5")]
+[node name="OG_Möbel" parent="StaticBody3D - Blender Export" unique_id=1953276407 instance=ExtResource("30_rpak2")]
 
-[node name="Umgebung" parent="StaticBody3D - Blender Export" unique_id=1063658571 instance=ExtResource("35_j0i50")]
+[node name="OG_Türen" parent="StaticBody3D - Blender Export" unique_id=2045674639 instance=ExtResource("31_5km1q")]
+
+[node name="SchlafzimmerLayout_01" parent="StaticBody3D - Blender Export" unique_id=977662881 instance=ExtResource("38_2b5t4")]
+
+[node name="SchlafzimmerLayout_02" parent="StaticBody3D - Blender Export" unique_id=563346491 instance=ExtResource("39_6rr4d")]
+visible = false
+
+[node name="SchlafzimmerLayout_03" parent="StaticBody3D - Blender Export" unique_id=1468301222 instance=ExtResource("40_kd6hp")]
+visible = false
+
+[node name="Szene" parent="StaticBody3D - Blender Export" unique_id=605807651 instance=ExtResource("32_xg34d")]
+
+[node name="UG" parent="StaticBody3D - Blender Export" unique_id=276713883 instance=ExtResource("33_ovydp")]
+
+[node name="UG_3D_002" parent="StaticBody3D - Blender Export" unique_id=655448970 instance=ExtResource("34_6weah")]
+
+[node name="UG_Doors" parent="StaticBody3D - Blender Export" unique_id=1224625377 instance=ExtResource("36_r6nm5")]
+
+[node name="Umgebung" parent="StaticBody3D - Blender Export" unique_id=1445347891 instance=ExtResource("35_j0i50")]

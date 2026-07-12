@@ -18,7 +18,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Dach.Ziegel.002",
+			"name":"Dach.Ziegel.004",
 			"scale":[
 				1,
 				1,
@@ -26,13 +26,13 @@
 			],
 			"translation":[
 				15.885087013244629,
-				5.999999523162842,
+				5.599999904632568,
 				-4.900000095367432
 			]
 		},
 		{
 			"mesh":1,
-			"name":"Dach.Ziegel.004",
+			"name":"Dach.Ziegel.005",
 			"rotation":[
 				0,
 				0,
@@ -46,7 +46,7 @@
 			],
 			"translation":[
 				22.0402889251709,
-				8.250807762145996,
+				7.850808143615723,
 				-4.998967170715332
 			]
 		},
@@ -60,7 +60,7 @@
 			],
 			"translation":[
 				15.885087013244629,
-				5.804820537567139,
+				5.404820919036865,
 				-4.998967170715332
 			]
 		},
@@ -74,7 +74,7 @@
 			],
 			"translation":[
 				15.885087013244629,
-				5.94871187210083,
+				5.548712253570557,
 				-4.998967170715332
 			]
 		}
@@ -109,6 +109,20 @@
 		},
 		{
 			"doubleSided":true,
+			"name":"white_plastic",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.800000011920929,
+					0.800000011920929,
+					0.800000011920929,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
+		},
+		{
+			"doubleSided":true,
 			"name":"AussenPutz",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -123,7 +137,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.237",
+			"name":"Cube.443",
 			"primitives":[
 				{
 					"attributes":{
@@ -137,7 +151,7 @@
 			]
 		},
 		{
-			"name":"Cube.238",
+			"name":"Cube.444",
 			"primitives":[
 				{
 					"attributes":{
@@ -151,7 +165,7 @@
 			]
 		},
 		{
-			"name":"Cube.239",
+			"name":"Cube.445",
 			"primitives":[
 				{
 					"attributes":{
@@ -165,7 +179,7 @@
 			]
 		},
 		{
-			"name":"Cube.240",
+			"name":"Cube.446",
 			"primitives":[
 				{
 					"attributes":{
@@ -174,7 +188,7 @@
 						"TEXCOORD_0":14
 					},
 					"indices":15,
-					"material":2
+					"material":3
 				}
 			]
 		}
@@ -183,7 +197,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":132,
+			"count":102,
 			"max":[
 				10.036792755126953,
 				2.658022165298462,
@@ -199,33 +213,33 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":132,
+			"count":102,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":132,
+			"count":102,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":312,
+			"count":234,
 			"type":"SCALAR"
 		},
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":142,
+			"count":74,
 			"max":[
 				4.76837158203125e-07,
 				0.40597182512283325,
-				0.016307130455970764
+				0.01630711555480957
 			],
 			"min":[
-				-6.615180015563965,
-				-2.484769821166992,
+				-6.235147476196289,
+				-2.4730935096740723,
 				-1.9837760925292969
 			],
 			"type":"VEC3"
@@ -233,33 +247,33 @@
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":142,
+			"count":74,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":142,
+			"count":74,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":7,
 			"componentType":5123,
-			"count":324,
+			"count":156,
 			"type":"SCALAR"
 		},
 		{
 			"bufferView":8,
 			"componentType":5126,
-			"count":128,
+			"count":104,
 			"max":[
-				9.894580841064453,
+				9.674949645996094,
 				2.457479953765869,
 				-0.044074952602386475
 			],
 			"min":[
 				5.953271389007568,
-				0.04339572414755821,
+				0.17485342919826508,
 				-1.9559252262115479
 			],
 			"type":"VEC3"
@@ -267,25 +281,25 @@
 		{
 			"bufferView":9,
 			"componentType":5126,
-			"count":128,
+			"count":104,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":10,
 			"componentType":5126,
-			"count":128,
+			"count":104,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":11,
 			"componentType":5123,
-			"count":300,
+			"count":240,
 			"type":"SCALAR"
 		},
 		{
 			"bufferView":12,
 			"componentType":5126,
-			"count":140,
+			"count":72,
 			"max":[
 				6.1552042961120605,
 				2.344728708267212,
@@ -301,123 +315,123 @@
 		{
 			"bufferView":13,
 			"componentType":5126,
-			"count":140,
+			"count":72,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":14,
 			"componentType":5126,
-			"count":140,
+			"count":72,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":15,
 			"componentType":5123,
-			"count":336,
+			"count":156,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1584,
+			"byteLength":1224,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1584,
-			"byteOffset":1584,
+			"byteLength":1224,
+			"byteOffset":1224,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1056,
-			"byteOffset":3168,
+			"byteLength":816,
+			"byteOffset":2448,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":624,
-			"byteOffset":4224,
+			"byteLength":468,
+			"byteOffset":3264,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":1704,
-			"byteOffset":4848,
+			"byteLength":888,
+			"byteOffset":3732,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1704,
-			"byteOffset":6552,
+			"byteLength":888,
+			"byteOffset":4620,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1136,
-			"byteOffset":8256,
+			"byteLength":592,
+			"byteOffset":5508,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":648,
-			"byteOffset":9392,
+			"byteLength":312,
+			"byteOffset":6100,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":1536,
-			"byteOffset":10040,
+			"byteLength":1248,
+			"byteOffset":6412,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1536,
-			"byteOffset":11576,
+			"byteLength":1248,
+			"byteOffset":7660,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1024,
-			"byteOffset":13112,
+			"byteLength":832,
+			"byteOffset":8908,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":600,
-			"byteOffset":14136,
+			"byteLength":480,
+			"byteOffset":9740,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":1680,
-			"byteOffset":14736,
+			"byteLength":864,
+			"byteOffset":10220,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1680,
-			"byteOffset":16416,
+			"byteLength":864,
+			"byteOffset":11084,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1120,
-			"byteOffset":18096,
+			"byteLength":576,
+			"byteOffset":11948,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":672,
-			"byteOffset":19216,
+			"byteLength":312,
+			"byteOffset":12524,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":19888,
+			"byteLength":12836,
 			"uri":"Dach_Aussen.bin"
 		}
 	]
